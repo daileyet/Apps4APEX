@@ -1,0 +1,39 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="A9801279-E8FB-553C-E093-C5B284CD148D" name="Object">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-02-24 03:53:51 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<engineerTo>
+<item key="9287CAAD-E5B3-4B24-8129-6CB9735260C8" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Object ID" id="F016EEF4-2E94-FFB2-7BB3-0FB07608FA31">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-02-24 06:52:03 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<engineerTo>
+<item key="9287CAAD-E5B3-4B24-8129-6CB9735260C8" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+</Attribute>
+<Attribute name="Version ID" id="D6862352-8BD2-945C-D6FA-860919261C44">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-02-24 06:52:09 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<engineerTo>
+<item key="9287CAAD-E5B3-4B24-8129-6CB9735260C8" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+</Attribute>
+</attributes>
+</Entity>

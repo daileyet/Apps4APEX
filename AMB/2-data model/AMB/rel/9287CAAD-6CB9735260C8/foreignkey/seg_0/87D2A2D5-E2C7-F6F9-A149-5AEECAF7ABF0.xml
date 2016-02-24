@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="87D2A2D5-E2C7-F6F9-A149-5AEECAF7ABF0" name="AMB_OBJECT_AMB_VERSION_FK">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-02-24 08:17:23 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<containerWithKeyObject>F42E4401-8E3B-4FD4-C69F-4E3C575EEB4F</containerWithKeyObject>
+<deleteRule>NO ACTION</deleteRule>
+<localFKIndex>8128D935-4E6F-7B54-8C93-732E8445E2BD</localFKIndex>
+<keyObject>3B5192CC-0392-B5C2-ACB2-097FCFB33FDE</keyObject>
+<mandatory>true</mandatory>
+<transferable>true</transferable>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

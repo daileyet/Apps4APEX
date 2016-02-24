@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="AMB" id="BC8D6253-394B-220B-9190-DFE7CB04A8BB" version="3.5">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-02-24 02:45:56 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>BC8D6253-394B-220B-9190-DFE7CB04A8BB</designId>
+</OSDM_Design>

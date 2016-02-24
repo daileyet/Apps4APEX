@@ -1,0 +1,77 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="10451921-A01B-700C-A5D0-216E852E5E78" name="AMB_OPS_VERSION">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-02-24 07:12:34 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="VERSION_ID" id="38BBFD48-743E-2B15-C11A-5E20C77F88DA">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-02-24 07:13:18 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="OPS_CODE" id="E484905F-7262-925E-0077-71443C83F374">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-02-24 07:14:03 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="OPS_VALUE" id="B197DFBD-FAB9-8B48-4244-1475BB3FEB89">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-02-24 07:14:19 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="OPS_STYLE" id="E6F549D8-6CB3-16DF-2343-E676F18B811A">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-02-24 07:15:06 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="OPS_DESC" id="3278E64C-A85A-157F-DC0A-8468AB84BABC">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-02-24 07:15:24 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1000</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E55D7F78-A67E-5271-F10F-A4832EA06DFB" name="AMB_OPS_VERSION_PK">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-02-24 07:35:22 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="38BBFD48-743E-2B15-C11A-5E20C77F88DA"/>
+<colUsage columnID="E484905F-7262-925E-0077-71443C83F374"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

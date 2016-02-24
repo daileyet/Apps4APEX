@@ -1,0 +1,12 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.relational.RelationalDesign>
+   <object objectType="Table" objectID="F42E4401-8E3B-4FD4-C69F-4E3C575EEB4F" name="AMB_OBJECT" seqName="seg_0"/>
+   <object objectType="Table" objectID="8D351208-B80C-080E-9371-64EC72FF341A" name="AMB_OPS_DEFINITION" seqName="seg_0"/>
+   <object objectType="Table" objectID="19D3F799-4693-76AC-BEDB-5CBEC84D3084" name="AMB_OPS_OBJECT" seqName="seg_0"/>
+   <object objectType="Table" objectID="24E60FB0-6A26-DA04-08B7-F1F99D1430D1" name="AMB_OPS_PROJECT" seqName="seg_0"/>
+   <object objectType="Table" objectID="10451921-A01B-700C-A5D0-216E852E5E78" name="AMB_OPS_VERSION" seqName="seg_0"/>
+   <object objectType="Table" objectID="D1BC7738-3CFF-407D-4D4D-6F0CFAAE9827" name="AMB_PROJECT" seqName="seg_0"/>
+   <object objectType="Table" objectID="E54BCEE2-196B-F2D1-8A37-04F57D3CCFFD" name="AMB_VERSION" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="CA8334CE-D06A-08E8-D72D-CB20D7A73564" name="AMB_VERSION_AMB_PROJECT_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="87D2A2D5-E2C7-F6F9-A149-5AEECAF7ABF0" name="AMB_OBJECT_AMB_VERSION_FK" seqName="seg_0"/>
+</oracle.dbtools.crest.model.design.relational.RelationalDesign>

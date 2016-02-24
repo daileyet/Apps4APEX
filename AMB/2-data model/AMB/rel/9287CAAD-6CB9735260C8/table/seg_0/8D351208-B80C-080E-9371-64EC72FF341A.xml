@@ -1,0 +1,95 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8D351208-B80C-080E-9371-64EC72FF341A" name="AMB_OPS_DEFINITION">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-02-24 06:54:29 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="OPS_CODE" id="E0F785C1-1573-6583-F616-0BF14DA09F6A">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-02-24 06:56:36 UTC</createdTime>
+<comment>option name</comment>
+<commentInRDBMS>option name</commentInRDBMS>
+<ownerDesignName>AMB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="OPS_NAME" id="2EAEB9A3-CCB0-EE71-1E1E-20D96A4D485C">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-02-24 06:58:17 UTC</createdTime>
+<comment>option display name</comment>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="OPS_TYPE" id="8E271139-67CD-C1A8-4E90-FA444685697A">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-02-24 06:58:17 UTC</createdTime>
+<comment>option value type</comment>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="OPS_TRAGET" id="6EDD40B0-BAB0-0A92-D2EC-5816F5573D6D">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-02-24 06:58:17 UTC</createdTime>
+<comment>option target &amp; levels</comment>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="OPS_DEFAULT" id="24A09846-6981-F561-C6B8-6D0A933166E8">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-02-24 06:58:47 UTC</createdTime>
+<comment>option default value</comment>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="OPS_DESC" id="2D034C20-4E42-51BD-D20D-9B376B8F4ABB">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-02-24 06:59:09 UTC</createdTime>
+<comment>option description</comment>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1000</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="76881FCE-BF62-32BE-9BC7-3850873C5BB8" name="AMB_OPS_DEF_PK">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-02-24 07:34:33 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E0F785C1-1573-6583-F616-0BF14DA09F6A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

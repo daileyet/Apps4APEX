@@ -1,0 +1,101 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F42E4401-8E3B-4FD4-C69F-4E3C575EEB4F" name="AMB_OBJECT">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-02-24 07:44:04 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="7A2EEDD3-549F-13F6-FB93-EAC7D18BB909">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-02-24 07:44:25 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VERSION_ID" id="5A1987F5-80B8-611A-6692-079829796831">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-02-24 07:47:08 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<delegate>685B4C70-FC37-7D8A-7DD6-9C35422B0824</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="87D2A2D5-E2C7-F6F9-A149-5AEECAF7ABF0" referredColumn="685B4C70-FC37-7D8A-7DD6-9C35422B0824"/>
+</associations>
+</Column>
+<Column name="NAME" id="46E14032-3EC0-05E0-2FF4-59F7B8C0B645">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-02-24 07:44:48 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TYPE" id="C63689BE-9CEB-234F-29E6-7F7A8F980306">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-02-24 07:46:35 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CONTENT" id="FF67C0E4-8CC3-9324-7F4A-DB34AA32233F">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-02-24 07:48:29 UTC</createdTime>
+<comment>object DDL </comment>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT028</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REFERENCE" id="1CBF54ED-65A6-93B1-3B8A-448F01500F35">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-02-24 07:52:15 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="06CD8FCD-8070-645B-84EF-0145EE343523" name="AMB_OBJECT_PK">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-02-24 07:49:40 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7A2EEDD3-549F-13F6-FB93-EAC7D18BB909"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8128D935-4E6F-7B54-8C93-732E8445E2BD" name="AMB_OBJECT_AMB_VERSION_FK">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-02-24 08:17:23 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5A1987F5-80B8-611A-6692-079829796831"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,133 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E54BCEE2-196B-F2D1-8A37-04F57D3CCFFD" name="AMB_VERSION">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-02-24 07:37:02 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="685B4C70-FC37-7D8A-7DD6-9C35422B0824">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-02-24 07:37:18 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PROJECT_ID" id="638070ED-5451-02A9-7FCD-4BA4B88774F5">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-02-24 08:13:32 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<delegate>9F911E8E-96E2-20D0-BB82-2DCC82259803</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CA8334CE-D06A-08E8-D72D-CB20D7A73564" referredColumn="9F911E8E-96E2-20D0-BB82-2DCC82259803"/>
+</associations>
+</Column>
+<Column name="APP_ID" id="05BAE281-6C24-62EB-A18D-E6B706118316">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-02-24 07:38:47 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="APP_NAME" id="7CD5E6A7-1E2D-48CF-23C3-7DB2E93D80DF">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-02-24 07:39:07 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="WORKSPACE" id="32405FD4-BE99-E09D-47B0-C51D99F2717E">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-02-24 07:39:25 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ENVIRONMENT" id="6DAB9456-70F2-3629-152D-C63712FB8538">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-02-24 07:39:51 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EDITION" id="12567971-4940-9E23-051C-938CBB190C22">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-02-24 07:41:48 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ACTIVE" id="A8EBD06B-572B-1975-2797-6E2AC49DE0AA">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-02-24 07:42:37 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IS_BASE" id="90C318EA-B4D6-FA5E-FE68-9D3F13EFB1CE">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-02-24 07:43:26 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="3B5192CC-0392-B5C2-ACB2-097FCFB33FDE" name="AMB_VERSION_PK">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-02-24 07:43:39 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="685B4C70-FC37-7D8A-7DD6-9C35422B0824"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4F5F8FB4-9F8A-6E19-FF88-ABD3E2873FDA" name="AMB_VERSION_AMB_PROJECT_FK">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-02-24 08:15:58 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="638070ED-5451-02A9-7FCD-4BA4B88774F5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
