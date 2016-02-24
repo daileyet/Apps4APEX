@@ -1,158 +1,196 @@
 body {
-    background: #000;
-    font-family: "Liberation Sans", Arial, sans-serif;
-    font-size: .8em;
+	margin:0;
+	padding:0;
+	font-family:verdana,geneva,lucida,'lucida grande',arial,helvetica,sans-serif;
+	font-size:12px;
+	height:100%;
 }
-#page {
-    width: 1100px;
-    height: 620px;
-    
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin-top: -310px;
-    margin-left: -550px;
-    
-    background: url(bg.jpg) 50% 50% no-repeat #2C2C2C;
+.noborder {
+	border:0 none;
 }
-#content {
-    z-index: 2;
+/*Navigation tab */
+.tabmenu {
+    border-bottom:1px solid black;
+    color:#000000;
+    margin:0;
+    padding:3px 0 0;
+    text-align:center;
+    z-index:1;
+    height:20px;
+    _height:17px;
+    |height:19px;
+    padding-left:20px;
 }
-#documentTitle {
-    text-align: center;
-    font-size: .9em;
-    margin: 0px;
-    margin-top: 4px;
+.tabmenu li {
+    -moz-background-clip:padding;
+    -moz-background-origin:padding;
+    -moz-border-radius-bottomleft:0;
+    -moz-border-radius-bottomright:0;
+    -moz-border-radius-topleft:5px;
+    -moz-border-radius-topright:5px;
+    -moz-box-shadow:0 0 2px rgba(255, 255, 255, 0.4) inset,
+                    0 4px 6px rgba(255, 255, 255, 0.4) inset,
+                    0 11px 0 -2px rgba(255, 255, 255, 0.2) inset,
+                    0 13px 8px rgba(0, 0, 0, 0.2) inset;
+    background-color:#D0E0F3;
+    border:1px solid black;
+    display:inline-table;
+    list-style-type:none;
+    margin-bottom:-1px;
+    margin-left:1px;
+    margin-top:1px;
+    overflow:hidden;
+    padding-top:0;
+    float:left;
 }
-#documentTitle span {
-    color: #292929;
-    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.04);
-    letter-spacing: -1px;
-    
-    padding: 2px 6px;
-    xbackground: rgba(255, 255, 255, .03);
-    
-    -moz-border-radius: 5px;
+.tabmenu a {
+    color:#002D64;
+    font-family:"Trebuchet MS",Arial,sans-serif;
+    font-size:1em;
+    margin:0 1px 0 0;
+    padding:2px 5px 0;
+    text-decoration:none;
+    white-space:nowrap;
 }
-
-#content .Page {
-    display: none;
+.tabmenu li:hover {
+    background-color:#ABC7EC;
 }
-#content .TargetPage {
-    display: block !important;
+.tabmenu li.active {
+    background-color:white;
+    border-bottom:1px solid white;
 }
-
-#content .Page .Texts {
-    position: absolute;
-    width: 200px;
-    height: 400px;
-    right: 30px;
-    top: 35px;
-    color: #ccc;
-    
-    overflow: auto;
+.tabmenu li.active a {
+    color:black;
 }
-#content .Page .Texts h2 {
-    font-size: 2.4em;
-    margin: 0px;
-    font-weight: bold;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
-    letter-spacing: -1px;
-}
-
-#content .Page .Image {
-    position: absolute;
-    width: 820px;
-    height: 580px;
-    
-    top: 20px;
-    left: 20px;
-    z-index: 5;
-}
-#content .Page .Image img {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    border: none;
-}
-#content .Page .Image .ImageFooter {
-    display: none;
-    height: 1px;
-    border-radius: 200px;
-    background: rgba(0, 0, 0, 0);
-    -moz-box-shadow: 0px 10px 10px 2px rgba(0, 0, 0, .7);
-    -webkit-box-shadow: 0px 10px 10px 2px rgba(0, 0, 0, .7);
-    
-    margin: 0px 3px;
-    margin-top: -12px;
-    z-index: 4;
-}
-#navigator {
-    position: absolute;
-    width: 220px;
-    right: 20px;
-    bottom: 70px;
-    
-    display: block;
-}
-#navigator .NavLink {
-    display: table;
-    height: 35px;
-    #position: relative;
-    overflow: hidden;
-    
-    margin-right: 30px;
-    opacity: .3;
-    zoom: 1;
-}
-#navigator .NavLink .Wrapper {
-    #position: absolute;
-    #top: 50%;
-    display: table-cell;
-    vertical-align: middle;
-    width: 180px;
-    
-    padding-left: 30px;
-    padding-right: 10px;
-    
-    background: url(back.png) 0% 50% no-repeat;
-}
-#navigator .NavNextLink {
-    margin-left: 30px;
-    margin-right: 0px;
-    margin-top: 10px;
-}
-#navigator .NavNextLink .Wrapper {
-    padding-left: 10px;
-    padding-right: 30px;
-    text-align: right;
-    background: url(next.png) 100% 50% no-repeat;
-}
-#navigator .NavLink a {
-    #position: relative;
-    #top: -50%;
-    width: 150px;
-    
-    color: #888;
-    text-decoration: none;
-    font-weight: bold;
-    
-    line-height: 1.1em;
-    
-    outline: none;
-}
-#navigator .NavLink:hover {
-    opacity: 1;
-    text-shadow: 0px 0px 3px #000;
+/*Default formatting */
+.Page {
+	padding:0 5px;
 }
 
-#footer {
-    position: absolute;
-    z-index: 1;
-    
-    background: #fff;
-    height: 50px;
-    width: 100%;
-    left: 0px;
-    bottom: 0px;
+.MainNumber {
+	color:lightgrey;
+	display:block;
+	float:right;
+	|margin:-25px 5px 0 0 ;
+}
+.pageTitle {
+	font-size:16px;
+	border:1px solid black;
+	padding:4px;
+}
+.raster {
+	border:1px dotted lightgrey;
+	margin:10px 0;
+	width:100%;
+}
+
+
+/* PRINT STYLE */
+ @media print {
+	/* #leftpanel {
+		display:none;
+	}
+	#main {
+	height:100%;
+	margin:0;
+	width:100%;
+	overflow:visible;
+	}*/
+	.Page {
+		margin:5px;
+		padding:5px;
+		border:1px solid lightgrey;
+		page-break-after:always;
+	}
+	/**
+	 *	PRINT Stylesheet
+	 *
+	 *	First 'neutralize' all the positioning/overflow CSS added by Layout
+	 *	Then change or add cosmetic styles (borders, padding) for printing
+	 *
+	 *	MUST use "!important" for all size, position, margin & overflow rules,
+	 *	so these will 'override' styles applied to the elements by Layout
+	 */
+
+	html, body {
+		/* NEUTRALIZE 'layout container' styles */
+		overflow:	visible 	!important;
+		width:		auto		!important;
+		height:		auto		!important;
+	}
+	.ui-layout-pane ,
+	.ui-layout-resizer ,
+	.ui-layout-toggler {
+		/* NEUTRALIZE 'layout element' styles */
+		display:	none		!important; /* hide ALL by default */
+		position:	relative	!important;
+		top:		auto		!important;
+		bottom:		auto		!important;
+		left:		auto		!important;
+		right:		auto		!important;
+		width:		auto		!important;
+		height:		auto		!important;
+		overflow:	visible		!important;
+	}
+	/* SHOW ONLY the panes you want */
+	.ui-layout-pane-center {
+		display:	block		!important;
+		border:		0			!important;
+		padding:	0			!important;
+		background:	transparent	!important;
+	}
+ }
+/* NOTE STYLE */
+hr {
+	border: medium none ;
+	margin: 0pt;
+	background-color: lightgrey;
+	height: 1px;
+}
+h1 {
+	border-bottom:1px solid black;
+	font-size:16px;
+}
+h2 {
+	font-size:14px;
+	border-bottom:1px dotted;
+}
+h3 {
+	font-size:12px;
+}
+h4 {
+	font-size:10px;
+}
+/*counter*/
+body{
+	counter-reset:h1counter pagecounter;
+}
+.pageTitle {
+	counter-increment:pagecounter;
+}
+/* .pageTitle:before {
+	content:"Page " counter(pagecounter) " - ";
+} */
+h1{counter-reset:h2counter;}
+h1:before{
+	counter-increment:h1counter;
+	content:counter(h1counter)  ". " ;
+}
+
+h2 { counter-reset:h3counter;}
+h2:before{
+	counter-increment:h2counter;
+	content:counter(h1counter) "." counter(h2counter) ". " ;
+}
+
+h3 {counter-reset:h4counter}
+h3:before{
+	counter-increment:h3counter;
+	content:counter(h1counter) "." counter(h2counter) "." counter(h3counter)  ". " ;
+}
+
+h4:before
+{
+	counter-increment:h4counter;
+	content:counter(h1counter) "." counter(h2counter) "." counter(h3counter) "." counter(h4counter) ". " ;
 }
