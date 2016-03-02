@@ -2,7 +2,7 @@
  * Applications Manager constant defintions
  * @author:dailey.dai@oracle.com
  * @since: 1.0
- * @date: 2015/02/25
+ * @date: 2016/02/25
  */
 create or replace package AMB_CONSTANT
 as
