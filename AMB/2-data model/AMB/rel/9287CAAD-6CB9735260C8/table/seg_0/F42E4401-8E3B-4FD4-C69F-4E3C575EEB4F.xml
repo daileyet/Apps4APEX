@@ -81,7 +81,9 @@
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT008</logicalDatatype>
+<logicalDatatype>LOGDT046</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="CREATE_BY" id="B7EABAEF-A77D-C126-9382-ED5519F8C531">
@@ -102,7 +104,9 @@
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT008</logicalDatatype>
+<logicalDatatype>LOGDT046</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="UPDATE_BY" id="929C54A9-F302-B24E-BE53-A774370C8721">
