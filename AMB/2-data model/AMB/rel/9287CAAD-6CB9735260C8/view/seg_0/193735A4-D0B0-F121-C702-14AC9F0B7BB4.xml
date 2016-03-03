@@ -1,0 +1,39 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableView class="oracle.dbtools.crest.model.design.relational.TableView" directorySegmentName="seg_0" id="193735A4-D0B0-F121-C702-14AC9F0B7BB4" name="AMB_OBJECT_TYPE">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-02 09:32:49 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<userDefined>true</userDefined>
+<userDefinedSQL>SELECT &apos;Table&apos; AS DISPLAY_NAME, &apos;TABLE&apos; AS CODE, 1 AS SORT_KEY FROM dual&lt;br/&gt;UNION&lt;br/&gt;SELECT &apos;View&apos;, &apos;VIEW&apos;, 2 FROM dual&lt;br/&gt;UNION&lt;br/&gt;SELECT &apos;Index&apos;, &apos;INDEX&apos;, 3 FROM dual&lt;br/&gt;UNION&lt;br/&gt;SELECT &apos;Sequence&apos;, &apos;SEQUENCE&apos;, 4 FROM dual&lt;br/&gt;UNION&lt;br/&gt;SELECT &apos;Type&apos;, &apos;TYPE&apos;, 5 FROM dual&lt;br/&gt;UNION&lt;br/&gt;SELECT &apos;Package&apos;, &apos;PACKAGE&apos;, 6 FROM dual&lt;br/&gt;UNION&lt;br/&gt;SELECT &apos;Procedure&apos;, &apos;PROCEDURE&apos;, 7 FROM dual&lt;br/&gt;UNION&lt;br/&gt;SELECT &apos;Function&apos;, &apos;FUNCTION&apos;, 8 FROM dual&lt;br/&gt;UNION&lt;br/&gt;SELECT &apos;Trigger&apos;, &apos;TRIGGER&apos;, 9 FROM dual&lt;br/&gt;UNION&lt;br/&gt;SELECT &apos;Database Link&apos;, &apos;DATABASE LINK&apos;, 10 FROM dual&lt;br/&gt;UNION&lt;br/&gt;SELECT &apos;Materialized View&apos;, &apos;MATERIALIZED VIEW&apos;, 11 FROM dual&lt;br/&gt;UNION&lt;br/&gt;SELECT &apos;Synonym&apos;, &apos;SYNONYM&apos;, 12 FROM dual</userDefinedSQL>
+<layoutSQL>&lt;?xml version = &apos;1.0&apos; encoding = &apos;UTF-8&apos;?&gt;&lt;br&gt;&lt;ActiveQueryBuilderLayout&gt;&lt;SQL&gt;Select &apos;Table&apos; As DISPLAY_NAME, &apos;TABLE&apos; As CODE, 1 As SORT_KEY From dual Union Select &apos;View&apos;, &apos;VIEW&apos;, 2 From dual Union Select &apos;Index&apos;, &apos;INDEX&apos;, 3 From dual Union Select &apos;Sequence&apos;, &apos;SEQUENCE&apos;, 4 From dual Union Select &apos;Type&apos;, &apos;TYPE&apos;, 5 From dual Union Select &apos;Package&apos;, &apos;PACKAGE&apos;, 6 From dual Union Select &apos;Procedure&apos;, &apos;PROCEDURE&apos;, 7 From dual Union Select &apos;Function&apos;, &apos;FUNCTION&apos;, 8 From dual Union Select &apos;Trigger&apos;, &apos;TRIGGER&apos;, 9 From dual Union Select &apos;Database Link&apos;, &apos;DATABASE LINK&apos;, 10 From dual Union Select &apos;Materialized View&apos;, &apos;MATERIALIZED VIEW&apos;, 11 From dual Union Select &apos;Synonym&apos;, &apos;SYNONYM&apos;, 12 From dual&lt;/SQL&gt;&lt;SubQueries&gt;&lt;SubQuery SQL=&quot;Select &apos;Table&apos; As DISPLAY_NAME, &apos;TABLE&apos; As CODE, 1 As SORT_KEY From dual Union Select &apos;View&apos;, &apos;VIEW&apos;, 2 From dual Union Select &apos;Index&apos;, &apos;INDEX&apos;, 3 From dual Union Select &apos;Sequence&apos;, &apos;SEQUENCE&apos;, 4 From dual Union Select &apos;Type&apos;, &apos;TYPE&apos;, 5 From dual Union Select &apos;Package&apos;, &apos;PACKAGE&apos;, 6 From dual Union Select &apos;Procedure&apos;, &apos;PROCEDURE&apos;, 7 From dual Union Select &apos;Function&apos;, &apos;FUNCTION&apos;, 8 From dual Union Select &apos;Trigger&apos;, &apos;TRIGGER&apos;, 9 From dual Union Select &apos;Database Link&apos;, &apos;DATABASE LINK&apos;, 10 From dual Union Select &apos;Materialized View&apos;, &apos;MATERIALIZED VIEW&apos;, 11 From dual Union Select &apos;Synonym&apos;, &apos;SYNONYM&apos;, 12 From dual&quot;&gt;&lt;UnionSubQuery&gt;&lt;DataSource SQL=&quot;dual&quot; X=&quot;50&quot; Y=&quot;20&quot; Height=&quot;48&quot; Width=&quot;140&quot;/&gt;&lt;/UnionSubQuery&gt;&lt;UnionSubQuery&gt;&lt;DataSource SQL=&quot;dual&quot; X=&quot;50&quot; Y=&quot;20&quot; Height=&quot;48&quot; Width=&quot;140&quot;/&gt;&lt;/UnionSubQuery&gt;&lt;UnionSubQuery&gt;&lt;DataSource SQL=&quot;dual&quot; X=&quot;50&quot; Y=&quot;20&quot; Height=&quot;48&quot; Width=&quot;140&quot;/&gt;&lt;/UnionSubQuery&gt;&lt;UnionSubQuery&gt;&lt;DataSource SQL=&quot;dual&quot; X=&quot;50&quot; Y=&quot;20&quot; Height=&quot;48&quot; Width=&quot;140&quot;/&gt;&lt;/UnionSubQuery&gt;&lt;UnionSubQuery&gt;&lt;DataSource SQL=&quot;dual&quot; X=&quot;50&quot; Y=&quot;20&quot; Height=&quot;48&quot; Width=&quot;140&quot;/&gt;&lt;/UnionSubQuery&gt;&lt;UnionSubQuery&gt;&lt;DataSource SQL=&quot;dual&quot; X=&quot;50&quot; Y=&quot;20&quot; Height=&quot;48&quot; Width=&quot;140&quot;/&gt;&lt;/UnionSubQuery&gt;&lt;UnionSubQuery&gt;&lt;DataSource SQL=&quot;dual&quot; X=&quot;50&quot; Y=&quot;20&quot; Height=&quot;48&quot; Width=&quot;140&quot;/&gt;&lt;/UnionSubQuery&gt;&lt;UnionSubQuery&gt;&lt;DataSource SQL=&quot;dual&quot; X=&quot;50&quot; Y=&quot;20&quot; Height=&quot;48&quot; Width=&quot;140&quot;/&gt;&lt;/UnionSubQuery&gt;&lt;UnionSubQuery&gt;&lt;DataSource SQL=&quot;dual&quot; X=&quot;50&quot; Y=&quot;20&quot; Height=&quot;48&quot; Width=&quot;140&quot;/&gt;&lt;/UnionSubQuery&gt;&lt;UnionSubQuery&gt;&lt;DataSource SQL=&quot;dual&quot; X=&quot;50&quot; Y=&quot;20&quot; Height=&quot;48&quot; Width=&quot;140&quot;/&gt;&lt;/UnionSubQuery&gt;&lt;UnionSubQuery&gt;&lt;DataSource SQL=&quot;dual&quot; X=&quot;50&quot; Y=&quot;20&quot; Height=&quot;48&quot; Width=&quot;140&quot;/&gt;&lt;/UnionSubQuery&gt;&lt;UnionSubQuery&gt;&lt;DataSource SQL=&quot;dual&quot; X=&quot;50&quot; Y=&quot;20&quot; Height=&quot;48&quot; Width=&quot;140&quot;/&gt;&lt;/UnionSubQuery&gt;&lt;/SubQuery&gt;&lt;/SubQueries&gt;&lt;/ActiveQueryBuilderLayout&gt;</layoutSQL>
+<parsed>true</parsed>
+<viewElements>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="NULL SET GENERATED_167" id="76046054-67D5-6655-5B88-C080E2B59BF5">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-02 09:32:55 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<alias>DISPLAY_NAME</alias>
+<expression>&apos;Table&apos;</expression>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="NULL SET GENERATED_169" id="2536933E-8922-8933-EC69-E60E4705FABC">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-02 09:32:55 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<alias>CODE</alias>
+<expression>&apos;TABLE&apos;</expression>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="NULL SET GENERATED_171" id="A7BACE97-9C21-2451-616C-E003D4FF1118">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-02 09:36:42 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<alias>SORT_KEY</alias>
+<expression>1</expression>
+<reference>false</reference>
+</viewElement>
+</viewElements>
+</TableView>

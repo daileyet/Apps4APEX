@@ -1,0 +1,39 @@
+.region-title{
+vertical-align:text-top;
+}
+
+/*
+<i class="material-icons region-title">list</i>
+<i class="material-icons region-title">event_note</i>
+*/
+
+.label-bold{
+	font-weight:bold;
+}
+
+.font-size-13{
+	font-size:13px;
+}
+
+.font-size-12{
+	font-size:13px;
+}
+
+.text-ellipsis{
+	text-overflow: ellipsis;
+}
+.text-clip{
+	text-overflow: clip;
+}
+
+.padding10-t{
+	padding-top:10px;
+}
+
+.padding15-t{
+	padding-top:15px;
+}
+
+.padding20-t{
+	padding-top:20px;
+}

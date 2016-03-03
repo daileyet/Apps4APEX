@@ -1,0 +1,115 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableView class="oracle.dbtools.crest.model.design.relational.TableView" directorySegmentName="seg_0" id="EFADBD85-D45B-4B44-035C-6E395166EA88" name="AMB_OBJ_LIST_VW">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-01 06:49:59 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<userDefined>true</userDefined>
+<userDefinedSQL>SELECT NULL AS OBJECT_ID,&lt;br/&gt;  AMB_OBJECT.VERSION_ID,&lt;br/&gt;  AMB_OBJECT.TYPE AS NAME,&lt;br/&gt;  NULL            AS TYPE,&lt;br/&gt;  NULL            AS &quot;REFERENCE&quot;,&lt;br/&gt;  NULL            AS PARENT,&lt;br/&gt;  AMB_OBJECT.TYPE AS SID&lt;br/&gt;FROM AMB_OBJECT&lt;br/&gt;GROUP BY AMB_OBJECT.VERSION_ID,&lt;br/&gt;  AMB_OBJECT.TYPE&lt;br/&gt;UNION&lt;br/&gt;SELECT AMB_OBJECT.ID,&lt;br/&gt;  AMB_OBJECT.VERSION_ID,&lt;br/&gt;  AMB_OBJECT.NAME,&lt;br/&gt;  AMB_OBJECT.TYPE,&lt;br/&gt;  AMB_OBJECT.&quot;REFERENCE&quot;,&lt;br/&gt;  AMB_OBJECT.TYPE AS PARENT,&lt;br/&gt;  NULL            AS SID&lt;br/&gt;FROM AMB_OBJECT</userDefinedSQL>
+<layoutSQL>&lt;?xml version = &apos;1.0&apos; encoding = &apos;UTF-8&apos;?&gt;&lt;br&gt;&lt;ActiveQueryBuilderLayout&gt;&lt;SQL&gt;Select Null As OBJECT_ID, AMB_OBJECT.VERSION_ID, AMB_OBJECT.TYPE As NAME, Null As TYPE, Null As &quot;REFERENCE&quot;, Null As PARENT, AMB_OBJECT.TYPE As SID From AMB_OBJECT Group By AMB_OBJECT.VERSION_ID, AMB_OBJECT.TYPE Union Select AMB_OBJECT.ID, AMB_OBJECT.VERSION_ID, AMB_OBJECT.NAME, AMB_OBJECT.TYPE, AMB_OBJECT.&quot;REFERENCE&quot;, AMB_OBJECT.TYPE As PARENT, Null As SID From AMB_OBJECT&lt;/SQL&gt;&lt;SubQueries&gt;&lt;SubQuery SQL=&quot;Select Null As OBJECT_ID, AMB_OBJECT.VERSION_ID, AMB_OBJECT.TYPE As NAME, Null As TYPE, Null As &amp;amp;quot;REFERENCE&amp;amp;quot;, Null As PARENT, AMB_OBJECT.TYPE As SID From AMB_OBJECT Group By AMB_OBJECT.VERSION_ID, AMB_OBJECT.TYPE Union Select AMB_OBJECT.ID, AMB_OBJECT.VERSION_ID, AMB_OBJECT.NAME, AMB_OBJECT.TYPE, AMB_OBJECT.&amp;amp;quot;REFERENCE&amp;amp;quot;, AMB_OBJECT.TYPE As PARENT, Null As SID From AMB_OBJECT&quot;&gt;&lt;UnionSubQuery&gt;&lt;DataSource SQL=&quot;AMB_OBJECT&quot; X=&quot;50&quot; Y=&quot;20&quot; Height=&quot;156&quot; Width=&quot;140&quot;/&gt;&lt;/UnionSubQuery&gt;&lt;UnionSubQuery&gt;&lt;DataSource SQL=&quot;AMB_OBJECT&quot; X=&quot;50&quot; Y=&quot;20&quot; Height=&quot;156&quot; Width=&quot;140&quot;/&gt;&lt;/UnionSubQuery&gt;&lt;/SubQuery&gt;&lt;/SubQueries&gt;&lt;/ActiveQueryBuilderLayout&gt;</layoutSQL>
+<parsed>true</parsed>
+<usedContainers>
+<container containerID="F42E4401-8E3B-4FD4-C69F-4E3C575EEB4F"/>
+</usedContainers>
+<viewElements>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="NULL" id="063AD7C5-B8AC-4EED-E215-7068294DEE58">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-01 07:01:28 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<alias>OBJECT_ID</alias>
+<headerAlias>ID</headerAlias>
+<expression>Null</expression>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="VERSION_ID" id="6F4A5B19-6E2C-FB46-8D5B-73BADE693E52">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-01 07:01:28 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<dataType>VARCHAR2 (100)</dataType>
+<expression>VERSION_ID</expression>
+<reference>false</reference>
+<referencedColumn>5A1987F5-80B8-611A-6692-079829796831</referencedColumn>
+<table>F42E4401-8E3B-4FD4-C69F-4E3C575EEB4F</table>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="COL_3" id="8046CD94-36DB-A4CC-5B9F-E1B860573A20">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-01 07:01:28 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<alias>NAME</alias>
+<dataType>VARCHAR2 (50)</dataType>
+<headerAlias>NAME</headerAlias>
+<expression>Null</expression>
+<reference>false</reference>
+<referencedColumn>C63689BE-9CEB-234F-29E6-7F7A8F980306</referencedColumn>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="COL_5" id="296348BC-2C98-A8EF-5DE8-F2D0DE4143FC">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-01 07:01:28 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<alias>TYPE</alias>
+<headerAlias>REFERENCE</headerAlias>
+<expression>Null</expression>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="COL_6" id="B4E02377-B650-6C6A-3259-06615E24BD8E">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-01 07:01:28 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<alias>&quot;REFERENCE&quot;</alias>
+<headerAlias>PARENT</headerAlias>
+<expression>Null</expression>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="NULL SET GENERATED_37" id="14DBD95D-6305-615F-11AE-9546C27F4B4E">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-01 07:14:20 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<alias>PARENT</alias>
+<expression>Null</expression>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="TYPE" id="1D5A705E-7483-A130-8AC5-8B62920365E0">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-01 07:01:28 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<alias>SID</alias>
+<dataType>VARCHAR2 (50)</dataType>
+<expression>TYPE</expression>
+<reference>false</reference>
+<referencedColumn>C63689BE-9CEB-234F-29E6-7F7A8F980306</referencedColumn>
+<table>F42E4401-8E3B-4FD4-C69F-4E3C575EEB4F</table>
+</viewElement>
+</viewElements>
+<usedObjects>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="F42E4401-8E3B-4FD4-C69F-4E3C575EEB4F">
+<container>true</container>
+<tableName>AMB_OBJECT</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="5A1987F5-80B8-611A-6692-079829796831">
+<columnName>VERSION_ID</columnName>
+<tableName>AMB_OBJECT</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="C63689BE-9CEB-234F-29E6-7F7A8F980306">
+<columnName>TYPE</columnName>
+<tableName>AMB_OBJECT</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="7A2EEDD3-549F-13F6-FB93-EAC7D18BB909">
+<columnName>ID</columnName>
+<tableName>AMB_OBJECT</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="46E14032-3EC0-05E0-2FF4-59F7B8C0B645">
+<columnName>NAME</columnName>
+<tableName>AMB_OBJECT</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="1CBF54ED-65A6-93B1-3B8A-448F01500F35">
+<columnName>REFERENCE</columnName>
+<tableName>AMB_OBJECT</tableName>
+</UsedObject>
+</usedObjects>
+</TableView>

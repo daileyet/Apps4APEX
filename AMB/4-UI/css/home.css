@@ -1,0 +1,32 @@
+#top-region .t-Region-body {
+	display: none;
+}
+
+@media screen and (min-width: 488px) {
+	.t-Region-headerItems {
+		display: table-cell;
+		vertical-align: middle;
+	}
+	.t-Region-headerItems--title {
+		text-align: left;
+		padding: 1.6rem 1.2rem;
+	}
+	.t-Region-headerItems--buttons {
+		text-align: right;
+	}
+}
+
+@media screen and (max-width: 488px) {
+	.t-Region-headerItems {
+		display: block;
+		vertical-align: middle;
+	}
+	.t-Region-headerItems--title {
+		text-align: left;
+		padding: 1.0rem 1.2rem;
+	}
+	.t-Region-headerItems--buttons {
+		text-align: right;
+		padding: 1.0rem 1.2rem;
+	}
+}

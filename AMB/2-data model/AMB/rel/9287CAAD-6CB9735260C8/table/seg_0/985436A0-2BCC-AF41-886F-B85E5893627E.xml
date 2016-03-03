@@ -1,0 +1,55 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="985436A0-2BCC-AF41-886F-B85E5893627E" name="AMB_LOGS">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-02 01:46:39 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="LOG_TYPE" id="0346647E-CB6A-256D-CDC0-04B1D51B1BD1">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-02 01:47:09 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LOG_TIME" id="CC11B73A-2B40-C70C-6C73-D24083450F24">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-02 01:47:31 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT046</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LOG_DESC" id="01B52D22-AA64-40FC-18B4-4D4C0E6A8C75">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-02 01:47:50 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LOG_POINT" id="5D890B29-3290-FF30-DE24-278E7E195D05">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-02 01:47:50 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+</Table>
