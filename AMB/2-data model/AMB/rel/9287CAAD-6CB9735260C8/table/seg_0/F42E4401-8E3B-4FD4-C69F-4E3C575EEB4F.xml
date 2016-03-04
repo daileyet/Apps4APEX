@@ -66,6 +66,7 @@
 <Column name="REFERENCE" id="1CBF54ED-65A6-93B1-3B8A-448F01500F35">
 <createdBy>minjdai</createdBy>
 <createdTime>2016-02-24 07:52:15 UTC</createdTime>
+<comment>reference other lower version object id</comment>
 <ownerDesignName>AMB</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -129,6 +130,18 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>4000</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VALIDTE_CODE" id="EFE45AA3-65A8-4744-B33C-3350B3566CFE">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-04 06:39:38 UTC</createdTime>
+<comment>compile result:PASS,FAILED</comment>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>

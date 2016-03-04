@@ -1,3 +1,33 @@
+window.amb = window.amb ||{};
+window.amb.state = window.amb.state || {} 
+window.amb.events = window.amb.events || {};
+window.amb.events.updates = [];
+/**
+ * update primary editor content by given parameter
+ * @param s_code
+ */
+window.amb.update_primary_editor = function (s_code){
+	if(window.amb.editors && window.amb.editors.primary){
+		window.amb.editors.primary.doc.setValue(s_code);
+	}
+}
+window.amb.exec_primary_editor_command = function (s_cmd,cmd_ops){
+	if(window.amb.editors && window.amb.editors.primary){}else{return;};
+	var cm = window.amb.editors.primary;
+	
+	if(cmd_ops == undefined)
+		cm.setOption(s_cmd, !cm.getOption(s_cmd));
+	else
+		cm.setOption(s_cmd, cmd_ops);
+}
+
+window.amb.get_primary_editor_option=function(s_ops_name){
+	if(window.amb.editors && window.amb.editors.primary){}else{return '';};
+	return window.amb.editors.primary.getOption(s_ops_name);
+}
+
+
+
 function get_amb_state(){
 	window.amb = window.amb || {};
 	var state = window.amb.state || {} 
@@ -30,38 +60,10 @@ function update_amb_state(state){
 }
 
 function edit_object(s_oname,s_oid){
-	/*
-	apex.server.process(
-		'OBJECT_SETTING',
-		{x01 : s_oid},
-		{
-			dataType:'json',
-			success:function(data){
-				if(data.result=='success'){
-					update_amb_state({
-						vid:$v('P1_VERSION'),
-						oid:s_oid,
-						oname:s_oname
-					});
-				}
-			}
-		}
-	);*/
 	update_amb_state({
 		vid:$v('P1_VERSION'),
 		oid:s_oid,
 		oname:s_oname
 	});
 }
-/*
- var primaryCodeMirror = CodeMirror.fromTextArea(
- //$("#obj-container .obj-panel-primary .obj-content .obj-code")[0]
- $("#P1_OBJECT_CODE")[0]
- ,{
- lineNumbers:true
- ,fixedGutter:true
- }
- );
- window.amb.editors = window.amb.editors || {};
- window.amb.editors.primary = primaryCodeMirror;
-*/
+	
