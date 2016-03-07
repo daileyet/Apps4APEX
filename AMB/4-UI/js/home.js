@@ -2,6 +2,7 @@ window.amb = window.amb ||{};
 window.amb.state = window.amb.state || {} 
 window.amb.events = window.amb.events || {};
 window.amb.events.updates = [];
+window.amb.handers = {};
 /**
  * update primary editor content by given parameter
  * @param s_code
@@ -66,4 +67,27 @@ function edit_object(s_oname,s_oid){
 		oname:s_oname
 	});
 }
-	
+
+window.amb.handers['COMPILE_END_FAILED']=function(ops){
+	var error_html = '<i class="fa fa-exclamation-triangle compile-error"></i>';
+	$(ops.addInPlace+' .compile-error').remove();
+	$(ops.addInPlace).append(error_html);
+}
+
+window.amb.handers['COMPILE_END_SUCCESS']=function(ops){
+	$(ops.addInPlace+' .compile-error').remove();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

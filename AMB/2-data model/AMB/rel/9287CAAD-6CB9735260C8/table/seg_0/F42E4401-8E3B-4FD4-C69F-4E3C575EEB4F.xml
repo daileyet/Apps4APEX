@@ -132,7 +132,7 @@
 <dataTypeSize>4000</dataTypeSize>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="VALIDTE_CODE" id="EFE45AA3-65A8-4744-B33C-3350B3566CFE">
+<Column name="COMPILED" id="EFE45AA3-65A8-4744-B33C-3350B3566CFE">
 <createdBy>minjdai</createdBy>
 <createdTime>2016-03-04 06:39:38 UTC</createdTime>
 <comment>compile result:PASS,FAILED</comment>
@@ -141,7 +141,7 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>500</dataTypeSize>
+<dataTypeSize>10</dataTypeSize>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>

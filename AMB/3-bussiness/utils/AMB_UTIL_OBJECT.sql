@@ -1,10 +1,10 @@
+create or replace package AMB_UTIL_OBJECT
 /**
  * Applications Manager object utilities
  * @author:dailey.dai@oracle.com
  * @since: 1.0
  * @date: 2016/03/01
  */
-create or replace package AMB_UTIL_OBJECT
 as
 
 /**

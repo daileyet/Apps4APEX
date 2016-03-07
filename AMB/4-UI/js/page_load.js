@@ -7,7 +7,7 @@ $("#obj-container .obj-content")[0]
     ,autofocus: true
     ,scrollbarStyle: "simple"
     ,extraKeys: {
-       "Ctrl-Shift-Space": "autocomplete"
+       "Ctrl-Space": "autocomplete"
         ,"F11": function(cm) {
           apex.event.trigger('#btn-object-fullscreen','click');
         },

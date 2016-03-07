@@ -1,7 +1,7 @@
 create or replace package body AMB_BIZ_OBJECT
 as
 
-procedure new_object(p_record AMB_OBJECT%ROWTYPE,p_result in out boolean)
+procedure new_object(p_record AMB_OBJECT%ROWTYPE,p_error in out AMB_ERROR)
 as
 v_obj_id varchar2(500);
 begin
@@ -10,12 +10,12 @@ begin
 	VALUES(v_obj_id,p_record.VERSION_ID,p_record.NAME,p_record.TYPE,CURRENT_TIMESTAMP,p_record.CREATE_BY,p_record.DESCRIPTION);
 	
 	EXCEPTION WHEN OTHERS THEN
-		p_result:=FALSE;
-		AMB_LOGGER.ERROR('New Object Error.');
+		p_error.error_message := 'New Object Error:' || SQLERRM;
+		AMB_LOGGER.ERROR(p_error.error_message);
 end;
 
 
-procedure save_object_ctx(p_record AMB_OBJECT%ROWTYPE,p_result in out boolean)
+procedure save_object_ctx(p_record AMB_OBJECT%ROWTYPE,p_error in out AMB_ERROR)
 as
 
 begin
@@ -28,8 +28,8 @@ begin
 	WHERE ID=p_record.ID;
 	
 	EXCEPTION WHEN OTHERS THEN
-		p_result:=FALSE;
-		AMB_LOGGER.ERROR('Save Object Content Error.');
+		p_error.error_message := 'Save Object Content Error:' || SQLERRM;
+		AMB_LOGGER.ERROR(p_error.error_message);
 end;
 
 function get_object_ctx(f_object_id varchar2) return CLOB
@@ -48,5 +48,39 @@ BEGIN
 	
 	return v_ctx;
 END;
+
+function get_object(f_object_id varchar2) RETURN AMB_OBJECT%ROWTYPE
+as
+v_object AMB_OBJECT%ROWTYPE;
+begin
+	IF f_object_id IS NOT NULL THEN
+		select * into v_object from AMB_OBJECT WHERE ID = f_object_id;
+	END IF;
+	return v_object;
+end;
+
+procedure compile_object(p_record AMB_OBJECT%ROWTYPE,p_error in out AMB_ERROR)
+as
+	v_object_ctx CLOB:=p_record.CONTENT;
+begin
+	
+	BEGIN
+		IF v_object_ctx IS NULL THEN
+			v_object_ctx:=get_object_ctx(p_record.ID);
+		END IF;
+		AMB_UTIL_CODE.execute_ddl(v_object_ctx);
+		UPDATE AMB_OBJECT
+				SET COMPILED = AMB_CONSTANT.COMPILE_WITHOUT_ERROR
+				WHERE ID = p_record.ID;
+		EXCEPTION 
+			WHEN OTHERS THEN
+				p_error.error_message := 'Compile Object Error:' || SQLERRM;
+				UPDATE AMB_OBJECT
+				SET COMPILED = AMB_CONSTANT.COMPILE_WITH_ERROR
+				WHERE ID = p_record.ID;
+				AMB_LOGGER.ERROR(p_error.error_message);
+	END;
+	
+end;
 
 end;
