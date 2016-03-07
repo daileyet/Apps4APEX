@@ -30,3 +30,14 @@
 		padding: 1.0rem 1.2rem;
 	}
 }
+
+
+
+/*
+*used for full screen button group also display in top right
+*/
+.fix-btn-group{
+position:fixed;
+top:1px;
+right:10px;
+}
