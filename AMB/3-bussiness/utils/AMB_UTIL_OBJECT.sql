@@ -33,4 +33,11 @@ function generate_objects_list_region(f_version_id varchar2) return CLOB;
  */
 function is_validate(f_object_id varchar2,f_version_id varchar2 default NULL) return boolean;
 
+/**
+ * fetch the object compile error detail message
+ */
+function get_compile_error(f_object_id varchar2) return AMB_TYPES.OBJECT_ERRORS;
+
+function format_compile_error(f_errors AMB_TYPES.OBJECT_ERRORS) return VARCHAR2;
+
 end AMB_UTIL_OBJECT;

@@ -60,4 +60,45 @@ begin
 	end loop;
 	return v_validate;
 end;
+
+
+function get_compile_error(f_object_id varchar2) return AMB_TYPES.OBJECT_ERRORS
+as
+	v_object AMB_OBJECT%ROWTYPE;
+	v_obj_errors AMB_TYPES.OBJECT_ERRORS:=AMB_TYPES.OBJECT_ERRORS();
+    v_row USER_ERRORS%ROWTYPE;
+    --v_index number:=1;
+begin
+	select * into v_object from AMB_OBJECT WHERE ID=f_object_id;
+    
+    FOR errs in (SELECT * FROM USER_ERRORS e WHERE e.NAME=v_object.NAME AND e.TYPE = v_object.TYPE ORDER BY e.SEQUENCE ASC)
+    LOOP
+       select errs.NAME,errs.TYPE,errs.SEQUENCE,errs.LINE,errs.POSITION,errs.TEXT,errs.ATTRIBUTE,errs.MESSAGE_NUMBER into v_row from dual;
+       v_obj_errors.EXTEND(1);
+	   v_obj_errors(v_obj_errors.COUNT):=v_row;
+       --v_index:=v_index+1;
+    END LOOP;
+	RETURN v_obj_errors;
+	EXCEPTION WHEN OTHERS THEN
+		AMB_LOGGER.ERROR('GET_COMPILE_ERROR:'||SQLERRM);
+		RETURN v_obj_errors;
+end;
+
+
+function format_compile_error(f_errors AMB_TYPES.OBJECT_ERRORS) return VARCHAR2
+AS
+	--v_output VARCHAR2(4000):='<li class="htmldbStdErr">No compilation error.</li>';
+	v_output VARCHAR2(4000);
+	v_row USER_ERRORS%ROWTYPE;
+begin
+	for i in 1..f_errors.COUNT
+	loop
+		v_row:=f_errors(i);
+		v_output:=v_output||'<li class="htmldbStdErr">Compilation failed,line <a class="compile-error-line">' || v_row.LINE ||'</a> '||apex_escape.html(v_row.TEXT)||'</li>';
+	end loop;
+	IF v_output IS NULL THEN
+		v_output := '<li class="htmldbStdErr">No compilation error.</li>';
+	END IF;
+	RETURN v_output;
+end;
 end AMB_UTIL_OBJECT;

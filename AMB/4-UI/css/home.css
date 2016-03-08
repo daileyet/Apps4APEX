@@ -1,5 +1,13 @@
+#top-section.t-Region{
+	margin-bottom:0px !important;
+}
+
 #top-section .t-Region-body {
 	display: none;
+}
+
+#compile-error-notification.t-Alert{
+	margin-bottom:0px !important;
 }
 
 @media screen and (min-width: 488px) {

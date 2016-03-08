@@ -54,7 +54,7 @@
 </OView>
 <OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="F42E4401-8E3B-4FD4-C69F-4E3C575EEB4F" otype="Table" vid="34E70811-E0E4-A961-E59A-2A0E6AB706B1">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<bounds x="574" y="458" width="214" height="220"/>
+<bounds x="574" y="458" width="214" height="240"/>
 </OView>
 </objectViews>
 <connectors>

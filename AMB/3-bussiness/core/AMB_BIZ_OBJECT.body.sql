@@ -62,6 +62,7 @@ end;
 procedure compile_object(p_record AMB_OBJECT%ROWTYPE,p_error in out AMB_ERROR)
 as
 	v_object_ctx CLOB:=p_record.CONTENT;
+	v_obj_errors AMB_TYPES.OBJECT_ERRORS;
 begin
 	
 	BEGIN
@@ -79,6 +80,8 @@ begin
 				SET COMPILED = AMB_CONSTANT.COMPILE_WITH_ERROR
 				WHERE ID = p_record.ID;
 				AMB_LOGGER.ERROR(p_error.error_message);
+				v_obj_errors:=AMB_UTIL_OBJECT.get_compile_error(p_record.ID);
+				p_error.error_message := AMB_UTIL_OBJECT.format_compile_error(v_obj_errors);
 	END;
 	
 end;
