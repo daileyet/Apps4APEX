@@ -53,3 +53,10 @@
 #t_Body_nav{
 	overflow:hidden;
 }
+
+.compile-error{
+color:red;
+font-size:13px;
+cursor:pointer;
+}
+

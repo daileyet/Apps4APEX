@@ -1,7 +1,8 @@
 window.amb = window.amb || {};
 window.amb.state = window.amb.state || {}
 window.amb.events = window.amb.events || {};
-window.amb.events.updates = [];
+window.amb.events.updates = [];// object id change listeners
+window.amb.events.refreshs = [];// object refresh after listeners
 window.amb.handers = {};
 /**
  * update primary editor content by given parameter
@@ -74,16 +75,26 @@ function edit_object(s_oname, s_oid) {
 		oname : s_oname
 	});
 }
-
+//will be invoked after compile action failed
 window.amb.handers['COMPILE_END_FAILED'] = function(ops) {
 	var error_html = '<i class="fa fa-exclamation-triangle compile-error"></i>';
 	$(ops.addInPlace + ' .compile-error').remove();
 	$(ops.addInPlace).append(error_html);
+	$('#compile-error-notification .htmldbUlErr').html($v('P1_OBJECT_COMPILE_ERROR'));
 }
-
+//will be invoked after compile action success
 window.amb.handers['COMPILE_END_SUCCESS'] = function(ops) {
 	$(ops.addInPlace + ' .compile-error').remove();
+	$('#compile-error-notification .t-Button--closeAlert').trigger('click');
+	$s('P1_OBJECT_COMPILE_ERROR','');
 }
-
-function notify_compile_error() {
+//will be invoked after refresh action finished
+window.amb.handers['REFRESH_END_SUCCESS'] = function(ops){
+	if (window.amb.events && window.amb.events.refreshs) {
+		var events = window.amb.events.refreshs;
+		for (var i = 0, j = events.length; i < j; i++) {
+			var event = events[i];
+			event.call(this, ops);
+		}
+	}
 }

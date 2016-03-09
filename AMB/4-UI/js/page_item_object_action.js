@@ -4,6 +4,7 @@ switch(s_action){
         
     case 'REFRESH_END_SUCCESS':
         window.amb.update_primary_editor($v('P1_OBJECT_CODE'));
+        window.amb.handers[s_action].call(this,o_state);
         break;
     case 'SAVE_END_SUCCESS':
         
@@ -22,7 +23,6 @@ switch(s_action){
         	state: o_state
         	,addInPlace:'#main-section_heading'
         });
-        $('#compile-error-notification .htmldbUlErr').html($v('P1_OBJECT_COMPILE_ERROR'));
         break;
         
 	default:
@@ -33,4 +33,5 @@ if(s_action.indexOf('BEGIN')!=-1){
 }
 if(s_action.indexOf('END')!=-1){
 	$('#object-loading-mark').hide();
+        
 }

@@ -19,14 +19,14 @@ procedure save_object_ctx(p_record AMB_OBJECT%ROWTYPE,p_error in out AMB_ERROR)
 as
 
 begin
-	UPDATE AMB_OBJECT
-	SET
-	CONTENT= p_record.CONTENT,
-	UPDATE_DATE = CURRENT_TIMESTAMP,
-	UPDATE_BY = p_record.UPDATE_BY
-	
-	WHERE ID=p_record.ID;
-	
+	IF p_record.ID IS NOT NULL THEN
+		UPDATE AMB_OBJECT
+		SET
+		CONTENT= p_record.CONTENT,
+		UPDATE_DATE = CURRENT_TIMESTAMP,
+		UPDATE_BY = p_record.UPDATE_BY
+		WHERE ID=p_record.ID;
+	END IF;
 	EXCEPTION WHEN OTHERS THEN
 		p_error.error_message := 'Save Object Content Error:' || SQLERRM;
 		AMB_LOGGER.ERROR(p_error.error_message);
@@ -69,10 +69,12 @@ begin
 		IF v_object_ctx IS NULL THEN
 			v_object_ctx:=get_object_ctx(p_record.ID);
 		END IF;
-		AMB_UTIL_CODE.execute_ddl(v_object_ctx);
-		UPDATE AMB_OBJECT
+		IF v_object_ctx IS NOT NULL THEN
+			AMB_UTIL_CODE.execute_ddl(v_object_ctx);
+			UPDATE AMB_OBJECT
 				SET COMPILED = AMB_CONSTANT.COMPILE_WITHOUT_ERROR
 				WHERE ID = p_record.ID;
+		END IF;
 		EXCEPTION 
 			WHEN OTHERS THEN
 				p_error.error_message := 'Compile Object Error:' || SQLERRM;
