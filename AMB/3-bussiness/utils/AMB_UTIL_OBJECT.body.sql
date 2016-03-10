@@ -97,8 +97,10 @@ begin
 		v_output:=v_output||'<li class="htmldbStdErr">Compilation failed,line <a class="compile-error-line">' || v_row.LINE ||'</a> '||apex_escape.html(v_row.TEXT)||'</li>';
 	end loop;
 	IF v_output IS NULL THEN
-		v_output := '<li class="htmldbStdErr">No compilation error.</li>';
+		v_output := '<li class="htmldbStdErr">No compilation error found. Please compile again.</li>';
 	END IF;
 	RETURN v_output;
 end;
+
+
 end AMB_UTIL_OBJECT;

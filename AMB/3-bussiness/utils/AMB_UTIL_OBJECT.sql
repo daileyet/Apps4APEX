@@ -40,4 +40,5 @@ function get_compile_error(f_object_id varchar2) return AMB_TYPES.OBJECT_ERRORS;
 
 function format_compile_error(f_errors AMB_TYPES.OBJECT_ERRORS) return VARCHAR2;
 
+
 end AMB_UTIL_OBJECT;

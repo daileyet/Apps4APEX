@@ -86,7 +86,7 @@ window.amb.handers['COMPILE_END_FAILED'] = function(ops) {
 window.amb.handers['COMPILE_END_SUCCESS'] = function(ops) {
 	$(ops.addInPlace + ' .compile-error').remove();
 	$('#compile-error-notification .t-Button--closeAlert').trigger('click');
-	$s('P1_OBJECT_COMPILE_ERROR','');
+	$s('P1_OBJECT_COMPILE_ERROR','<li class="htmldbStdErr">No compilation error found. Please compile again.</li>');
 }
 //will be invoked after refresh action finished
 window.amb.handers['REFRESH_END_SUCCESS'] = function(ops){
