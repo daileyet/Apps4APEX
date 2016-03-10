@@ -2,6 +2,7 @@ window.amb = window.amb || {};
 window.amb.C = window.amb.C || {};
 var C = window.amb.C;
 var V = window.amb.V;
+var Vn = V.names;
 var M = window.amb.M;
 
 C.init=function(){
@@ -12,18 +13,34 @@ C.init=function(){
 		M.items['object_id'].setVal(valObj.new_val);
 	});
 	M.state.addUpdateListener("CODE",function(valObj){
-		M.items['object_code'].setVal(valObj.new_val);
 		//update editor content
-		V.components.editors.primary.doc.setValue(valObj.new_val);
+		V.components.editors.primary.setVal(valObj.new_val);
 	});
 	M.state.addUpdateListener("COMPILED",function(valObj){
-		M.items['compile'].setVal(valObj.new_val);
+		if(valObj.new_val=='FAILED'){
+			V.components.sections.alert.showTag();
+			V.components.sections.alert.bindTagClick(function(){
+				V.components.sections.alert.showAlertMsg(M.state.obj_compile_error);
+			});
+		}else{
+			V.components.sections.alert.hideTag();
+			V.components.sections.alert.hideAlertMsg();
+		}
 	});
-	M.state.addUpdateListener("STATUS",function(valObj){
-		M.items['action'].setVal(valObj.new_val);
+	M.state.addUpdateListener("COMPILE_ERROR",function(valObj){
+		V.components.sections.alert.setAlertMsg(valObj.newVal);
 	});
 	M.items.version.isEmpty()?V.components.dialogs.version_selector.open():V.components.dialogs.version_selector.close();
 	
+	M.buttons.refresh.bindClick(C.refresh);
+	M.buttons.fullscreen.bindClick(C.fullscreen);
+	M.buttons.create.bindClick(C.create);
+	M.buttons.save.bindClick(C.save);
+	M.buttons.compile.bindClick(C.compile);
+	
+	if(!M.items['object_id'].isEmpty()){
+		C.treeNodeClick(M.items['object_id'].getVal());
+	}
 };
 
 // main event handers of page and element 
@@ -33,14 +50,12 @@ C.pageLoad=function(){
 	C.init();
 }
 C.create=function(){
-	
+	V.components.dialogs.new_object.open();
 }
-C.treeNodeClick = function(name,id){
+C.treeNodeClick = function(id){
 	V.components.overlays.code_loader.show();//show loading mask
-	M.state.update({//change object id & name
-		obj_id:id,
-		obj_name:name
-	});
+	//change object id & name
+	M.state.update({obj_id:id});
 	// Ajax load object code & status
 	apex.server.process('REFRESH_OBJECT',{
 		x01:id
@@ -48,6 +63,7 @@ C.treeNodeClick = function(name,id){
 		dataType:'xml',
 		success:function(data){
 			M.state.update({
+				obj_name:$('name',data).text(),
 				obj_code:$('code',data).text(),
 				obj_status:$('action_status',data).text(),
 				obj_compiled:$('compile_tag',data).text(),
@@ -56,13 +72,60 @@ C.treeNodeClick = function(name,id){
 		}
 	});
 }
+C.fullscreen=function(){
+	V.components.editors.primary.exec_command('fullScreen');
+	if(V.components.editors.primary.isFullScreen()){
+	  $(Vn.S_header).slideUp('fast');
+	  M.buttons.fullscreen.title('Exit Full Screen');
+	  $(Vn.B_fullscreen_icon).removeClass('fa-expand').addClass('fa-compress');
+	  $(Vn.S_main_btn_grp).children().appendTo($(Vn.S_fix_panel));
+	  $(Vn.M_overlay).addClass('CodeMirror-fullscreen');
+	}else{
+	  $(Vn.S_header).show();
+	  M.buttons.fullscreen.title('Full Screen');
+	  $(Vn.B_fullscreen_icon).removeClass('fa-compress').addClass('fa-expand');
+	  $(Vn.S_fix_panel).children().appendTo($(Vn.S_main_btn_grp))
+	  $(Vn.M_overlay).removeClass('CodeMirror-fullscreen');
+	}
+}
 C.refresh=function(){
-	
+	C.treeNodeClick(M.state.obj_id);
 }
 C.save=function(){
-	
+	V.components.overlays.code_loader.show();//show loading mask
+	M.state.obj_code=V.components.editors.primary.getVal();
+	// Ajax save object code 
+	apex.server.process('SAVE_OBJECT_CTX',{
+		x01:M.state.obj_id,
+		x02:M.state.obj_code
+	},{
+		dataType:'xml',
+		success:function(data){
+			M.state.update({
+				obj_status:$('action_status',data).text()
+			});
+			V.components.overlays.code_loader.hide();
+		}
+	});
 }
 C.compile=function(){
-	
+	V.components.overlays.code_loader.show();//show loading mask
+	M.state.obj_code=V.components.editors.primary.getVal();
+	// Ajax save object code 
+	apex.server.process('COMPILE_OBJECT_CTX',{
+		x01:M.state.obj_id,
+		x02:M.state.obj_code
+	},{
+		dataType:'xml',
+		success:function(data){
+			M.state.update({
+				obj_status:$('action_status',data).text(),
+				obj_compiled:$('compile_tag',data).text(),
+				obj_compile_error:$('compile_error',data).text()
+			});
+			V.components.overlays.code_loader.hide();
+		}
+	});
 }
+
 

@@ -7,20 +7,27 @@ var Vn = V.names;
 M.init=function(){
 	M.state = new M.State();
 	M.items = {// apex page items name
-			'action' : M.Item.create(Vn.I_action,true)
+			'object_id': M.Item.create(Vn.I_id,true)
 			,'version': M.Item.create(Vn.I_version,true)
-			,'compile': M.Item.create(Vn.I_compile_tag,true)
-			,'compile_msg': M.Item.create(Vn.I_compile_msg,true)
+			,'object_name': M.Item.create(Vn.RI_obj_name,false)
 			,'top_section': M.Item.create(Vn.S_top,false)
 			,'main_section': M.Item.create(Vn.S_main,false)
 			,'main_section_heading': M.Item.create(Vn.S_main_heading,false)
 			,'alert_region': M.Item.create(Vn.N_cp_err,false)
 			,'alert_region_msg': M.Item.create(Vn.N_cp_err_msg,false)
 			,'alert_region_close': M.Item.create(Vn.N_cp_err_close,false)
-			,'object_name': M.Item.create(Vn.RI_obj_name,false)
-			,'object_id': M.Item.create(Vn.I_id,true)
-			,'object_code': M.Item.create(Vn.I_code,true)
-	}
+	};
+	M.buttons = {
+		'create':M.Button.create(Vn.B_create),
+		'fullscreen':M.Button.create(Vn.B_fullscreen),
+		'refresh':M.Button.create(Vn.B_refresh),
+		'save':M.Button.create(Vn.B_save),
+		'compile':M.Button.create(Vn.B_compile)
+	};
+	M.state.update({
+		obj_id:M.items.object_id.getVal(),
+		obj_version:M.items.version.getVal()
+	});
 };
 
 /**
@@ -61,9 +68,9 @@ M.State.prototype.update=function(stateObj){
 			M.state.obj_code = stateObj.obj_code,
 			this.fireUpdateEvent('CODE',{old_val:oldState.obj_code,new_val:stateObj.obj_code})
 			);
-	stateObj == undefined || stateObj.compiled==undefined || (
-			M.state.compiled = stateObj.compiled,
-			this.fireUpdateEvent('COMPILED',{old_val:oldState.compiled,new_val:stateObj.compiled})
+	stateObj == undefined || stateObj.obj_compiled==undefined || (
+			M.state.obj_compiled = stateObj.obj_compiled,
+			this.fireUpdateEvent('COMPILED',{old_val:oldState.obj_compiled,new_val:stateObj.obj_compiled})
 			);
 	stateObj == undefined || stateObj.obj_version==undefined || (
 			M.state.obj_version = stateObj.obj_version,
@@ -129,3 +136,26 @@ M.Item = function(name, isapex) {// item object
 M.Item.create=function(name, isapex){
 	return new window.amb.M.Item(name, isapex);
 }
+
+M.Button = function(name){
+	this.name=name;
+	this.bindClick=function(fnClick){
+		$(this.name).click(fnClick);
+	}
+	this.attr=function(sAttrName,sVal){
+		$(this.name).attr(sAttrName,sVal);
+	}
+	this.title=function(sVal){
+		if(sVal==undefined){
+			return this.attr('title');
+		}else{
+			this.attr('title',sVal);
+		}
+	}
+}
+
+M.Button.create=function(name){
+	return new M.Button(name);
+}
+
+
