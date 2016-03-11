@@ -1,11 +1,12 @@
 create or replace package body AMB_BIZ_OBJECT
 as
 
-procedure new_object(p_record AMB_OBJECT%ROWTYPE,p_error in out AMB_ERROR)
+procedure new_object(p_record in out AMB_OBJECT%ROWTYPE,p_error in out AMB_ERROR)
 as
 v_obj_id varchar2(500);
 begin
 	v_obj_id:=AMB_UTIL_OBJECT.generate_guid;
+	p_record.ID:=v_obj_id;
 	INSERT INTO AMB_OBJECT(ID,VERSION_ID,NAME,TYPE,CREATE_DATE,CREATE_BY,DESCRIPTION)
 	VALUES(v_obj_id,p_record.VERSION_ID,p_record.NAME,p_record.TYPE,CURRENT_TIMESTAMP,p_record.CREATE_BY,p_record.DESCRIPTION);
 	

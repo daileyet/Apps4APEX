@@ -118,11 +118,18 @@ M.Item = function(name, isapex) {// item object
 	}
 	this.text=function(sVal){
 		var $item = this.get$();
-		$item.text(sVal);
+		if(sVal==undefined)
+			return $item.text();
+		else
+			$item.text(sVal);
+		
 	}
 	this.html=function(sHtml){
 		var $item = this.get$();
-		$item.html(sHtml);
+		if(sVal==undefined)
+			return $item.html();
+		else
+			$item.html(sHtml);
 	}
 	this.isEmpty=function(){
 		var sVal = this.getVal();

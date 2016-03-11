@@ -30,7 +30,7 @@ C.init=function(){
 	M.state.addUpdateListener("COMPILE_ERROR",function(valObj){
 		V.components.sections.alert.setAlertMsg(valObj.newVal);
 	});
-	M.items.version.isEmpty()?V.components.dialogs.version_selector.open():V.components.dialogs.version_selector.close();
+	
 	
 	M.buttons.refresh.bindClick(C.refresh);
 	M.buttons.fullscreen.bindClick(C.fullscreen);
@@ -38,8 +38,17 @@ C.init=function(){
 	M.buttons.save.bindClick(C.save);
 	M.buttons.compile.bindClick(C.compile);
 	
+	M.items.version.isEmpty()?V.components.dialogs.version_selector.open():V.components.dialogs.version_selector.close();
+	
 	if(!M.items['object_id'].isEmpty()){
-		C.treeNodeClick(M.items['object_id'].getVal());
+		C.refresh();
+	}else{
+		M.state.update({
+			obj_name:'',
+			obj_code:'',
+			obj_status:'',
+			obj_compiled:'',
+		});
 	}
 };
 

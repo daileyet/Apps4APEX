@@ -17,7 +17,10 @@ function generate_guid return varchar2;
  */
 function list_enviroment_query return varchar2;
 
-
+/**
+ * check the given version is the base version or not
+ */
+function is_base(f_version_id varchar2) return boolean;
 
 
 end AMB_UTIL_VERSION;

@@ -16,4 +16,7 @@ PREFIX_OBJECT constant varchar(3):='O-';
 COMPILE_WITHOUT_ERROR constant varchar2(10):='SUCCESS';
 COMPILE_WITH_ERROR constant varchar2(10):='FAILED';
 
+IS_BASE_VERSION constant varchar2(3):='Y';
+NOT_BASE_VERSION constant varchar2(3):='N';
+
 end AMB_CONSTANT;

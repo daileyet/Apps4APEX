@@ -22,4 +22,14 @@ begin
 	;
 end;
 
+function is_base(f_version_id varchar2) return boolean
+as
+	v_cnt NUMBER:=0;
+begin
+	SELECT COUNT(*) INTO v_cnt from AMB_VERSION 
+	WHERE ID=f_version_id AND IS_BASE = AMB_CONSTANT.IS_BASE_VERSION
+	;
+	RETURN v_cnt>0;
+end;
+
 end AMB_UTIL_VERSION;

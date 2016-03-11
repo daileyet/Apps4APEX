@@ -10,7 +10,7 @@ as
 /**
  * create a new object entry
  */
-procedure new_object(p_record AMB_OBJECT%ROWTYPE,p_error in out AMB_ERROR);
+procedure new_object(p_record in out AMB_OBJECT%ROWTYPE,p_error in out AMB_ERROR);
 
 /**
  * save a object ctx, mostly just save object content
