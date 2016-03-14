@@ -32,4 +32,20 @@ begin
 	RETURN v_cnt>0;
 end;
 
+function list_initialize_mode_query return varchar2
+as
+begin
+	return 'select ''Quick Reference'' as dis, '''||AMB_CONSTANT.QUICK_REF_INIT_MODE ||''' as val from dual '
+	||' union '
+	|| 'select ''Full Copy'' as dis, '''||AMB_CONSTANT.FULL_CP_INIT_MODE||''' as val from dual '
+	
+	;
+end;
+
+function list_base_version_query(f_project_id varchar2) return varchar2
+as
+begin
+   return 'SELECT ENVIRONMENT ||'' ''||EDITION as dis,ID as val from AMB_VERSION where PROJECT_ID='''||f_project_id||''' AND IS_BASE='''||AMB_CONSTANT.IS_BASE_VERSION||''' AND ACTIVE ='''||AMB_CONSTANT.IS_ACTIVE_VERSION ||''' ';
+end;
+
 end AMB_UTIL_VERSION;

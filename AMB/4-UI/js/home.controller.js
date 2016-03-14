@@ -38,6 +38,8 @@ C.init=function(){
 	M.buttons.save.bindClick(C.save);
 	M.buttons.compile.bindClick(C.compile);
 	
+	M.buttons.init.bindClick(C.initVersion);
+	
 	M.items.version.isEmpty()?V.components.dialogs.version_selector.open():V.components.dialogs.version_selector.close();
 	
 	if(!M.items['object_id'].isEmpty()){
@@ -58,6 +60,11 @@ C.pageLoad=function(){
 	M.init();
 	C.init();
 }
+
+C.initVersion=function(){
+	V.components.dialogs.init_version.open();
+}
+
 C.create=function(){
 	V.components.dialogs.new_object.open();
 }

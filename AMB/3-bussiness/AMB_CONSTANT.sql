@@ -19,4 +19,10 @@ COMPILE_WITH_ERROR constant varchar2(10):='FAILED';
 IS_BASE_VERSION constant varchar2(3):='Y';
 NOT_BASE_VERSION constant varchar2(3):='N';
 
+IS_ACTIVE_VERSION constant varchar2(3):='Y';
+NOT_ACTIVE_VERSION constant varchar2(3):='N';
+
+FULL_CP_INIT_MODE constant varchar2(10):='FULL_COPY';
+QUICK_REF_INIT_MODE constant varchar2(10):='QUICK_REF';
+
 end AMB_CONSTANT;

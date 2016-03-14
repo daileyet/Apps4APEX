@@ -22,5 +22,9 @@ function list_enviroment_query return varchar2;
  */
 function is_base(f_version_id varchar2) return boolean;
 
+function list_initialize_mode_query return varchar2;
+
+function list_base_version_query(f_project_id varchar2) return varchar2;
+
 
 end AMB_UTIL_VERSION;

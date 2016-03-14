@@ -39,14 +39,17 @@ V.names = {
 		'B_save':'#btn-object-save',
 		'B_compile':'#btn-object-compile',
 		
+		'B_init':'#btn-version-init',
+		
 		'N_cp_err':'#compile-error-notification',
 		'N_cp_err_msg':'#compile-error-notification .htmldbUlErr',
 		'N_cp_err_close':'#compile-error-notification .t-Button--closeAlert',
 		
 		'M_overlay':'#object-loading-mark',
 		
-		'D_version_selector':'#version-selector',
+		'D_version_selector':'#dialog-version-selector',
 		'D_new_object':'#dialog-new-object',
+		'D_init_objects':'#dialog-init-objects',
 		
 		
 		'T_nav':'#t_Body_nav'
@@ -84,6 +87,14 @@ V.components.dialogs = V.components.dialogs || {
 	new_object:{
 		open:function(){
 		    openModal($(Vn.D_new_object).attr('id'));
+		},
+		close:function(){
+			closeModal();
+		}
+	},
+	init_version:{
+		open:function(){
+		    openModal($(Vn.D_init_objects).attr('id'));
 		},
 		close:function(){
 			closeModal();

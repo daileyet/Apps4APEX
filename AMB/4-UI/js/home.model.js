@@ -22,7 +22,9 @@ M.init=function(){
 		'fullscreen':M.Button.create(Vn.B_fullscreen),
 		'refresh':M.Button.create(Vn.B_refresh),
 		'save':M.Button.create(Vn.B_save),
-		'compile':M.Button.create(Vn.B_compile)
+		'compile':M.Button.create(Vn.B_compile),
+		
+		'init':M.Button.create(Vn.B_init)
 	};
 	M.state.update({
 		obj_id:M.items.object_id.getVal(),

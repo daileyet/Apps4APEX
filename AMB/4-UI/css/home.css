@@ -60,3 +60,12 @@ font-size:13px;
 cursor:pointer;
 }
 
+.mode-desc{
+	color:blue;
+	margin: 2px;
+	padding-left: 15px;
+}
+.mode-desc li{
+	font-size:12px;
+	list-style: none;
+}
