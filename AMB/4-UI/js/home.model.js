@@ -24,7 +24,11 @@ M.init=function(){
 		'save':M.Button.create(Vn.B_save),
 		'compile':M.Button.create(Vn.B_compile),
 		
-		'init':M.Button.create(Vn.B_init)
+		'init':M.Button.create(Vn.B_init),
+		
+		'info_obj_proxy':M.Button.create(Vn.L_obj_info),
+		'info_obj':M.Button.create(Vn.B_obj_info)
+		
 	};
 	M.state.update({
 		obj_id:M.items.object_id.getVal(),
@@ -160,6 +164,9 @@ M.Button = function(name){
 		}else{
 			this.attr('title',sVal);
 		}
+	}
+	this.click=function(data){
+		apex.event.trigger($(this.name),"click",data);
 	}
 }
 

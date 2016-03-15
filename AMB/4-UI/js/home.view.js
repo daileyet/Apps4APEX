@@ -40,6 +40,7 @@ V.names = {
 		'B_compile':'#btn-object-compile',
 		
 		'B_init':'#btn-version-init',
+		'B_obj_info':'#btn-object-info',
 		
 		'N_cp_err':'#compile-error-notification',
 		'N_cp_err_msg':'#compile-error-notification .htmldbUlErr',
@@ -52,7 +53,11 @@ V.names = {
 		'D_init_objects':'#dialog-init-objects',
 		
 		
-		'T_nav':'#t_Body_nav'
+		'T_nav':'#t_Body_nav',
+		'T_nav_leaf_label':'#t_Body_nav .a-TreeView-node--leaf .a-TreeView-label',
+		
+		'L_obj_info':'#object-info'
+		
 };
 var Vn = V.names;
 V.components = V.components || {};
@@ -68,6 +73,25 @@ V.components.overlays = V.components.overlays || {
 		hide:function(){
 			$(Vn.M_overlay).hide();
 		}
+	}
+};
+
+V.components.nav_tree = V.components.nav_tree || {
+	init:function(){},
+	removeNode:function(itemName){
+		var $removed_labels = $(Vn.T_nav_leaf_label).filter(function(){
+			return $(this).text() == itemName;
+		});
+		
+		var $removed_leafs = $removed_labels.parents('.a-TreeView-node--leaf');
+		var $remove_leafs_group = $removed_leafs.parent();
+		var $remove_node_topLevel = $removed_labels.parents('.a-TreeView-node--topLevel');
+		
+		$removed_leafs.remove();
+		if($remove_leafs_group.length!=0 && $remove_leafs_group.children().length==0){
+			$remove_node_topLevel.remove();
+		}
+		
 	}
 };
 
@@ -188,6 +212,37 @@ V.components.sections = V.components.sections || {
 		},
 		hideTag:function(){
 			$(Vn.S_main_heading + ' .compile-error').remove();
+		}
+	},
+	alert_dynamic:{
+		init:function(){
+			var message = '<div class="t-Body-alert">' +
+			'<div id="t_Alert_Success" class="t-Alert t-Alert--defaultIcons t-Alert--success t-Alert--horizontal t-Alert--page t-Alert--colorBG is-visible" role="alert">'+
+			'<div class="t-Alert-wrap">' + 
+			'<div class="t-Alert-icon">' +
+			'<span class="t-Icon"></span>' +
+			'</div>' +
+			'<div class="t-Alert-content">' +
+			'<div class="t-Alert-header">' +
+			'<h2 class="t-Alert-title">' +
+			'Action Processed.' +
+			'</h2>' +
+			'</div>' +
+			'</div>' +
+			'<div class="t-Alert-buttons">' +
+			'<button class="t-Button t-Button--noUI t-Button--icon t-Button--closeAlert" title="Close Notification" type="button" style="touch-action: pan-y;">' +
+			'<span class="t-Icon icon-close"></span>' +
+			'</button>' +
+			'</div>' +
+			'</div>' +
+			'</div>' +
+			'</div>';
+			$(message).appendTo("body"); 
+			$(function() {
+				  $('.t-Button--closeAlert').bind('click',function(){
+				    $(".t-Body-alert").remove();
+				  });
+				});
 		}
 	}
 };

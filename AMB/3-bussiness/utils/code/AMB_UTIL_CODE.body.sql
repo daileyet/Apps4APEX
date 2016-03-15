@@ -18,4 +18,21 @@ as
       return v_row_count>0;  
   end is_object_exists;  
   
+  
+  procedure drop_object(p_obj_name in varchar2)
+  as
+  	v_exist boolean:=FALSE;
+  	v_ddl_sql varchar2(500);
+  begin
+	  v_exist:=is_object_exists(p_obj_name);
+	  IF v_exist THEN
+	  	FOR objs in (select * from ALL_OBJECTS where OBJECT_NAME = p_obj_name)
+	  	LOOP
+	  		v_ddl_sql:='DROP '|| objs.OBJECT_TYPE || ' '||objs.OBJECT_NAME;
+	  		execute_ddl(v_ddl_sql);
+	  		EXIT;
+	  	END LOOP;
+	  END IF;
+  end;
+  
 end AMB_UTIL_CODE;
