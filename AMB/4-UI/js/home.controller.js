@@ -29,7 +29,7 @@ C.init = function() {
 		}
 	});
 	M.state.addUpdateListener("COMPILE_ERROR", function(valObj) {
-		V.components.sections.alert.setAlertMsg(valObj.newVal);
+		V.components.sections.alert.setAlertMsg(valObj.new_val);
 	});
 
 	M.buttons.refresh.bindClick(C.refresh);
@@ -39,7 +39,7 @@ C.init = function() {
 	M.buttons.compile.bindClick(C.compile);
 	M.buttons.init.bindClick(C.initVersion);
 	M.buttons.info_obj_proxy.bindClick(C.openObjectInfo);
-
+	
 	M.items.version.isEmpty() ? V.components.dialogs.version_selector.open()
 			: V.components.dialogs.version_selector.close();
 
@@ -86,6 +86,7 @@ C.treeNodeClick = function(id) {
 				obj_code : $('code', data).text(),
 				obj_status : $('action_status', data).text(),
 				obj_compiled : $('compile_tag', data).text(),
+				obj_info_url : $('url_info', data).text()
 			});
 			V.components.overlays.code_loader.hide();
 		}
@@ -151,6 +152,9 @@ C.compile = function() {
 
 C.openObjectInfo = function() {
 	if(M.state.obj_id!=''){
+		var clickSource = M.buttons.info_obj.attr('onclick');
+		clickSource = clickSource.replace(/P2_ID:(.*)(\\u0026|&)/g, 'P2_ID:'+M.state.obj_id+'&');
+		M.buttons.info_obj.attr('onclick',clickSource);
 		M.buttons.info_obj.click();
 	}
 }

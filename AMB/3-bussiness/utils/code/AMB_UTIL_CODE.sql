@@ -13,6 +13,6 @@ as
   -- check object is exits by given object name  
   function is_object_exists(p_obj_name in varchar2) return boolean;  
   
-  procedure drop_object(p_obj_name in varchar2);
+  procedure drop_object(p_obj_name in varchar2,p_obj_type in varchar2 default NULL);
 
 end AMB_UTIL_CODE;

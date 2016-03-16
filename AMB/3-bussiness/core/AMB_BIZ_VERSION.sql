@@ -11,4 +11,9 @@ as
  */
 procedure init_version(p_new_version varchar2,p_base_version varchar2,p_mode varchar2,p_error in out AMB_ERROR);
 
+/**
+ * get stored in AMB_VERSION version record
+ */
+function get_version(f_version_id varchar2) RETURN AMB_VERSION%ROWTYPE;
+
 end;

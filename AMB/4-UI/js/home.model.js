@@ -156,7 +156,10 @@ M.Button = function(name){
 		$(this.name).click(fnClick);
 	}
 	this.attr=function(sAttrName,sVal){
-		$(this.name).attr(sAttrName,sVal);
+		if(sVal==undefined)
+			return $(this.name).attr(sAttrName);
+		else
+			$(this.name).attr(sAttrName,sVal);
 	}
 	this.title=function(sVal){
 		if(sVal==undefined){

@@ -13,6 +13,10 @@ PREFIX_PROJECT constant varchar(3):='P-';
 PREFIX_VERSION constant varchar(3):='V-';
 PREFIX_OBJECT constant varchar(3):='O-';
 
+SHORT_PROJECT constant varchar(3):='P';
+SHORT_VERSION constant varchar(3):='V';
+SHORT_OBJECT constant varchar(3):='O';
+
 COMPILE_WITHOUT_ERROR constant varchar2(10):='SUCCESS';
 COMPILE_WITH_ERROR constant varchar2(10):='FAILED';
 
@@ -24,5 +28,8 @@ NOT_ACTIVE_VERSION constant varchar2(3):='N';
 
 FULL_CP_INIT_MODE constant varchar2(10):='FULL_COPY';
 QUICK_REF_INIT_MODE constant varchar2(10):='QUICK_REF';
+
+OPS_STYLE_SHARED constant varchar2(10):='SHARED';
+OPS_STYLE_PRIVATE constant varchar2(10):='PRIVATE';
 
 end AMB_CONSTANT;

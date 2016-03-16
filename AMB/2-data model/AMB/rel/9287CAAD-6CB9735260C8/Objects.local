@@ -2,6 +2,7 @@
 <oracle.dbtools.crest.model.design.relational.RelationalDesign>
    <object objectType="Table" objectID="985436A0-2BCC-AF41-886F-B85E5893627E" name="AMB_LOGS" seqName="seg_0"/>
    <object objectType="Table" objectID="F42E4401-8E3B-4FD4-C69F-4E3C575EEB4F" name="AMB_OBJECT" seqName="seg_0"/>
+   <object objectType="Table" objectID="A602A3D7-4B00-6CE2-716E-2FED41AAFF6B" name="AMB_OBJECT_INTERIM" seqName="seg_0"/>
    <object objectType="Table" objectID="8D351208-B80C-080E-9371-64EC72FF341A" name="AMB_OPS_DEFINITION" seqName="seg_0"/>
    <object objectType="Table" objectID="19D3F799-4693-76AC-BEDB-5CBEC84D3084" name="AMB_OPS_OBJECT" seqName="seg_0"/>
    <object objectType="Table" objectID="24E60FB0-6A26-DA04-08B7-F1F99D1430D1" name="AMB_OPS_PROJECT" seqName="seg_0"/>

@@ -67,4 +67,14 @@ begin
 		
 end;
 
+function get_version(f_version_id varchar2) RETURN AMB_VERSION%ROWTYPE
+as
+	v_version AMB_VERSION%ROWTYPE;
+begin
+	IF f_version_id IS NOT NULL THEN
+		select * into v_version from AMB_VERSION WHERE ID = f_version_id;
+	END IF;
+	return v_version;
+end;
+
 end;
