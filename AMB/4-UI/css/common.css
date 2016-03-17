@@ -81,3 +81,7 @@
 .link-style{
 	cursor:pointer;
 }
+
+.display-none{
+    display:none;
+}

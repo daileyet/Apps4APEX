@@ -1,0 +1,157 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A602A3D7-4B00-6CE2-716E-2FED41AAFF6B" name="AMB_OBJECT_INTERIM">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-16 02:59:23 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="FB8184AC-F05D-512B-3C29-A771CB87F429">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-16 02:59:23 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VERSION_ID" id="DE8355CC-675C-9629-87FF-B6DC5A8FD36F">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-16 02:59:23 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NAME" id="0D050938-E6FB-B6BE-0801-604C7A4E607D">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-16 02:59:23 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TYPE" id="52F4352B-4D7E-7FB4-7BAF-4FEAD5615B94">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-16 02:59:23 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CONTENT" id="73E6EA46-890C-4D07-A630-725BEB462E50">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-16 02:59:23 UTC</createdTime>
+<comment>object DDL </comment>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT028</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REFERENCE" id="14BE171F-64FC-0742-07E7-E092213028E3">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-16 02:59:23 UTC</createdTime>
+<comment>reference other lower version object id</comment>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATE_DATE" id="006A12B0-1288-4098-1D93-46CFF191EDF3">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-16 02:59:23 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT046</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATE_BY" id="157F535C-272E-8587-7F59-6D18207FDC42">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-16 02:59:23 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UPDATE_DATE" id="D6BCC8A6-C29F-5AED-8DC7-54F7876D7236">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-16 02:59:23 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT046</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UPDATE_BY" id="DE95C000-B381-2CB2-47D1-2260036A26BC">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-16 02:59:23 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DESCRIPTION" id="FD90759B-82B5-98EF-AB31-70E1ADD77F80">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-16 02:59:23 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="COMPILED" id="B52FE0CE-4BF7-E93C-C1C4-B13DF7885596">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-16 02:59:23 UTC</createdTime>
+<comment>compile result:PASS,FAILED</comment>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0068BDC3-E748-364D-3169-EC02940B56A1" name="AMB_OBJECT_INTER_PK">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-16 02:59:23 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FB8184AC-F05D-512B-3C29-A771CB87F429"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

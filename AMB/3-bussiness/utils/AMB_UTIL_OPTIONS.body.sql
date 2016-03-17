@@ -110,4 +110,28 @@ as
 		
 	end;
 	
+	procedure save_version_option(p_record AMB_OPS_VERSION%ROWTYPE,p_error in out AMB_ERROR)
+	as
+		v_count number:=0;
+	begin
+		SELECT COUNT(*) into v_count FROM AMB_OPS_VERSION WHERE OPS_CODE = p_record.OPS_CODE and VERSION_ID=p_record.VERSION_ID;
+		IF v_count = 0  THEN
+			INSERT INTO AMB_OPS_VERSION values(p_record.VERSION_ID,p_record.OPS_CODE,p_record.OPS_VALUE,p_record.OPS_STYLE,p_record.OPS_DESC);
+		ELSE
+			UPDATE AMB_OPS_VERSION
+			SET OPS_VALUE = p_record.OPS_VALUE,
+			OPS_STYLE = p_record.OPS_STYLE,
+			OPS_DESC = p_record.OPS_DESC
+			WHERE VERSION_ID =p_record.VERSION_ID  and  OPS_CODE=p_record.OPS_CODE;
+		END IF;
+	EXCEPTION WHEN OTHERS THEN
+		p_error.error_message := 'Save Version Options Error:' || SQLERRM;
+		AMB_LOGGER.ERROR(p_error.error_message);
+	end;
+	
+	procedure save_object_option(p_record AMB_OPS_OBJECT%ROWTYPE,p_error in out AMB_ERROR)
+	AS
+	BEGIN
+		NULL;
+	END;
 end AMB_UTIL_OPTIONS;

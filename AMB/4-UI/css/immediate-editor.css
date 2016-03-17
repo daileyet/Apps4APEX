@@ -1,0 +1,19 @@
+.immediate-hiden{
+	display:none;
+}
+
+.immediate-place{
+	padding:0;
+	margin:0;
+	width:auto;
+	overflow:hidden;
+}
+.immediate-controller{
+	padding:0;
+	margin:0;
+}
+
+.immediate-place input[type="text"],.immediate-place input[type="number"],.immediate-place select{
+	width:80px;
+	border:1px solid grey;
+}
