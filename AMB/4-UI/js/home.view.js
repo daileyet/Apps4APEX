@@ -38,6 +38,7 @@ V.names = {
 		'B_refresh':'#btn-object-refersh',
 		'B_save':'#btn-object-save',
 		'B_compile':'#btn-object-compile',
+		'B_obj_option':'#btn-object-option',
 		
 		'B_init':'#btn-version-init',
 		'B_obj_info':'#btn-object-info',

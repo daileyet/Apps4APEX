@@ -61,6 +61,14 @@ begin
 	return v_validate;
 end;
 
+function check_validate(f_object_id varchar2,f_version_id varchar2 default NULL) return VARCHAR2
+AS
+BEGIN
+	IF is_validate(f_object_id,f_version_id) THEN
+		RETURN 'Y';
+	END IF;
+	RETURN NULL;
+END;
 
 function get_compile_error(f_object_id varchar2) return AMB_TYPES.OBJECT_ERRORS
 as

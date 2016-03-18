@@ -11,6 +11,8 @@ C.init = function() {
 	});
 	M.state.addUpdateListener("ID", function(valObj) {
 		M.items['object_id'].setVal(valObj.new_val);
+		M.buttons.info_obj.refresh(valObj.new_val);
+		M.buttons.obj_option.refresh(valObj.new_val);
 	});
 	M.state.addUpdateListener("CODE", function(valObj) {
 		// update editor content
@@ -152,9 +154,6 @@ C.compile = function() {
 
 C.openObjectInfo = function() {
 	if(M.state.obj_id!=''){
-		var clickSource = M.buttons.info_obj.attr('onclick');
-		clickSource = clickSource.replace(/P2_ID:(.*)(\\u0026|&)/g, 'P2_ID:'+M.state.obj_id+'&');
-		M.buttons.info_obj.attr('onclick',clickSource);
 		M.buttons.info_obj.click();
 	}
 }
@@ -162,15 +161,6 @@ C.afterCloseObjectInfo=function(sAction){
 	console.log(sAction);
 	V.components.sections.alert_dynamic.init();
 	if(sAction && sAction=="DELETE"){
-//		V.components.nav_tree.removeNode(M.state.obj_name);
-//		M.state.update({
-//			obj_id:'',
-//			obj_name:'',
-//			obj_status:'',
-//			obj_code:'',
-//			obj_compiled:'',
-//			obj_compile_error:''
-//		});
 		apex.submit('REFRESH');
 	}else if(sAction && sAction=="UPDATE"){
 		

@@ -11,10 +11,9 @@ as
 	
 	function get_project_options(f_project_id varchar2) return AMB_TYPES.PROJECT_OPTIONS PIPELINED
 	as
-		v_ops_row AMB_OPS_PROJECT%ROWTYPE;
 	begin
 		FOR pops in (select 
-			f_project_id AS ID,
+			f_project_id AS PROJECT_ID,
 			aod.OPS_CODE AS OPS_CODE,
 			NVL(aop.OPS_VALUE,aod.OPS_DEFAULT) OPS_VALUE,
 			aop.OPS_STYLE,
@@ -36,7 +35,6 @@ as
 	as
 		v_version_row AMB_VERSION%ROWTYPE;
 		v_project_id varchar2(100);
-		v_ops_row AMB_OPS_VERSION%ROWTYPE;
 	begin
 		v_version_row:=AMB_BIZ_VERSION.get_version(f_version_id);
 		v_project_id:=v_version_row.PROJECT_ID;
@@ -74,7 +72,6 @@ as
 	as
 		v_version_id varchar2(100);
 		v_object_row AMB_OBJECT%ROWTYPE;
-		v_ops_row AMB_OPS_OBJECT%ROWTYPE;
 	begin
 		v_object_row:=AMB_BIZ_OBJECT.get_object(f_object_id);
 		v_version_id:=v_object_row.VERSION_ID;
@@ -131,7 +128,20 @@ as
 	
 	procedure save_object_option(p_record AMB_OPS_OBJECT%ROWTYPE,p_error in out AMB_ERROR)
 	AS
+		v_count number:=0;
 	BEGIN
-		NULL;
+		SELECT COUNT(*) into v_count FROM AMB_OPS_OBJECT WHERE OPS_CODE = p_record.OPS_CODE and OBJECT_ID=p_record.OBJECT_ID;
+		IF v_count = 0  THEN
+			INSERT INTO AMB_OPS_OBJECT values(p_record.OBJECT_ID,p_record.OPS_CODE,p_record.OPS_VALUE,p_record.OPS_STYLE,p_record.OPS_DESC);
+		ELSE
+			UPDATE AMB_OPS_OBJECT
+			SET OPS_VALUE = p_record.OPS_VALUE,
+			OPS_STYLE = p_record.OPS_STYLE,
+			OPS_DESC = p_record.OPS_DESC
+			WHERE OBJECT_ID =p_record.OBJECT_ID  and  OPS_CODE=p_record.OPS_CODE;
+		END IF;
+	EXCEPTION WHEN OTHERS THEN
+		p_error.error_message := 'Save Object Options Error:' || SQLERRM;
+		AMB_LOGGER.ERROR(p_error.error_message);
 	END;
 end AMB_UTIL_OPTIONS;

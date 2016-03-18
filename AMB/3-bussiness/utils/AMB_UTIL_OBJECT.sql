@@ -33,6 +33,8 @@ function generate_objects_list_region(f_version_id varchar2) return CLOB;
  */
 function is_validate(f_object_id varchar2,f_version_id varchar2 default NULL) return boolean;
 
+function check_validate(f_object_id varchar2,f_version_id varchar2 default NULL) return VARCHAR2;
+
 /**
  * fetch the object compile error detail message
  */

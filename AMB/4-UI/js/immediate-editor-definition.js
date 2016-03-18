@@ -122,6 +122,10 @@
 				$CELL.find(".immediate-place").toggleClass('immediate-hiden');
 				return;
 			}
+			var beforeFn = _this._element.beforeProcessCallback;
+			if(beforeFn!=undefined && $.isFunction(beforeFn)){
+				beforeFn.call(_this);
+			}
 			apex.server.process(el.processName, {
 				'x01' : _this._dataModel['rowid'],
 				'x02' : _this._dataModel['newVal']['value'],

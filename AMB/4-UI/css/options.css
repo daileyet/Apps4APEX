@@ -1,0 +1,31 @@
+#section-version-options .t-fht-wrapper>div {
+	display: none;
+}
+
+#section-version-options .t-fht-wrapper div.t-fht-tbody {
+	display: block !important;
+}
+
+#OPS_VALUE.a-IRR-header, td[headers="OPS_VALUE"] {
+	width: 150px;
+	height: 30px;
+}
+
+td[headers="OPS_VALUE"] {
+	padding: 0;
+}
+
+.ops-tip {
+	cursor: pointer;
+}
+.ops-tip[title=""],.ops-tip[title=" "] {
+	display:none
+}
+
+#section-object-options .t-fht-wrapper>div {
+	display: none;
+}
+
+#section-object-options .t-fht-wrapper div.t-fht-tbody {
+	display: block !important;
+}

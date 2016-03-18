@@ -18,16 +18,26 @@ M.init=function(){
 			,'alert_region_close': M.Item.create(Vn.N_cp_err_close,false)
 	};
 	M.buttons = {
-		'create':M.Button.create(Vn.B_create),
+		//object section
 		'fullscreen':M.Button.create(Vn.B_fullscreen),
 		'refresh':M.Button.create(Vn.B_refresh),
 		'save':M.Button.create(Vn.B_save),
 		'compile':M.Button.create(Vn.B_compile),
-		
+		'obj_option':M.Button.create(Vn.B_obj_option,function(newval_obj_id){
+			var clickSource = this.attr('onclick');
+			clickSource = clickSource.replace(/P4_OBJECT:(.*)(\\u0026|&)/g, 'P4_OBJECT:'+newval_obj_id+'&');
+			this.attr('onclick',clickSource);
+		}),
+		//version section
+		'create':M.Button.create(Vn.B_create),
 		'init':M.Button.create(Vn.B_init),
 		
 		'info_obj_proxy':M.Button.create(Vn.L_obj_info),
-		'info_obj':M.Button.create(Vn.B_obj_info)
+		'info_obj':M.Button.create(Vn.B_obj_info,function(newval_obj_id){
+			var clickSource = this.attr('onclick');
+			clickSource = clickSource.replace(/P2_ID:(.*)(\\u0026|&)/g, 'P2_ID:'+newval_obj_id+'&');
+			this.attr('onclick',clickSource);
+		})
 		
 	};
 	M.state.update({
@@ -150,8 +160,10 @@ M.Item.create=function(name, isapex){
 	return new window.amb.M.Item(name, isapex);
 }
 
-M.Button = function(name){
+M.Button = function(name,refreshFn){
 	this.name=name;
+	this.refreshHander = refreshFn;
+	
 	this.bindClick=function(fnClick){
 		$(this.name).click(fnClick);
 	}
@@ -171,10 +183,15 @@ M.Button = function(name){
 	this.click=function(data){
 		apex.event.trigger($(this.name),"click",data);
 	}
+	this.refresh=function(objArg){
+		if(this.refreshHander){
+			this.refreshHander.call(this,objArg);
+		}
+	}
 }
 
-M.Button.create=function(name){
-	return new M.Button(name);
+M.Button.create=function(name,refreshFn){
+	return new M.Button(name,refreshFn);
 }
 
 
