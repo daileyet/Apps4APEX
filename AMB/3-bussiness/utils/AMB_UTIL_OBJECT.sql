@@ -42,5 +42,9 @@ function get_compile_error(f_object_id varchar2) return AMB_TYPES.OBJECT_ERRORS;
 
 function format_compile_error(f_errors AMB_TYPES.OBJECT_ERRORS) return VARCHAR2;
 
+function is_in_build_all_list(f_object_id varchar2) return boolean;
+function check_in_build_all_list(f_object_id varchar2) return VARCHAR2;
+function is_in_export_list(f_object_id varchar2) return boolean;
+function check_in_export_list(f_object_id varchar2) return VARCHAR2;
 
 end AMB_UTIL_OBJECT;

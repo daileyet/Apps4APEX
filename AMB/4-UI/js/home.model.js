@@ -28,9 +28,11 @@ M.init=function(){
 			clickSource = clickSource.replace(/P4_OBJECT:(.*)(\\u0026|&)/g, 'P4_OBJECT:'+newval_obj_id+'&');
 			this.attr('onclick',clickSource);
 		}),
-		//version section
+		//version sections
 		'create':M.Button.create(Vn.B_create),
 		'init':M.Button.create(Vn.B_init),
+		'build_all':M.Button.create(Vn.B_build_all),
+		'export':M.Button.create(Vn.B_export),
 		
 		'info_obj_proxy':M.Button.create(Vn.L_obj_info),
 		'info_obj':M.Button.create(Vn.B_obj_info,function(newval_obj_id){

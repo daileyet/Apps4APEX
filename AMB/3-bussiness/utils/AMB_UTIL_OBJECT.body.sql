@@ -65,7 +65,7 @@ function check_validate(f_object_id varchar2,f_version_id varchar2 default NULL)
 AS
 BEGIN
 	IF is_validate(f_object_id,f_version_id) THEN
-		RETURN 'Y';
+		RETURN AMB_CONSTANT.YES_TRUE;
 	END IF;
 	RETURN NULL;
 END;
@@ -110,5 +110,52 @@ begin
 	RETURN v_output;
 end;
 
+function is_in_build_all_list(f_object_id varchar2) return boolean
+AS
+	v_ops_val varchar2(500):='true';
+begin
+	select OPS_VALUE INTO v_ops_val from TABLE(AMB_UTIL_OPTIONS.get_object_options(f_object_id))
+	WHERE OPS_CODE = AMB_CONSTANT.OPS_CODE_IN_BUILD_ALL;
+	
+	IF UPPER(v_ops_val) = 'FALSE' THEN
+		return FALSE;
+	END IF;
+	RETURN TRUE;
+	EXCEPTION WHEN OTHERS THEN
+		RETURN TRUE;
+end;
+
+function check_in_build_all_list(f_object_id varchar2) return VARCHAR2
+AS
+BEGIN
+	IF IS_IN_BUILD_ALL_LIST(f_object_id) THEN
+		return AMB_CONSTANT.YES_TRUE;
+	END IF;
+	RETURN NULL;
+END;
+
+function is_in_export_list(f_object_id varchar2) return boolean
+AS
+	v_ops_val varchar2(500):='true';
+begin
+	select OPS_VALUE INTO v_ops_val from TABLE(AMB_UTIL_OPTIONS.get_object_options(f_object_id))
+	WHERE OPS_CODE = AMB_CONSTANT.OPS_CODE_IN_EXPORT;
+	
+	IF UPPER(v_ops_val) = 'FALSE' THEN
+		return FALSE;
+	END IF;
+	RETURN TRUE;
+	EXCEPTION WHEN OTHERS THEN
+		RETURN TRUE;
+END;
+
+function check_in_export_list(f_object_id varchar2) return VARCHAR2
+AS
+BEGIN
+	IF is_in_export_list(f_object_id) THEN
+		return AMB_CONSTANT.YES_TRUE;
+	END IF;
+	RETURN NULL;
+END;
 
 end AMB_UTIL_OBJECT;

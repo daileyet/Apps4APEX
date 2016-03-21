@@ -77,4 +77,31 @@ begin
 	return v_version;
 end;
 
+procedure initial_object_list(p_version_id varchar2,p_error in out AMB_ERROR)
+AS
+BEGIN
+	
+	DELETE FROM AMB_BUILD_EXPORT_LIST WHERE VERSION_ID=p_version_id;
+	
+	INSERT INTO AMB_BUILD_EXPORT_LIST(ID,VERSION_ID,TYPE,NAME,NEED_BUILD,NEED_EXPORT)
+	SELECT ID,VERSION_ID,TYPE,NAME,
+	CASE WHEN AMB_UTIL_OBJECT.check_in_build_all_list(ID) IS NOT NULL THEN
+		AMB_CONSTANT.YES_TRUE
+	ELSE
+		AMB_CONSTANT.NO_FALSE
+	END AS NEED_BUILD,
+	CASE WHEN AMB_UTIL_OBJECT.check_in_export_list(ID) IS NOT NULL THEN
+		AMB_CONSTANT.YES_TRUE
+	ELSE
+		AMB_CONSTANT.NO_FALSE
+	END AS NEED_EXPORT
+	FROM AMB_OBJECT ao
+	WHERE ao.VERSION_ID=p_version_id
+	--AND ao.ID NOT IN (SELECT ID FROM AMB_BUILD_EXPORT_LIST WHERE VERSION_ID=p_version_id) 
+	;
+	EXCEPTION WHEN OTHERS THEN
+		p_error.error_message := 'Initialize Version Object Build & Export List Error:' || SQLERRM;
+		AMB_LOGGER.ERROR(p_error.error_message);
+END;
+
 end;

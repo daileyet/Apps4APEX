@@ -16,4 +16,9 @@ procedure init_version(p_new_version varchar2,p_base_version varchar2,p_mode var
  */
 function get_version(f_version_id varchar2) RETURN AMB_VERSION%ROWTYPE;
 
+/**
+ * initial object build & export list(AMB_BUILD_EXPORT_LIST) records
+ */
+procedure initial_object_list(p_version_id varchar2,p_error in out AMB_ERROR);
+
 end;

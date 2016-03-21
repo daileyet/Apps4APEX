@@ -41,6 +41,8 @@ V.names = {
 		'B_obj_option':'#btn-object-option',
 		
 		'B_init':'#btn-version-init',
+		'B_build_all':'#btn-version-buildall',
+		'B_export':'#btn-version-export',
 		'B_obj_info':'#btn-object-info',
 		
 		'N_cp_err':'#compile-error-notification',
