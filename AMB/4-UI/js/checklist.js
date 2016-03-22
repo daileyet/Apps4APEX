@@ -19,8 +19,8 @@ window.amb.checklist.C = window.amb.checklist.C || {
 		$(V.names.I_CHECK_ITEM).unbind('change').change(C.itemChangeHander);
 	},
 	itemChangeHander : function() {
-		console.log('Click');
 		var $checkItem = $(this);
+		var bCheckValue = $checkItem.prop("checked");
 		var sCheckValue = $checkItem.prop("checked") ? 'Y' : 'N';
 		var sId = $checkItem.data('id');
 		var sModel = $v(V.names.I_MODEL);
@@ -32,10 +32,14 @@ window.amb.checklist.C = window.amb.checklist.C || {
 		{
 			dataType : 'json',
 			success : function(data) {
-				if(data.type=='SUCCESS')
-					console.log('Success');
+				if(data.type=='SUCCESS'){
+					//console.log('Success');
+				}
 				else{
-					console.log('Error');
+					//
+					$checkItem.unbind('change');
+					$checkItem.prop("checked",!bCheckValue);
+					$checkItem.bind('change',C.itemChangeHander);
 				}
 			}
 		}

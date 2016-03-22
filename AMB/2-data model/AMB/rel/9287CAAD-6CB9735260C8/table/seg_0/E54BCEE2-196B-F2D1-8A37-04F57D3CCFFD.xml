@@ -73,6 +73,17 @@
 <dataTypeSize>50</dataTypeSize>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="SCHEMA" id="2C4EAB71-469F-4C4B-982A-E2A6A595B71C">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-22 05:09:38 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 <Column name="EDITION" id="12567971-4940-9E23-051C-938CBB190C22">
 <createdBy>minjdai</createdBy>
 <createdTime>2016-02-24 07:41:48 UTC</createdTime>

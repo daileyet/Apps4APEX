@@ -21,4 +21,6 @@ function get_version(f_version_id varchar2) RETURN AMB_VERSION%ROWTYPE;
  */
 procedure initial_object_list(p_version_id varchar2,p_error in out AMB_ERROR);
 
+function get_export_content(f_version_id varchar2,f_style varchar2 default AMB_CONSTANT.EXPORT_XML_STYLE) return CLOB;
+
 end;

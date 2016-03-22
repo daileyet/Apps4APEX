@@ -10,6 +10,7 @@
    <object objectType="Table" objectID="10451921-A01B-700C-A5D0-216E852E5E78" name="AMB_OPS_VERSION" seqName="seg_0"/>
    <object objectType="Table" objectID="D1BC7738-3CFF-407D-4D4D-6F0CFAAE9827" name="AMB_PROJECT" seqName="seg_0"/>
    <object objectType="Table" objectID="E54BCEE2-196B-F2D1-8A37-04F57D3CCFFD" name="AMB_VERSION" seqName="seg_0"/>
+   <object objectType="View" objectID="BA95CA93-D853-DD64-AA14-63745B337E51" name="AMB_EXPORT_VW" seqName="seg_0"/>
    <object objectType="View" objectID="193735A4-D0B0-F121-C702-14AC9F0B7BB4" name="AMB_OBJECT_TYPE" seqName="seg_0"/>
    <object objectType="View" objectID="EFADBD85-D45B-4B44-035C-6E395166EA88" name="AMB_OBJ_LIST_VW" seqName="seg_0"/>
    <object objectType="View" objectID="8101D7A1-38BB-797C-9B6E-367CA4DD18AC" name="AMB_PROJ_VERSION_VW" seqName="seg_0"/>

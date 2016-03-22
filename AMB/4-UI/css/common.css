@@ -102,6 +102,20 @@
 	cursor:pointer;
 }
 
-.display-none{
+.display-none,{
     display:none;
 }
+
+.display-block{
+	display:block !important;
+}
+.display-hiden,.visibility-hiden,{
+	visibility: hidden;
+}
+.visibility-visible{
+	visibility:visible !important;
+}
+.lazy-display-none{
+	display:block;
+}
+.lazy-display-block,.lazy-visibility-visible{}
