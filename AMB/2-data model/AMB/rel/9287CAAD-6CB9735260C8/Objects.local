@@ -1,21 +1,20 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <oracle.dbtools.crest.model.design.relational.RelationalDesign>
-   <object objectType="Table" objectID="ED172E7C-3D75-7FC6-EF98-27B3E3AC9F67" name="AMB_BUILD_EXPORT_LIST" seqName="seg_0"/>
-   <object objectType="Table" objectID="D52FB897-E020-AA42-1464-7B400F7FA837" name="AMB_IMPORT_LIST" seqName="seg_0"/>
-   <object objectType="Table" objectID="985436A0-2BCC-AF41-886F-B85E5893627E" name="AMB_LOGS" seqName="seg_0"/>
-   <object objectType="Table" objectID="F42E4401-8E3B-4FD4-C69F-4E3C575EEB4F" name="AMB_OBJECT" seqName="seg_0"/>
-   <object objectType="Table" objectID="A602A3D7-4B00-6CE2-716E-2FED41AAFF6B" name="AMB_OBJECT_INTERIM" seqName="seg_0"/>
-   <object objectType="Table" objectID="8D351208-B80C-080E-9371-64EC72FF341A" name="AMB_OPS_DEFINITION" seqName="seg_0"/>
-   <object objectType="Table" objectID="19D3F799-4693-76AC-BEDB-5CBEC84D3084" name="AMB_OPS_OBJECT" seqName="seg_0"/>
-   <object objectType="Table" objectID="24E60FB0-6A26-DA04-08B7-F1F99D1430D1" name="AMB_OPS_PROJECT" seqName="seg_0"/>
-   <object objectType="Table" objectID="10451921-A01B-700C-A5D0-216E852E5E78" name="AMB_OPS_VERSION" seqName="seg_0"/>
-   <object objectType="Table" objectID="D1BC7738-3CFF-407D-4D4D-6F0CFAAE9827" name="AMB_PROJECT" seqName="seg_0"/>
-   <object objectType="Table" objectID="E54BCEE2-196B-F2D1-8A37-04F57D3CCFFD" name="AMB_VERSION" seqName="seg_0"/>
-   <object objectType="View" objectID="BA95CA93-D853-DD64-AA14-63745B337E51" name="AMB_EXPORT_VW" seqName="seg_0"/>
-   <object objectType="View" objectID="86D8B80C-8EC2-DE9E-C10E-CDB1A60FE3A1" name="AMB_IMPORT_VW" seqName="seg_0"/>
-   <object objectType="View" objectID="193735A4-D0B0-F121-C702-14AC9F0B7BB4" name="AMB_OBJECT_TYPE" seqName="seg_0"/>
-   <object objectType="View" objectID="EFADBD85-D45B-4B44-035C-6E395166EA88" name="AMB_OBJ_LIST_VW" seqName="seg_0"/>
-   <object objectType="View" objectID="8101D7A1-38BB-797C-9B6E-367CA4DD18AC" name="AMB_PROJ_VERSION_VW" seqName="seg_0"/>
-   <object objectType="FKIndexAssociation" objectID="87D2A2D5-E2C7-F6F9-A149-5AEECAF7ABF0" name="AMB_OBJECT_AMB_VERSION_FK" seqName="seg_0"/>
-   <object objectType="FKIndexAssociation" objectID="CA8334CE-D06A-08E8-D72D-CB20D7A73564" name="AMB_VERSION_AMB_PROJECT_FK" seqName="seg_0"/>
+   <object objectType="Table" objectID="ED172E7C-3D75-7FC6-EF98-27B3E3AC9F67" name="AMB_BEI_LIST" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="9287CAAD-E5B3-4B24-8129-6CB9735260C8" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Table" objectID="985436A0-2BCC-AF41-886F-B85E5893627E" name="AMB_LOGS" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="9287CAAD-E5B3-4B24-8129-6CB9735260C8" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Table" objectID="F42E4401-8E3B-4FD4-C69F-4E3C575EEB4F" name="AMB_OBJECT" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="9287CAAD-E5B3-4B24-8129-6CB9735260C8" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Table" objectID="A602A3D7-4B00-6CE2-716E-2FED41AAFF6B" name="AMB_OBJECT_INTERIM" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="9287CAAD-E5B3-4B24-8129-6CB9735260C8" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Table" objectID="8D351208-B80C-080E-9371-64EC72FF341A" name="AMB_OPS_DEFINITION" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="9287CAAD-E5B3-4B24-8129-6CB9735260C8" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Table" objectID="19D3F799-4693-76AC-BEDB-5CBEC84D3084" name="AMB_OPS_OBJECT" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="9287CAAD-E5B3-4B24-8129-6CB9735260C8" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Table" objectID="24E60FB0-6A26-DA04-08B7-F1F99D1430D1" name="AMB_OPS_PROJECT" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="9287CAAD-E5B3-4B24-8129-6CB9735260C8" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Table" objectID="10451921-A01B-700C-A5D0-216E852E5E78" name="AMB_OPS_VERSION" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="9287CAAD-E5B3-4B24-8129-6CB9735260C8" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Table" objectID="D1BC7738-3CFF-407D-4D4D-6F0CFAAE9827" name="AMB_PROJECT" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="9287CAAD-E5B3-4B24-8129-6CB9735260C8" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Table" objectID="E54BCEE2-196B-F2D1-8A37-04F57D3CCFFD" name="AMB_VERSION" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="9287CAAD-E5B3-4B24-8129-6CB9735260C8" propertySourceId="" propertyTargetId=""/>
+   <object objectType="View" objectID="BA95CA93-D853-DD64-AA14-63745B337E51" name="AMB_EXPORT_VW" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.TableView" propertyParentId="9287CAAD-E5B3-4B24-8129-6CB9735260C8" propertySourceId="" propertyTargetId=""/>
+   <object objectType="View" objectID="DD4DEDFB-2710-5F0C-FDFD-01E4FE588AC1" name="AMB_IMPORT_VW" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.TableView" propertyParentId="9287CAAD-E5B3-4B24-8129-6CB9735260C8" propertySourceId="" propertyTargetId=""/>
+   <object objectType="View" objectID="193735A4-D0B0-F121-C702-14AC9F0B7BB4" name="AMB_OBJECT_TYPE" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.TableView" propertyParentId="9287CAAD-E5B3-4B24-8129-6CB9735260C8" propertySourceId="" propertyTargetId=""/>
+   <object objectType="View" objectID="EFADBD85-D45B-4B44-035C-6E395166EA88" name="AMB_OBJ_LIST_VW" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.TableView" propertyParentId="9287CAAD-E5B3-4B24-8129-6CB9735260C8" propertySourceId="" propertyTargetId=""/>
+   <object objectType="View" objectID="8101D7A1-38BB-797C-9B6E-367CA4DD18AC" name="AMB_PROJ_VERSION_VW" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.TableView" propertyParentId="9287CAAD-E5B3-4B24-8129-6CB9735260C8" propertySourceId="" propertyTargetId=""/>
+   <object objectType="FKIndexAssociation" objectID="87D2A2D5-E2C7-F6F9-A149-5AEECAF7ABF0" name="AMB_OBJECT_AMB_VERSION_FK" seqName="seg_0" containerID="F42E4401-8E3B-4FD4-C69F-4E3C575EEB4F" refContainerID="E54BCEE2-196B-F2D1-8A37-04F57D3CCFFD" propertyClassName="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" propertyParentId="9287CAAD-E5B3-4B24-8129-6CB9735260C8" propertySourceId="E54BCEE2-196B-F2D1-8A37-04F57D3CCFFD" propertyTargetId="F42E4401-8E3B-4FD4-C69F-4E3C575EEB4F"/>
+   <object objectType="FKIndexAssociation" objectID="CA8334CE-D06A-08E8-D72D-CB20D7A73564" name="AMB_VERSION_AMB_PROJECT_FK" seqName="seg_0" containerID="E54BCEE2-196B-F2D1-8A37-04F57D3CCFFD" refContainerID="D1BC7738-3CFF-407D-4D4D-6F0CFAAE9827" propertyClassName="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" propertyParentId="9287CAAD-E5B3-4B24-8129-6CB9735260C8" propertySourceId="D1BC7738-3CFF-407D-4D4D-6F0CFAAE9827" propertyTargetId="E54BCEE2-196B-F2D1-8A37-04F57D3CCFFD"/>
 </oracle.dbtools.crest.model.design.relational.RelationalDesign>

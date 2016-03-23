@@ -1,0 +1,78 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="AMB_VERSION" directorySegmentName="seg_0" id="E54BCEE2-196B-F2D1-8A37-04F57D3CCFFD">
+<createdBy>openthinks-pc</createdBy>
+<createdTime>2016-03-23 13:26:52 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="APP_ID" id="05BAE281-6C24-62EB-A18D-E6B706118316">
+<createdBy>openthinks-pc</createdBy>
+<createdTime>2016-03-23 13:26:52 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="EDITION" id="12567971-4940-9E23-051C-938CBB190C22">
+<createdBy>openthinks-pc</createdBy>
+<createdTime>2016-03-23 13:26:52 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="SCHEMA" id="2C4EAB71-469F-4C4B-982A-E2A6A595B71C">
+<createdBy>openthinks-pc</createdBy>
+<createdTime>2016-03-23 13:26:52 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="WORKSPACE" id="32405FD4-BE99-E09D-47B0-C51D99F2717E">
+<createdBy>openthinks-pc</createdBy>
+<createdTime>2016-03-23 13:26:52 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PROJECT_ID" id="638070ED-5451-02A9-7FCD-4BA4B88774F5">
+<createdBy>openthinks-pc</createdBy>
+<createdTime>2016-03-23 13:26:52 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ID" id="685B4C70-FC37-7D8A-7DD6-9C35422B0824">
+<createdBy>openthinks-pc</createdBy>
+<createdTime>2016-03-23 13:26:52 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ENVIRONMENT" id="6DAB9456-70F2-3629-152D-C63712FB8538">
+<createdBy>openthinks-pc</createdBy>
+<createdTime>2016-03-23 13:26:52 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="APP_NAME" id="7CD5E6A7-1E2D-48CF-23C3-7DB2E93D80DF">
+<createdBy>openthinks-pc</createdBy>
+<createdTime>2016-03-23 13:26:52 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="IS_BASE" id="90C318EA-B4D6-FA5E-FE68-9D3F13EFB1CE">
+<createdBy>openthinks-pc</createdBy>
+<createdTime>2016-03-23 13:26:52 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ACTIVE" id="A8EBD06B-572B-1975-2797-6E2AC49DE0AA">
+<createdBy>openthinks-pc</createdBy>
+<createdTime>2016-03-23 13:26:52 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="AMB_VERSION_AMB_PROJECT_FK" id="4F5F8FB4-9F8A-6E19-FF88-ABD3E2873FDA">
+<createdBy>openthinks-pc</createdBy>
+<createdTime>2016-03-23 13:26:52 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="AMB_VERSION_PK" id="3B5192CC-0392-B5C2-ACB2-097FCFB33FDE">
+<createdBy>openthinks-pc</createdBy>
+<createdTime>2016-03-23 13:26:52 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

@@ -1,0 +1,46 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="AMB_OPS_PROJECT" directorySegmentName="seg_0" id="24E60FB0-6A26-DA04-08B7-F1F99D1430D1">
+<createdBy>openthinks-pc</createdBy>
+<createdTime>2016-03-23 13:26:52 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="OPS_DESC" id="08E9C599-1EEF-9DE7-672B-0C6063618E40">
+<createdBy>openthinks-pc</createdBy>
+<createdTime>2016-03-23 13:26:52 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PROJECT_ID" id="13CED0E2-9019-A6BC-DF3D-5A4A1071223A">
+<createdBy>openthinks-pc</createdBy>
+<createdTime>2016-03-23 13:26:52 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="OPS_VALUE" id="7C826429-EA4B-A33F-AA2D-1CF93CE9AF5B">
+<createdBy>openthinks-pc</createdBy>
+<createdTime>2016-03-23 13:26:52 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="OPS_STYLE" id="93E0829E-A452-BA87-43EC-764805CE79EF">
+<createdBy>openthinks-pc</createdBy>
+<createdTime>2016-03-23 13:26:52 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="OPS_CODE" id="E8122251-2F01-89C3-A45E-30CE8F7C610C">
+<createdBy>openthinks-pc</createdBy>
+<createdTime>2016-03-23 13:26:52 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="AMB_OPS_PROJ_PK" id="653B3924-EEB9-D452-BD02-8AA6657C1C34">
+<createdBy>openthinks-pc</createdBy>
+<createdTime>2016-03-23 13:26:52 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

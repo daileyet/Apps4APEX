@@ -1,0 +1,77 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<DomainFile class="oracle.dbtools.crest.model.design.DomainFileWrapper" fileName="1_Domains">
+   <domains>
+      <Domain class="oracle.dbtools.crest.model.design.Domain" name="VARCHAR_0_0_100" id="00388BA7-1E58-6FF2-47F3-A846EA4A73FD">
+         <createdBy>openthinks-pc</createdBy>
+         <createdTime>2016-03-23 13:27:09 UTC</createdTime>
+         <ownerDesignName>AMB</ownerDesignName>
+         <avTSortOrder>0</avTSortOrder>
+         <dataTypePrecision>0</dataTypePrecision>
+         <dataTypeScale>0</dataTypeScale>
+         <dataTypeSize>100</dataTypeSize>
+         <fileName>1_Domains</fileName>
+         <logicalDatatype>LOGDT024</logicalDatatype>
+      </Domain>
+      <Domain class="oracle.dbtools.crest.model.design.Domain" name="VARCHAR_0_0_500" id="29B5C5A0-A13D-ABA0-EE67-19E2BBD30C07">
+         <createdBy>openthinks-pc</createdBy>
+         <createdTime>2016-03-23 13:27:09 UTC</createdTime>
+         <ownerDesignName>AMB</ownerDesignName>
+         <avTSortOrder>0</avTSortOrder>
+         <dataTypePrecision>0</dataTypePrecision>
+         <dataTypeScale>0</dataTypeScale>
+         <dataTypeSize>500</dataTypeSize>
+         <fileName>1_Domains</fileName>
+         <logicalDatatype>LOGDT024</logicalDatatype>
+      </Domain>
+      <Domain class="oracle.dbtools.crest.model.design.Domain" name="TIMESTAMP WITH TIME ZONE_6_0_0" id="539541F0-05F1-2625-487B-4AB0FF728434">
+         <createdBy>openthinks-pc</createdBy>
+         <createdTime>2016-03-23 13:27:09 UTC</createdTime>
+         <ownerDesignName>AMB</ownerDesignName>
+         <avTSortOrder>0</avTSortOrder>
+         <dataTypePrecision>6</dataTypePrecision>
+         <fileName>1_Domains</fileName>
+         <logicalDatatype>LOGDT046</logicalDatatype>
+      </Domain>
+      <Domain class="oracle.dbtools.crest.model.design.Domain" name="VARCHAR_0_0_4000" id="64AF3DFC-1E99-0E5C-44E4-DF83E49F9AAA">
+         <createdBy>openthinks-pc</createdBy>
+         <createdTime>2016-03-23 13:27:09 UTC</createdTime>
+         <ownerDesignName>AMB</ownerDesignName>
+         <avTSortOrder>0</avTSortOrder>
+         <dataTypePrecision>0</dataTypePrecision>
+         <dataTypeScale>0</dataTypeScale>
+         <dataTypeSize>4000</dataTypeSize>
+         <fileName>1_Domains</fileName>
+         <logicalDatatype>LOGDT024</logicalDatatype>
+      </Domain>
+      <Domain class="oracle.dbtools.crest.model.design.Domain" name="VARCHAR_0_0_3" id="69BFCAF6-0EDB-A365-812E-C4C0F4D494F8">
+         <createdBy>openthinks-pc</createdBy>
+         <createdTime>2016-03-23 13:27:09 UTC</createdTime>
+         <ownerDesignName>AMB</ownerDesignName>
+         <avTSortOrder>0</avTSortOrder>
+         <dataTypePrecision>0</dataTypePrecision>
+         <dataTypeScale>0</dataTypeScale>
+         <dataTypeSize>3</dataTypeSize>
+         <fileName>1_Domains</fileName>
+         <logicalDatatype>LOGDT024</logicalDatatype>
+      </Domain>
+      <Domain class="oracle.dbtools.crest.model.design.Domain" name="CLOB_0_0_0" id="6D43D048-AC4E-E5FC-67B8-98EAC7A8C693">
+         <createdBy>openthinks-pc</createdBy>
+         <createdTime>2016-03-23 13:27:09 UTC</createdTime>
+         <ownerDesignName>AMB</ownerDesignName>
+         <avTSortOrder>0</avTSortOrder>
+         <fileName>1_Domains</fileName>
+         <logicalDatatype>LOGDT028</logicalDatatype>
+      </Domain>
+      <Domain class="oracle.dbtools.crest.model.design.Domain" name="VARCHAR_0_0_50" id="F0B85038-9228-7789-4AD2-12B9D57F5A8E">
+         <createdBy>openthinks-pc</createdBy>
+         <createdTime>2016-03-23 13:27:09 UTC</createdTime>
+         <ownerDesignName>AMB</ownerDesignName>
+         <avTSortOrder>0</avTSortOrder>
+         <dataTypePrecision>0</dataTypePrecision>
+         <dataTypeScale>0</dataTypeScale>
+         <dataTypeSize>50</dataTypeSize>
+         <fileName>1_Domains</fileName>
+         <logicalDatatype>LOGDT024</logicalDatatype>
+      </Domain>
+   </domains>
+</DomainFile>

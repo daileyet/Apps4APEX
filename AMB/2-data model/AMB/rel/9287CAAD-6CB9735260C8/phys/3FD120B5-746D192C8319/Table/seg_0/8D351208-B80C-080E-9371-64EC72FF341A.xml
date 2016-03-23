@@ -1,0 +1,51 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="AMB_OPS_DEFINITION" directorySegmentName="seg_0" id="8D351208-B80C-080E-9371-64EC72FF341A">
+<createdBy>openthinks-pc</createdBy>
+<createdTime>2016-03-23 13:26:52 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="OPS_DEFAULT" id="24A09846-6981-F561-C6B8-6D0A933166E8">
+<createdBy>openthinks-pc</createdBy>
+<createdTime>2016-03-23 13:26:52 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="OPS_DESC" id="2D034C20-4E42-51BD-D20D-9B376B8F4ABB">
+<createdBy>openthinks-pc</createdBy>
+<createdTime>2016-03-23 13:26:52 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="OPS_NAME" id="2EAEB9A3-CCB0-EE71-1E1E-20D96A4D485C">
+<createdBy>openthinks-pc</createdBy>
+<createdTime>2016-03-23 13:26:52 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="OPS_TRAGET" id="6EDD40B0-BAB0-0A92-D2EC-5816F5573D6D">
+<createdBy>openthinks-pc</createdBy>
+<createdTime>2016-03-23 13:26:52 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="OPS_TYPE" id="8E271139-67CD-C1A8-4E90-FA444685697A">
+<createdBy>openthinks-pc</createdBy>
+<createdTime>2016-03-23 13:26:52 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="OPS_CODE" id="E0F785C1-1573-6583-F616-0BF14DA09F6A">
+<createdBy>openthinks-pc</createdBy>
+<createdTime>2016-03-23 13:26:52 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="AMB_OPS_DEF_PK" id="76881FCE-BF62-32BE-9BC7-3850873C5BB8">
+<createdBy>openthinks-pc</createdBy>
+<createdTime>2016-03-23 13:26:52 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

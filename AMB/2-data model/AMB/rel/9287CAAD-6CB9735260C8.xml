@@ -4,5 +4,12 @@
 <createdTime>2016-02-24 02:45:56 UTC</createdTime>
 <ownerDesignName>AMB</ownerDesignName>
 <shouldBeOpen>true</shouldBeOpen>
-<selectedRDBMSSite>32076570-2523-435C-2E92-BF29817DFF70</selectedRDBMSSite>
+<selectedRDBMSSite>3FD120B5-9F4E-6278-D5E2-746D192C8319</selectedRDBMSSite>
+<importDDLFileStamps>
+<importDDLFileStamp class="oracle.dbtools.crest.imports.DDLFileStamp">
+<fileName>1.sql</fileName>
+<pathName>C:\Users\openthinks-pc\Desktop</pathName>
+<dbType>11</dbType>
+</importDDLFileStamp>
+</importDDLFileStamps>
 </relationalModel>

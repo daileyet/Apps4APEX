@@ -1,0 +1,57 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="AMB_IMPORT_LIST" directorySegmentName="seg_0" id="E8927789-8EDA-F231-4A5D-3B9EA851D689">
+<createdBy>openthinks-pc</createdBy>
+<createdTime>2016-03-23 13:27:09 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="DESCRIPTION" id="27EA1099-629F-E648-8567-9379C86D179D">
+<createdBy>openthinks-pc</createdBy>
+<createdTime>2016-03-23 13:27:09 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="VERSION_ID" id="4F96C05B-ED55-2E8E-1DEF-2BCFDE419E03">
+<createdBy>openthinks-pc</createdBy>
+<createdTime>2016-03-23 13:27:09 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CREATE_DATE" id="88242B0B-08EA-38E6-1539-10BCA757F3C3">
+<createdBy>openthinks-pc</createdBy>
+<createdTime>2016-03-23 13:27:09 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="NAME" id="91E2AC74-E6E8-6052-A114-2176FCAD22BE">
+<createdBy>openthinks-pc</createdBy>
+<createdTime>2016-03-23 13:27:09 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="NEED_IMPORT" id="AB47B27C-C96D-56A8-04D3-4FDBEBAEA7D6">
+<createdBy>openthinks-pc</createdBy>
+<createdTime>2016-03-23 13:27:09 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="TYPE" id="AC6C64AA-20AF-E9C0-DBC8-6852DB1BEDF9">
+<createdBy>openthinks-pc</createdBy>
+<createdTime>2016-03-23 13:27:09 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CONTENT" id="B5077F0A-898A-F168-82F8-B1C4B678DE8E">
+<createdBy>openthinks-pc</createdBy>
+<createdTime>2016-03-23 13:27:09 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ID" id="DC2403A8-A0FF-F325-7196-81D44F07AFCE">
+<createdBy>openthinks-pc</createdBy>
+<createdTime>2016-03-23 13:27:09 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CREATE_BY" id="EACA1DD1-4D50-FDCC-F26D-9E5858BAA6C3">
+<createdBy>openthinks-pc</createdBy>
+<createdTime>2016-03-23 13:27:09 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+</TableProxyOraclev12c>

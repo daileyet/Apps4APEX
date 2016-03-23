@@ -1,12 +1,12 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <oracle.dbtools.crest.model.design.logical.LogicalDesign>
-   <object objectType="Entity" objectID="1F216B62-F017-3F27-78E8-CF98E2CE055A" name="Version Application" seqName="seg_0"/>
-   <object objectType="Entity" objectID="301BB482-8436-859E-3A18-67BAF53F563D" name="Application Options" seqName="seg_0"/>
-   <object objectType="Entity" objectID="8783EF02-85B0-48F8-60DE-4CDF0E8DD903" name="Project" seqName="seg_0"/>
-   <object objectType="Entity" objectID="8C1E28D0-2C8D-EF47-E3B7-6E0FC1CCBDD8" name="Project Options" seqName="seg_0"/>
-   <object objectType="Entity" objectID="A9801279-E8FB-553C-E093-C5B284CD148D" name="Object" seqName="seg_0"/>
-   <object objectType="Entity" objectID="AC426342-AC75-A8C3-3F41-6AA65BBF8A10" name="Shared Option Definition" seqName="seg_0"/>
-   <object objectType="Entity" objectID="E0E9BD22-2140-B54B-1244-947D1473A1E8" name="Object Options" seqName="seg_0"/>
-   <object objectType="Relation" objectID="4DC17EC2-A083-4134-11C7-C1B5DEC37259" name="Relation_2" seqName="seg_0"/>
-   <object objectType="Relation" objectID="8ED8544E-C1DB-8E3A-05FB-DCE1B359E57C" name="Relation_4" seqName="seg_0"/>
+   <object objectType="Entity" objectID="301BB482-8436-859E-3A18-67BAF53F563D" name="Application Options" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.logical.Entity" propertyParentId="FF5172CD-B5B4-7F70-93E1-99902F36C252" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Entity" objectID="A9801279-E8FB-553C-E093-C5B284CD148D" name="Object" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.logical.Entity" propertyParentId="FF5172CD-B5B4-7F70-93E1-99902F36C252" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Entity" objectID="E0E9BD22-2140-B54B-1244-947D1473A1E8" name="Object Options" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.logical.Entity" propertyParentId="FF5172CD-B5B4-7F70-93E1-99902F36C252" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Entity" objectID="8783EF02-85B0-48F8-60DE-4CDF0E8DD903" name="Project" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.logical.Entity" propertyParentId="FF5172CD-B5B4-7F70-93E1-99902F36C252" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Entity" objectID="8C1E28D0-2C8D-EF47-E3B7-6E0FC1CCBDD8" name="Project Options" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.logical.Entity" propertyParentId="FF5172CD-B5B4-7F70-93E1-99902F36C252" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Entity" objectID="AC426342-AC75-A8C3-3F41-6AA65BBF8A10" name="Shared Option Definition" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.logical.Entity" propertyParentId="FF5172CD-B5B4-7F70-93E1-99902F36C252" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Entity" objectID="1F216B62-F017-3F27-78E8-CF98E2CE055A" name="Version Application" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.logical.Entity" propertyParentId="FF5172CD-B5B4-7F70-93E1-99902F36C252" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Relation" objectID="4DC17EC2-A083-4134-11C7-C1B5DEC37259" name="Relation_2" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.logical.Relation" propertyParentId="FF5172CD-B5B4-7F70-93E1-99902F36C252" propertySourceId="8783EF02-85B0-48F8-60DE-4CDF0E8DD903" propertyTargetId="1F216B62-F017-3F27-78E8-CF98E2CE055A"/>
+   <object objectType="Relation" objectID="8ED8544E-C1DB-8E3A-05FB-DCE1B359E57C" name="Relation_4" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.logical.Relation" propertyParentId="FF5172CD-B5B4-7F70-93E1-99902F36C252" propertySourceId="1F216B62-F017-3F27-78E8-CF98E2CE055A" propertyTargetId="A9801279-E8FB-553C-E093-C5B284CD148D"/>
 </oracle.dbtools.crest.model.design.logical.LogicalDesign>

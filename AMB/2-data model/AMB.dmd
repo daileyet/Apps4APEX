@@ -5,4 +5,9 @@
 <ownerDesignName>AMB</ownerDesignName>
 <capitalNames>false</capitalNames>
 <designId>BC8D6253-394B-220B-9190-DFE7CB04A8BB</designId>
+<usedDesignStorageDescriptors>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="ACA40999-3E79-110A-8A85-463246AC6336">
+<designStoragePath>E:\1</designStoragePath>
+</designDescr>
+</usedDesignStorageDescriptors>
 </OSDM_Design>

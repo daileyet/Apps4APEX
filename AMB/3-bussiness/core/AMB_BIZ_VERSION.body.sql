@@ -128,7 +128,7 @@ begin
 end;
 
 
-procedure store_import_as_list(p_version_id varchar2,p_import_unique_name VARCHAR2)
+procedure store_import_as_list(p_version_id varchar2,p_import_unique_name VARCHAR2,p_error in out AMB_ERROR)
 as
 	v_import_record APEX_APPLICATION_TEMP_FILES%ROWTYPE;
 	v_content CLOB;
@@ -158,7 +158,9 @@ begin
 		create_by VARCHAR2(500) path 'CREATE_BY',
 		description VARCHAR2(4000) path 'DESCRIPTION'
 	) x;
-	
+	EXCEPTION WHEN OTHERS THEN
+		p_error.error_message := 'Initialize Version Object Import List Error:' || SQLERRM;
+		AMB_LOGGER.ERROR(p_error.error_message);
 end;
 
 
