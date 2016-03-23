@@ -22,4 +22,6 @@ procedure set_ajax_header(p_response_type varchar2 default 'text/json');
 
 procedure download_file(p_mine varchar2,p_file_clob CLOB,p_filename varchar2);
 
+function clobfromblob(p_blob blob) return clob;
+
 end AMB_UTIL;

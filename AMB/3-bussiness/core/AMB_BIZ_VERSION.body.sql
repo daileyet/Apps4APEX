@@ -127,4 +127,46 @@ begin
 	return v_output;
 end;
 
+
+procedure store_import_as_list(p_version_id varchar2,p_import_unique_name VARCHAR2)
+as
+	v_import_record APEX_APPLICATION_TEMP_FILES%ROWTYPE;
+	v_content CLOB;
+begin
+	DELETE FROM AMB_IMPORT_LIST WHERE VERSION_ID=p_version_id;
+	SELECT * INTO v_import_record FROM APEX_APPLICATION_TEMP_FILES WHERE NAME = p_import_unique_name;
+	v_content:= AMB_UTIL.clobfromblob(v_import_record.BLOB_CONTENT);
+	
+	INSERT INTO AMB_IMPORT_LIST(ID,VERSION_ID,NAME,TYPE,CONTENT,CREATE_DATE,CREATE_BY,DESCRIPTION,NEED_IMPORT)
+	SELECT 
+	AMB_UTIL_OBJECT.generate_guid AS ID,
+	p_version_id AS VERSION_ID,
+	x.object_name AS NAME,
+	x.object_type AS TYPE,
+	x.content AS CONTENT,
+	TO_TIMESTAMP_TZ(x.create_date) AS CREATE_DATE,
+	x.create_by AS CREATE_BY,
+	x.description AS DESCRIPTION,
+	AMB_CONSTANT.YES_TRUE AS NEED_IMPORT
+	FROM XMLTABLE(
+		'for $i in /ROWSET/ROW return $i'
+		passing XMLTYPE(v_content) columns
+		object_name VARCHAR2(30) path 'NAME',
+		object_type VARCHAR2(50) path 'TYPE',
+		content CLOB path 'CONTENT',
+		create_date VARCHAR2(500) path 'CREATE_DATE',
+		create_by VARCHAR2(500) path 'CREATE_BY',
+		description VARCHAR2(4000) path 'DESCRIPTION'
+	) x;
+	
+end;
+
+
+
+
+
+
+
+
+--/////////////////////////////////////
 end;

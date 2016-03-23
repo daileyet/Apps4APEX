@@ -1,0 +1,141 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableView class="oracle.dbtools.crest.model.design.relational.TableView" directorySegmentName="seg_0" id="BA95CA93-D853-DD64-AA14-63745B337E51" name="AMB_EXPORT_VW">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-22 09:06:59 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<userDefined>true</userDefined>
+<userDefinedSQL>SELECT AMB_BUILD_EXPORT_LIST.NAME,&lt;br/&gt;  AMB_BUILD_EXPORT_LIST.TYPE,&lt;br/&gt;  AMB_BIZ_OBJECT.get_object_ctx(AMB_BUILD_EXPORT_LIST.ID) AS CONTENT,&lt;br/&gt;  AMB_OBJECT.CREATE_DATE,&lt;br/&gt;  AMB_OBJECT.CREATE_BY,&lt;br/&gt;  AMB_OBJECT.DESCRIPTION,&lt;br/&gt;  AMB_BUILD_EXPORT_LIST.VERSION_ID,&lt;br/&gt;  AMB_OBJECT_TYPE.SORT_KEY&lt;br/&gt;FROM AMB_BUILD_EXPORT_LIST&lt;br/&gt;LEFT JOIN AMB_OBJECT&lt;br/&gt;ON AMB_BUILD_EXPORT_LIST.ID = AMB_OBJECT.ID&lt;br/&gt;LEFT JOIN AMB_OBJECT_TYPE&lt;br/&gt;ON AMB_BUILD_EXPORT_LIST.TYPE = AMB_OBJECT_TYPE.CODE</userDefinedSQL>
+<layoutSQL>&lt;?xml version = &apos;1.0&apos; encoding = &apos;UTF-8&apos;?&gt;&lt;br&gt;&lt;ActiveQueryBuilderLayout&gt;&lt;SQL&gt;Select AMB_BUILD_EXPORT_LIST.NAME, AMB_BUILD_EXPORT_LIST.TYPE, AMB_BIZ_OBJECT.get_object_ctx(AMB_BUILD_EXPORT_LIST.ID) As CONTENT, AMB_OBJECT.CREATE_DATE, AMB_OBJECT.CREATE_BY, AMB_OBJECT.DESCRIPTION, AMB_BUILD_EXPORT_LIST.VERSION_ID, AMB_OBJECT_TYPE.SORT_KEY From AMB_BUILD_EXPORT_LIST Left Join AMB_OBJECT On AMB_BUILD_EXPORT_LIST.ID = AMB_OBJECT.ID Left Join AMB_OBJECT_TYPE On AMB_BUILD_EXPORT_LIST.TYPE = AMB_OBJECT_TYPE.CODE&lt;/SQL&gt;&lt;SubQueries&gt;&lt;SubQuery SQL=&quot;Select AMB_BUILD_EXPORT_LIST.NAME, AMB_BUILD_EXPORT_LIST.TYPE, AMB_BIZ_OBJECT.get_object_ctx(AMB_BUILD_EXPORT_LIST.ID) As CONTENT, AMB_OBJECT.CREATE_DATE, AMB_OBJECT.CREATE_BY, AMB_OBJECT.DESCRIPTION, AMB_BUILD_EXPORT_LIST.VERSION_ID, AMB_OBJECT_TYPE.SORT_KEY From AMB_BUILD_EXPORT_LIST Left Join AMB_OBJECT On AMB_BUILD_EXPORT_LIST.ID = AMB_OBJECT.ID Left Join AMB_OBJECT_TYPE On AMB_BUILD_EXPORT_LIST.TYPE = AMB_OBJECT_TYPE.CODE&quot;&gt;&lt;UnionSubQuery&gt;&lt;DataSource SQL=&quot;AMB_BUILD_EXPORT_LIST&quot; X=&quot;50&quot; Y=&quot;20&quot; Height=&quot;156&quot; Width=&quot;140&quot;/&gt;&lt;DataSource SQL=&quot;AMB_OBJECT&quot; X=&quot;240&quot; Y=&quot;20&quot; Height=&quot;264&quot; Width=&quot;140&quot;/&gt;&lt;DataSource SQL=&quot;AMB_OBJECT_TYPE&quot; X=&quot;50&quot; Y=&quot;196&quot; Height=&quot;102&quot; Width=&quot;140&quot;/&gt;&lt;/UnionSubQuery&gt;&lt;/SubQuery&gt;&lt;/SubQueries&gt;&lt;/ActiveQueryBuilderLayout&gt;</layoutSQL>
+<parsed>true</parsed>
+<usedContainers>
+<container containerID="ED172E7C-3D75-7FC6-EF98-27B3E3AC9F67"/>
+<container containerID="F42E4401-8E3B-4FD4-C69F-4E3C575EEB4F"/>
+<container containerID="193735A4-D0B0-F121-C702-14AC9F0B7BB4"/>
+</usedContainers>
+<viewElements>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="NAME" id="01024451-8E1A-9B44-9B27-33ABD0E404F2">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-22 09:11:32 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<dataType>VARCHAR2 (30)</dataType>
+<reference>false</reference>
+<referencedColumn>E0252F77-A648-4C4A-EB4A-D38ECC2F75D3</referencedColumn>
+<table>ED172E7C-3D75-7FC6-EF98-27B3E3AC9F67</table>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="TYPE" id="F2B03B6E-74C4-E90B-11B2-77AF96730AD5">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-22 09:11:32 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<dataType>VARCHAR2 (50)</dataType>
+<reference>false</reference>
+<referencedColumn>DA65F209-D5B0-752D-4413-4AB540B470D8</referencedColumn>
+<table>ED172E7C-3D75-7FC6-EF98-27B3E3AC9F67</table>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="NULL SET GENERATED_154" id="0D5ACD06-689B-28D3-B912-B4B3FC866114">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-22 09:11:32 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<alias>CONTENT</alias>
+<expression>AMB_BIZ_OBJECT.get_object_ctx(AMB_BUILD_EXPORT_LIST.ID)</expression>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="CREATE_DATE" id="AC94AAEC-B9D6-FFC4-C106-3FD9317F0B36">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-22 09:11:32 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<dataType>TIMESTAMP WITH TIME ZONE</dataType>
+<reference>false</reference>
+<referencedColumn>6A68706E-CDBC-939C-4BF2-3A04DED834CF</referencedColumn>
+<table>F42E4401-8E3B-4FD4-C69F-4E3C575EEB4F</table>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="CREATE_BY" id="95426277-D8F5-70A1-D595-8FC50E0CA5B4">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-22 09:11:32 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<dataType>VARCHAR2 (500)</dataType>
+<reference>false</reference>
+<referencedColumn>B7EABAEF-A77D-C126-9382-ED5519F8C531</referencedColumn>
+<table>F42E4401-8E3B-4FD4-C69F-4E3C575EEB4F</table>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="DESCRIPTION" id="FE6D84E1-5319-80C7-7620-3BA6E9AFB2D6">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-22 09:11:32 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<dataType>VARCHAR2 (4000)</dataType>
+<reference>false</reference>
+<referencedColumn>FCC044E6-FF60-8520-FAAA-66BD21231519</referencedColumn>
+<table>F42E4401-8E3B-4FD4-C69F-4E3C575EEB4F</table>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="VERSION_ID" id="1F7EA81C-8C0A-1653-5AED-0759C5BA577C">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-22 09:13:17 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<dataType>VARCHAR2 (100)</dataType>
+<reference>false</reference>
+<referencedColumn>20521920-D386-69DB-C330-7F2B693691A1</referencedColumn>
+<table>ED172E7C-3D75-7FC6-EF98-27B3E3AC9F67</table>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="SORT_KEY" id="E76A176A-9E3D-4175-4D24-AC74E9F13183">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-22 09:11:32 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<reference>false</reference>
+<viewID>193735A4-D0B0-F121-C702-14AC9F0B7BB4</viewID>
+</viewElement>
+</viewElements>
+<usedObjects>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="ED172E7C-3D75-7FC6-EF98-27B3E3AC9F67">
+<container>true</container>
+<tableName>AMB_BUILD_EXPORT_LIST</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="F42E4401-8E3B-4FD4-C69F-4E3C575EEB4F">
+<container>true</container>
+<tableName>AMB_OBJECT</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="193735A4-D0B0-F121-C702-14AC9F0B7BB4">
+<container>true</container>
+<tableName>AMB_OBJECT_TYPE</tableName>
+<view>true</view>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="E0252F77-A648-4C4A-EB4A-D38ECC2F75D3">
+<columnName>NAME</columnName>
+<tableName>AMB_BUILD_EXPORT_LIST</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="DA65F209-D5B0-752D-4413-4AB540B470D8">
+<columnName>TYPE</columnName>
+<tableName>AMB_BUILD_EXPORT_LIST</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="CF279148-7AA9-7059-9960-33F93DC3DA3C">
+<columnName>ID</columnName>
+<tableName>AMB_BUILD_EXPORT_LIST</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="6A68706E-CDBC-939C-4BF2-3A04DED834CF">
+<columnName>CREATE_DATE</columnName>
+<tableName>AMB_OBJECT</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="B7EABAEF-A77D-C126-9382-ED5519F8C531">
+<columnName>CREATE_BY</columnName>
+<tableName>AMB_OBJECT</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="FCC044E6-FF60-8520-FAAA-66BD21231519">
+<columnName>DESCRIPTION</columnName>
+<tableName>AMB_OBJECT</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="20521920-D386-69DB-C330-7F2B693691A1">
+<columnName>VERSION_ID</columnName>
+<tableName>AMB_BUILD_EXPORT_LIST</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="7A2EEDD3-549F-13F6-FB93-EAC7D18BB909">
+<columnName>ID</columnName>
+<tableName>AMB_OBJECT</tableName>
+</UsedObject>
+</usedObjects>
+</TableView>
