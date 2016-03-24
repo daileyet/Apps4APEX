@@ -1,0 +1,138 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableView class="oracle.dbtools.crest.model.design.relational.TableView" directorySegmentName="seg_0" id="8F868FBD-9DB3-F7EA-446D-224B9843DC86" name="AMB_BUILD_VW">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-24 02:07:04 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<userDefined>true</userDefined>
+<userDefinedSQL>SELECT abl.ID,&lt;br/&gt;  abl.VERSION_ID,&lt;br/&gt;  abl.NAME,&lt;br/&gt;  abl.TYPE,&lt;br/&gt;  abl.NEED_BUILD,&lt;br/&gt;  CASE&lt;br/&gt;    WHEN uo.OBJECT_ID IS NOT NULL&lt;br/&gt;    THEN &apos;Y&apos;&lt;br/&gt;    ELSE &apos;N&apos;&lt;br/&gt;  END AS IS_ALREADY_EXIST,&lt;br/&gt;  CASE&lt;br/&gt;    WHEN uo.STATUS = &apos;VALID&apos;&lt;br/&gt;    THEN &apos;Y&apos;&lt;br/&gt;    WHEN uo.STATUS = &apos;INVALID&apos;&lt;br/&gt;    THEN &apos;N&apos;&lt;br/&gt;    ELSE &apos;&apos;&lt;br/&gt;  END AS IS_VALID,&lt;br/&gt;  AMB_OBJECT_TYPE.SORT_KEY,&lt;br/&gt;  abl.IS_SUCCESS&lt;br/&gt;FROM AMB_BEI_LIST abl&lt;br/&gt;LEFT JOIN USER_OBJECTS uo&lt;br/&gt;ON abl.NAME  = uo.OBJECT_NAME&lt;br/&gt;AND abl.TYPE = uo.OBJECT_TYPE&lt;br/&gt;LEFT JOIN AMB_OBJECT_TYPE&lt;br/&gt;ON abl.TYPE = AMB_OBJECT_TYPE.CODE</userDefinedSQL>
+<layoutSQL>&lt;?xml version = &apos;1.0&apos; encoding = &apos;UTF-8&apos;?&gt;&lt;br&gt;&lt;ActiveQueryBuilderLayout&gt;&lt;SQL&gt;Select abl.ID, abl.VERSION_ID, abl.NAME, abl.TYPE, abl.NEED_BUILD, Case When uo.OBJECT_ID Is Not Null Then &apos;Y&apos; Else &apos;N&apos; End As IS_ALREADY_EXIST, Case When uo.STATUS = &apos;VALID&apos; Then &apos;Y&apos; When uo.STATUS = &apos;INVALID&apos; Then &apos;N&apos; Else &apos;&apos; End As IS_VALID, AMB_OBJECT_TYPE.SORT_KEY, abl.IS_SUCCESS From AMB_BEI_LIST abl Left Join USER_OBJECTS uo On abl.NAME = uo.OBJECT_NAME And abl.TYPE = uo.OBJECT_TYPE Left Join AMB_OBJECT_TYPE On abl.TYPE = AMB_OBJECT_TYPE.CODE&lt;/SQL&gt;&lt;SubQueries&gt;&lt;SubQuery SQL=&quot;Select abl.ID, abl.VERSION_ID, abl.NAME, abl.TYPE, abl.NEED_BUILD, Case When uo.OBJECT_ID Is Not Null Then &apos;Y&apos; Else &apos;N&apos; End As IS_ALREADY_EXIST, Case When uo.STATUS = &apos;VALID&apos; Then &apos;Y&apos; When uo.STATUS = &apos;INVALID&apos; Then &apos;N&apos; Else &apos;&apos; End As IS_VALID, AMB_OBJECT_TYPE.SORT_KEY, abl.IS_SUCCESS From AMB_BEI_LIST abl Left Join USER_OBJECTS uo On abl.NAME = uo.OBJECT_NAME And abl.TYPE = uo.OBJECT_TYPE Left Join AMB_OBJECT_TYPE On abl.TYPE = AMB_OBJECT_TYPE.CODE&quot;&gt;&lt;UnionSubQuery&gt;&lt;DataSource SQL=&quot;AMB_BEI_LIST abl&quot; X=&quot;50&quot; Y=&quot;20&quot; Height=&quot;246&quot; Width=&quot;140&quot;/&gt;&lt;DataSource SQL=&quot;USER_OBJECTS uo&quot; X=&quot;240&quot; Y=&quot;20&quot; Height=&quot;48&quot; Width=&quot;140&quot;/&gt;&lt;DataSource SQL=&quot;AMB_OBJECT_TYPE&quot; X=&quot;240&quot; Y=&quot;88&quot; Height=&quot;102&quot; Width=&quot;140&quot;/&gt;&lt;/UnionSubQuery&gt;&lt;/SubQuery&gt;&lt;/SubQueries&gt;&lt;/ActiveQueryBuilderLayout&gt;</layoutSQL>
+<parsed>true</parsed>
+<usedContainers>
+<container alias="abl" containerID="ED172E7C-3D75-7FC6-EF98-27B3E3AC9F67"/>
+<container containerID="193735A4-D0B0-F121-C702-14AC9F0B7BB4"/>
+</usedContainers>
+<viewElements>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="ID" id="EBA0C1B6-EA66-6528-31AC-BDD89597B26F">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-24 02:12:12 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<dataType>VARCHAR2 (100)</dataType>
+<reference>false</reference>
+<referencedColumn>CF279148-7AA9-7059-9960-33F93DC3DA3C</referencedColumn>
+<table>ED172E7C-3D75-7FC6-EF98-27B3E3AC9F67</table>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="VERSION_ID" id="38A80E8A-E0A3-21F4-E849-C78446B99A3A">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-24 02:12:12 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<dataType>VARCHAR2 (100)</dataType>
+<reference>false</reference>
+<referencedColumn>20521920-D386-69DB-C330-7F2B693691A1</referencedColumn>
+<table>ED172E7C-3D75-7FC6-EF98-27B3E3AC9F67</table>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="NAME" id="C0B4019A-88C7-47BC-CF10-48C03CBD6359">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-24 02:12:12 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<dataType>VARCHAR2 (30)</dataType>
+<reference>false</reference>
+<referencedColumn>E0252F77-A648-4C4A-EB4A-D38ECC2F75D3</referencedColumn>
+<table>ED172E7C-3D75-7FC6-EF98-27B3E3AC9F67</table>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="TYPE" id="C4D98FE8-DBD2-B06D-B641-FC05877CD3E8">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-24 02:12:12 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<dataType>VARCHAR2 (50)</dataType>
+<reference>false</reference>
+<referencedColumn>DA65F209-D5B0-752D-4413-4AB540B470D8</referencedColumn>
+<table>ED172E7C-3D75-7FC6-EF98-27B3E3AC9F67</table>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="NEED_BUILD" id="0C53124B-31AA-0B25-D40B-BE94C63F01B7">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-24 02:12:12 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<dataType>VARCHAR2 (3)</dataType>
+<reference>false</reference>
+<referencedColumn>41B64AC9-2A3A-940D-01BF-1C9B23D7DE4A</referencedColumn>
+<table>ED172E7C-3D75-7FC6-EF98-27B3E3AC9F67</table>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="NULL SET GENERATED_43" id="5157DEA4-1D7B-EE47-8BD7-663656C59301">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-24 02:36:05 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<alias>IS_ALREADY_EXIST</alias>
+<expression>Case When uo.OBJECT_ID Is Not Null Then &apos;Y&apos; Else &apos;N&apos; End</expression>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="NULL SET GENERATED_45" id="B2B18241-79ED-8993-518A-39AE4EDB6246">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-24 02:36:05 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<alias>IS_VALID</alias>
+<expression>Case When uo.STATUS = &apos;VALID&apos; Then &apos;Y&apos; When uo.STATUS = &apos;INVALID&apos; Then &apos;N&apos; Else &apos;&apos; End</expression>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="SORT_KEY" id="813E6EC8-3D95-C591-E943-202B1255D13C">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-24 02:59:24 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<reference>false</reference>
+<viewID>193735A4-D0B0-F121-C702-14AC9F0B7BB4</viewID>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="IS_SUCCESS" id="363D6D6B-928B-9B08-DF08-CDA1546AA26C">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-24 07:47:51 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<dataType>VARCHAR2 (3)</dataType>
+<reference>false</reference>
+<referencedColumn>6C60596B-9FAA-1282-AEB7-DECD2B430513</referencedColumn>
+<table>ED172E7C-3D75-7FC6-EF98-27B3E3AC9F67</table>
+<tableAlias>abl</tableAlias>
+</viewElement>
+</viewElements>
+<usedObjects>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="ED172E7C-3D75-7FC6-EF98-27B3E3AC9F67">
+<container>true</container>
+<tableName>AMB_BEI_LIST</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="193735A4-D0B0-F121-C702-14AC9F0B7BB4">
+<container>true</container>
+<tableName>AMB_OBJECT_TYPE</tableName>
+<view>true</view>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="CF279148-7AA9-7059-9960-33F93DC3DA3C">
+<columnName>ID</columnName>
+<tableName>AMB_BEI_LIST</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="20521920-D386-69DB-C330-7F2B693691A1">
+<columnName>VERSION_ID</columnName>
+<tableName>AMB_BEI_LIST</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="E0252F77-A648-4C4A-EB4A-D38ECC2F75D3">
+<columnName>NAME</columnName>
+<tableName>AMB_BEI_LIST</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="DA65F209-D5B0-752D-4413-4AB540B470D8">
+<columnName>TYPE</columnName>
+<tableName>AMB_BEI_LIST</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="41B64AC9-2A3A-940D-01BF-1C9B23D7DE4A">
+<columnName>NEED_BUILD</columnName>
+<tableName>AMB_BEI_LIST</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="6C60596B-9FAA-1282-AEB7-DECD2B430513">
+<columnName>IS_SUCCESS</columnName>
+<tableName>AMB_BEI_LIST</tableName>
+</UsedObject>
+</usedObjects>
+</TableView>

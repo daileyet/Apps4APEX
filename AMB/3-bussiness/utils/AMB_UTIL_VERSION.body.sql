@@ -19,6 +19,9 @@ begin
 	'select ''Dev'' as d ,	''DEV'' as r from dual '||
 	' union '||
 	'select ''Prod'' as d ,	''PROD'' as r from dual '
+	||
+	' union '||
+	'select ''Test'' as d ,	''TEST'' as r from dual '
 	;
 end;
 

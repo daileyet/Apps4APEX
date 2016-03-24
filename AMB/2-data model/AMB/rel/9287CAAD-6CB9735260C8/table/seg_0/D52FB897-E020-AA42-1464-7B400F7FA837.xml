@@ -1,14 +1,14 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="ED172E7C-3D75-7FC6-EF98-27B3E3AC9F67" name="AMB_BEI_LIST">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D52FB897-E020-AA42-1464-7B400F7FA837" name="AMB_IMPORT_LIST">
 <createdBy>minjdai</createdBy>
-<createdTime>2016-03-21 06:55:57 UTC</createdTime>
+<createdTime>2016-03-23 06:34:02 UTC</createdTime>
 <ownerDesignName>AMB</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="ID" id="CF279148-7AA9-7059-9960-33F93DC3DA3C">
+<Column name="ID" id="8906D083-8E21-901F-5939-178D905CE602">
 <createdBy>minjdai</createdBy>
-<createdTime>2016-03-21 06:57:38 UTC</createdTime>
+<createdTime>2016-03-23 06:35:54 UTC</createdTime>
 <ownerDesignName>AMB</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -17,9 +17,9 @@
 <dataTypeSize>100</dataTypeSize>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="VERSION_ID" id="20521920-D386-69DB-C330-7F2B693691A1">
+<Column name="VERSION_ID" id="47712F14-078B-83DD-3683-0B7F2F7A712B">
 <createdBy>minjdai</createdBy>
-<createdTime>2016-03-21 06:58:08 UTC</createdTime>
+<createdTime>2016-03-23 06:35:54 UTC</createdTime>
 <ownerDesignName>AMB</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -28,20 +28,9 @@
 <dataTypeSize>100</dataTypeSize>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="NAME" id="E0252F77-A648-4C4A-EB4A-D38ECC2F75D3">
+<Column name="NAME" id="75124FAB-6377-8127-7096-9E3925A93502">
 <createdBy>minjdai</createdBy>
-<createdTime>2016-03-21 06:58:50 UTC</createdTime>
-<ownerDesignName>AMB</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>30</dataTypeSize>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="TYPE" id="DA65F209-D5B0-752D-4413-4AB540B470D8">
-<createdBy>minjdai</createdBy>
-<createdTime>2016-03-21 06:58:27 UTC</createdTime>
+<createdTime>2016-03-23 06:36:22 UTC</createdTime>
 <ownerDesignName>AMB</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -50,42 +39,20 @@
 <dataTypeSize>50</dataTypeSize>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="NEED_BUILD" id="41B64AC9-2A3A-940D-01BF-1C9B23D7DE4A">
+<Column name="TYPE" id="0CF923A8-0B09-F648-288B-FAF25EE4B226">
 <createdBy>minjdai</createdBy>
-<createdTime>2016-03-21 06:59:20 UTC</createdTime>
+<createdTime>2016-03-23 06:35:54 UTC</createdTime>
 <ownerDesignName>AMB</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>3</dataTypeSize>
+<dataTypeSize>50</dataTypeSize>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="NEED_EXPORT" id="0DA2265F-7120-4B44-CA50-5907C1DCD7EA">
+<Column name="CONTENT" id="48A1811C-901E-0042-664C-A640DC176135">
 <createdBy>minjdai</createdBy>
-<createdTime>2016-03-21 07:00:16 UTC</createdTime>
-<ownerDesignName>AMB</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>3</dataTypeSize>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="NEED_IMPORT" id="A3718670-A5CE-1283-B9B8-0A879EA6D2A7">
-<createdBy>openthinks-pc</createdBy>
-<createdTime>2016-03-23 13:35:13 UTC</createdTime>
-<ownerDesignName>AMB</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>3</dataTypeSize>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="CONTENT" id="F8C9EA9F-3E99-021A-59C1-44C8E306CD37">
-<createdBy>openthinks-pc</createdBy>
-<createdTime>2016-03-23 13:35:31 UTC</createdTime>
+<createdTime>2016-03-23 06:36:22 UTC</createdTime>
 <ownerDesignName>AMB</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -93,19 +60,21 @@
 <logicalDatatype>LOGDT028</logicalDatatype>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="CREATE_DATE" id="FC2047E4-0457-43D1-EB08-025136024AB0">
-<createdBy>openthinks-pc</createdBy>
-<createdTime>2016-03-23 13:35:43 UTC</createdTime>
+<Column name="CREATE_DATE" id="44637D6B-6531-52DD-E322-1F72098799F4">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-23 07:18:17 UTC</createdTime>
 <ownerDesignName>AMB</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT046</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="CREATE_BY" id="ED95C13E-D3B2-2EC3-2F88-A4FEB9967C54">
-<createdBy>openthinks-pc</createdBy>
-<createdTime>2016-03-23 13:36:12 UTC</createdTime>
+<Column name="CREATE_BY" id="D7DDE34C-F247-6CA8-030D-837D9CB9D7E4">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-23 07:19:13 UTC</createdTime>
 <ownerDesignName>AMB</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -114,9 +83,9 @@
 <dataTypeSize>500</dataTypeSize>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="DESCRIPTION" id="CF8BA772-9625-90B7-FDED-5C51B2FDCF21">
-<createdBy>openthinks-pc</createdBy>
-<createdTime>2016-03-23 13:36:25 UTC</createdTime>
+<Column name="DESCRIPTION" id="12F68B7F-D3E3-BA54-46E3-9B65E59B7D34">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-23 07:19:32 UTC</createdTime>
 <ownerDesignName>AMB</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -125,9 +94,9 @@
 <dataTypeSize>4000</dataTypeSize>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="IS_SUCCESS" id="6C60596B-9FAA-1282-AEB7-DECD2B430513">
+<Column name="NEED_IMPORT" id="376B8B9B-1FC6-C5EA-3F0D-2BE6F7B8FD43">
 <createdBy>minjdai</createdBy>
-<createdTime>2016-03-24 07:45:37 UTC</createdTime>
+<createdTime>2016-03-23 06:36:57 UTC</createdTime>
 <ownerDesignName>AMB</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
