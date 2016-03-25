@@ -136,5 +136,16 @@
 <dataTypeSize>3</dataTypeSize>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="FAILED_MSG" id="9425C45E-7D46-93D7-4105-6961E38DA3DE">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-03-25 08:04:05 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 </Table>

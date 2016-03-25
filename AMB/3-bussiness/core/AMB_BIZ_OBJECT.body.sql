@@ -84,7 +84,9 @@ begin
 				WHERE ID = p_record.ID;
 				AMB_LOGGER.ERROR(p_error.error_message);
 				v_obj_errors:=AMB_UTIL_OBJECT.get_compile_error(p_record.ID);
-				p_error.error_message := AMB_UTIL_OBJECT.format_compile_error(v_obj_errors);
+				IF v_obj_errors.COUNT > 0 THEN
+					p_error.error_message := AMB_UTIL_OBJECT.format_compile_error(v_obj_errors);
+				END IF;
 	END;
 	
 end;

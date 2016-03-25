@@ -168,6 +168,7 @@ procedure process_import(p_version_id varchar2,p_error in out AMB_ERROR)
 as
 	v_row_affect number;
 	v_failed EXCEPTION;
+	v_each_error varchar2(4000);
 BEGIN
 	
 	for imps in (select * from AMB_IMPORT_VW where VERSION_ID=p_version_id AND NEED_IMPORT=AMB_CONSTANT.YES_TRUE)
@@ -191,9 +192,18 @@ BEGIN
 			IF v_row_affect = 0 THEN
 				RAISE v_failed;
 			END IF;
-		EXCEPTION WHEN OTHERS THEN
+		EXCEPTION 
+		WHEN v_failed THEN
+			v_each_error:='The object can not be found.';
 			UPDATE AMB_BEI_LIST
-			SET IS_SUCCESS = AMB_CONSTANT.NO_FALSE
+			SET IS_SUCCESS = AMB_CONSTANT.NO_FALSE,
+			FAILED_MSG=v_each_error
+			WHERE ID = imps.ID;
+		WHEN OTHERS THEN
+			v_each_error:=SQLERRM;
+			UPDATE AMB_BEI_LIST
+			SET IS_SUCCESS = AMB_CONSTANT.NO_FALSE,
+			FAILED_MSG=v_each_error
 			WHERE ID = imps.ID;
 		END;
 	end loop;
@@ -203,7 +213,35 @@ BEGIN
 END;
 
 
-
+procedure process_build_all(p_version_id varchar2,p_error in out AMB_ERROR)
+AS
+	v_obj_error AMB_ERROR;
+	v_record AMB_OBJECT%ROWTYPE;
+	v_failed EXCEPTION;
+BEGIN
+	for buds in (
+		select * from AMB_BUILD_VW where VERSION_ID=p_version_id and NEED_BUILD=AMB_CONSTANT.YES_TRUE AND ACTION <> AMB_CONSTANT.ACTION_MANUAL
+		order by SORT_KEY
+	)
+	loop
+		BEGIN
+			v_obj_error:=AMB_ERROR.EMPTY_ERROR;
+			v_record.ID:= buds.ID;
+			AMB_BIZ_OBJECT.compile_object(v_record,v_obj_error);
+			IF NOT v_obj_error.IS_EMPTY THEN
+				RAISE v_failed;
+			END IF;
+		EXCEPTION WHEN OTHERS THEN
+			UPDATE AMB_BEI_LIST
+			SET IS_SUCCESS = AMB_CONSTANT.NO_FALSE,
+			FAILED_MSG=v_obj_error.error_message
+			WHERE ID = buds.ID;
+		END;
+	end loop;
+	EXCEPTION WHEN OTHERS THEN
+		p_error.error_message := 'Process Version Object Build List Error:' || SQLERRM;
+		AMB_LOGGER.ERROR(p_error.error_message);
+END;
 
 
 --/////////////////////////////////////

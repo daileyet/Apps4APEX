@@ -45,4 +45,10 @@ IMPORT_MODEL constant varchar2(10):='IMPORT';
 EXPORT_XML_STYLE constant varchar2(10):='XML';
 EXPORT_DDL_STYLE constant varchar2(10):='DDL';
 
+ACTION_NEW constant varchar2(10):='NEW';
+ACTION_REPLACE constant varchar2(10):='REPLACE';
+ACTION_MANUAL constant varchar2(10):='MANUAL';
+ACTION_UPDATE constant varchar2(10):='UPDATE';
+ACTION_INSERT constant varchar2(10):='INSERT';
+
 end AMB_CONSTANT;

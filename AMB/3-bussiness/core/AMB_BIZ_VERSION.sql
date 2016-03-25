@@ -30,6 +30,6 @@ procedure store_import_as_list(p_version_id varchar2,p_import_unique_name VARCHA
 
 procedure process_import(p_version_id varchar2,p_error in out AMB_ERROR);
 
---procedure process_build_all(p_version_id varchar2,p_error in out AMB_ERROR);
+procedure process_build_all(p_version_id varchar2,p_error in out AMB_ERROR);
 
 end;
