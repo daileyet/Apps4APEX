@@ -41,6 +41,7 @@ OPS_CODE_IN_EXPORT constant varchar2(50):='IN_EXPORT_LIST';
 BUILD_ALL_MODEL constant varchar2(10):='BUILD';
 EXPORT_MODEL constant varchar2(10):='EXPORT';
 IMPORT_MODEL constant varchar2(10):='IMPORT';
+LOAD_MODEL constant varchar2(10):='LOAD';
 
 EXPORT_XML_STYLE constant varchar2(10):='XML';
 EXPORT_DDL_STYLE constant varchar2(10):='DDL';

@@ -35,4 +35,10 @@ as
 	  END IF;
   end;
   
+  function get_ddl(f_object_type varchar2,f_object_name varchar2) return CLOB
+  as
+  begin
+	return DBMS_METADATA.GET_DDL(f_object_type,f_object_name);
+  end;
+  
 end AMB_UTIL_CODE;
