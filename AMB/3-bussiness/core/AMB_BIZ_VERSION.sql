@@ -32,4 +32,6 @@ procedure process_import(p_version_id varchar2,p_error in out AMB_ERROR);
 
 procedure process_build_all(p_version_id varchar2,p_error in out AMB_ERROR);
 
+procedure process_load(p_version_id varchar2,p_error in out AMB_ERROR);
+
 end;

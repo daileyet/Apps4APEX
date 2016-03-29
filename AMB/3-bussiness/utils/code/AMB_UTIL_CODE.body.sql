@@ -37,8 +37,55 @@ as
   
   function get_ddl(f_object_type varchar2,f_object_name varchar2) return CLOB
   as
+  	v_whole_ddl CLOB;
+  	v_regex constant varchar2(500):='CREATE(.*)(PACKAGE|TYPE)\s+BODY\s+(.*)('||f_object_name||'|"'||f_object_name||'")';
+  	function get_definition_ddl(f_whole_ddl CLOB) return CLOB
+  	as
+  		v_index number;
+  	begin
+	  	v_index:= REGEXP_INSTR(f_whole_ddl,v_regex,1,1,0,'im');
+	  	IF v_index =0 THEN
+	  		return SUBSTR(f_whole_ddl,1);
+	  	ELSE
+	  		return SUBSTR(f_whole_ddl,1,v_index-1);
+	  	END IF;
+	end;
+	function get_body_ddl(f_whole_ddl CLOB) return CLOB
+	as
+		v_index number;
+	begin
+		v_index:= REGEXP_INSTR(f_whole_ddl,v_regex,1,1,0,'im');
+		IF v_index = 0 THEN
+			RETURN NULL;
+		ELSE
+	  		return SUBSTR(f_whole_ddl,v_index);
+	  	END IF;
+	end;
+	
   begin
-	return DBMS_METADATA.GET_DDL(f_object_type,f_object_name);
+	v_whole_ddl:= DBMS_METADATA.GET_DDL(replace(UPPER(f_object_type),' BODY',''),f_object_name);
+	
+	IF UPPER(f_object_type) IN ('TYPE','PACKAGE') THEN
+		return get_definition_ddl(v_whole_ddl);
+	END IF;
+	
+	IF UPPER(f_object_type) IN ('TYPE BODY','PACKAGE BODY') THEN
+		return get_body_ddl(v_whole_ddl);
+	END IF;
+	
+	return v_whole_ddl;
+	EXCEPTION WHEN OTHERS THEN
+		return  'Get This Object DDL Error:' || SQLERRM;
+  end;
+  
+  procedure make_pure_ddl(p_ddl in out CLOB,p_schema in varchar2 default null,p_tablespace in varchar2 default 'APEX_(\d)+')
+  as
+  	v_schema constant varchar2(500):=NVL(p_schema,sys_context('USERENV', 'CURRENT_SCHEMA'));
+  	v_regex_schema constant varchar2(500):='('||v_schema||'\.)|("'||v_schema||'"\.)';
+  	v_regex_tablesapce constant varchar2(500):='TABLESPACE "'||p_tablespace||'"';
+  begin
+		p_ddl:=REGEXP_REPLACE(p_ddl,v_regex_schema,'',1,0,'im');
+		p_ddl:=REGEXP_REPLACE(p_ddl,v_regex_tablesapce,'',1,0,'im');
   end;
   
 end AMB_UTIL_CODE;

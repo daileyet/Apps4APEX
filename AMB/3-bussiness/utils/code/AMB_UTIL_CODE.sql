@@ -16,5 +16,10 @@ as
   procedure drop_object(p_obj_name in varchar2,p_obj_type in varchar2 default NULL);
   
   function get_ddl(f_object_type varchar2,f_object_name varchar2) return CLOB;
+  
+  /**
+   * remove schema and table space name from load local object ddl
+   */
+  procedure make_pure_ddl(p_ddl in out CLOB,p_schema in varchar2 default NULL,p_tablespace in varchar2 default 'APEX_(\d)+');
 
 end AMB_UTIL_CODE;

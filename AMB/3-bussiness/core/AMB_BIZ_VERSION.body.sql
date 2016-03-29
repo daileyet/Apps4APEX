@@ -175,13 +175,13 @@ BEGIN
 	loop
 		v_row_affect:=0;
 		BEGIN
-			IF imps.ACTION ='INSERT' THEN
+			IF imps.ACTION = AMB_CONSTANT.ACTION_INSERT THEN
 				INSERT INTO AMB_OBJECT(ID,VERSION_ID,NAME,TYPE,CONTENT,CREATE_DATE,CREATE_BY,DESCRIPTION)
 				VALUES(imps.ID,imps.VERSION_ID,imps.NAME,imps.TYPE,imps.CONTENT,imps.CREATE_DATE,imps.CREATE_BY,imps.DESCRIPTION);
 				v_row_affect:=SQL%ROWCOUNT;
 			END IF;
 			
-			IF imps.ACTION ='UPDATE' THEN
+			IF imps.ACTION = AMB_CONSTANT.ACTION_UPDATE THEN
 				UPDATE AMB_OBJECT
 				SET CONTENT=imps.CONTENT,
 				DESCRIPTION = imps.DESCRIPTION,
@@ -192,6 +192,10 @@ BEGIN
 			IF v_row_affect = 0 THEN
 				RAISE v_failed;
 			END IF;
+			UPDATE AMB_BEI_LIST
+			SET IS_SUCCESS = AMB_CONSTANT.YES_TRUE,
+			FAILED_MSG=NULL
+			WHERE ID = imps.ID;
 		EXCEPTION 
 		WHEN v_failed THEN
 			v_each_error:='The object can not be found.';
@@ -231,6 +235,10 @@ BEGIN
 			IF NOT v_obj_error.IS_EMPTY THEN
 				RAISE v_failed;
 			END IF;
+			UPDATE AMB_BEI_LIST
+			SET IS_SUCCESS = AMB_CONSTANT.YES_TRUE,
+			FAILED_MSG=NULL
+			WHERE ID = buds.ID;
 		EXCEPTION WHEN OTHERS THEN
 			UPDATE AMB_BEI_LIST
 			SET IS_SUCCESS = AMB_CONSTANT.NO_FALSE,
@@ -243,6 +251,65 @@ BEGIN
 		AMB_LOGGER.ERROR(p_error.error_message);
 END;
 
-
+procedure process_load(p_version_id varchar2,p_error in out AMB_ERROR)
+as
+	v_row_affect number;
+	v_failed EXCEPTION;
+	v_each_error varchar2(4000);
+	v_code clob;
+begin
+	for lods in (
+		select * from AMB_LOAD_VW where VERSION_ID=p_version_id order by SORT_KEY
+	)
+	LOOP
+		v_row_affect:=0;
+		BEGIN
+			v_code:=lods.CONTENT;
+				IF v_code IS NULL THEN
+					v_code:= AMB_UTIL_CODE.get_ddl(lods.TYPE,lods.NAME);
+					AMB_UTIL_CODE.make_pure_ddl(v_code);
+				END IF;
+			IF lods.ACTION = AMB_CONSTANT.ACTION_INSERT THEN
+				INSERT INTO AMB_OBJECT(ID,VERSION_ID,NAME,TYPE,CONTENT,CREATE_DATE,CREATE_BY,DESCRIPTION)
+				VALUES(lods.ID,lods.VERSION_ID,lods.NAME,lods.TYPE,v_code,lods.CREATE_DATE,lods.CREATE_BY,lods.DESCRIPTION);
+				v_row_affect:=SQL%ROWCOUNT;
+			END IF;
+			IF lods.ACTION = AMB_CONSTANT.ACTION_UPDATE THEN
+				UPDATE AMB_OBJECT
+				SET CONTENT=v_code,
+				DESCRIPTION = NVL(DESCRIPTION,lods.DESCRIPTION),
+				UPDATE_DATE = CURRENT_TIMESTAMP
+				WHERE NAME= lods.NAME
+				AND TYPE = lods.TYPE
+				AND VERSION_ID = lods.VERSION_ID
+				;
+				v_row_affect:=SQL%ROWCOUNT;
+			END IF;
+			IF v_row_affect = 0 THEN
+				RAISE v_failed;
+			END IF;
+			UPDATE AMB_OBJECT_INTERIM
+			SET IS_SUCCESS = AMB_CONSTANT.YES_TRUE,
+			FAILED_MSG=NULL
+			WHERE ID = lods.ID;
+		EXCEPTION 
+		WHEN v_failed THEN
+			v_each_error:='The object can not be found.';
+			UPDATE AMB_OBJECT_INTERIM
+			SET IS_SUCCESS = AMB_CONSTANT.NO_FALSE,
+			FAILED_MSG=v_each_error
+			WHERE ID = lods.ID;
+		WHEN OTHERS THEN
+			v_each_error:=SQLERRM;
+			UPDATE AMB_OBJECT_INTERIM
+			SET IS_SUCCESS = AMB_CONSTANT.NO_FALSE,
+			FAILED_MSG=v_each_error
+			WHERE ID = lods.ID;
+		END;
+	END LOOP;
+	EXCEPTION WHEN OTHERS THEN
+		p_error.error_message := 'Process Version Object Load List Error:' || SQLERRM;
+		AMB_LOGGER.ERROR(p_error.error_message);
+end;
 --/////////////////////////////////////
 end;
