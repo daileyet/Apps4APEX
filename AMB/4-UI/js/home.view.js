@@ -32,6 +32,9 @@ V.names = {
 		'S_header':'header.t-Header',
 		'S_fix_panel':'#fs-fixed-panel',
 		
+		'S_main_editor_primary_cm':'#obj-container .obj-panel-primary .obj-content .CodeMirror',
+		'S_main_editor_primary_footer':'#obj-container .obj-panel-primary .obj-footer',
+		
 		'B_create':'#btn-object-create',
 		'B_fullscreen':'#btn-object-fullscreen',
 		'B_fullscreen_icon':'#btn-object-fullscreen span.t-Icon',
@@ -149,13 +152,27 @@ V.components.editors = V.components.editors || {
 		isFullScreen:function(){
 			var cm = V.components.editors.primary.cm ;
 			return cm.getOption('fullScreen');
+		},
+		resize:function(){
+			var padding =12, cmMinHeight = 300;
+			var cmPos = $(Vn.S_main_editor_primary_cm).offset();
+			var footerPos = $(Vn.S_main_editor_primary_footer).offset();
+			var cmSmartHeight = footerPos.top - cmPos.top - padding;
+			if(cmSmartHeight > cmMinHeight){
+				 $(Vn.S_main_editor_primary_cm).css("height",cmSmartHeight+"px");
+			}
 		}
 	},
 	init:function(){
 		V.components.editors.primary.cm =  CodeMirror($("#obj-container .obj-content")[0], {
 			mode : 'text/x-plsql',
 			lineNumbers : true,
+			lineWrapping: true,
 			fixedGutter : true,
+			foldGutter:{
+				rangeFinder: new CodeMirror.fold.combine(CodeMirror.fold.plsql_begin,CodeMirror.fold.plsql_if,CodeMirror.fold.plsql_loop, CodeMirror.fold.comment)
+			},
+			gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
 			autofocus : true,
 			scrollbarStyle : "simple",
 			extraKeys : {
@@ -168,6 +185,7 @@ V.components.editors = V.components.editors || {
 				}
 			}
 		});
+		
 	}
 };
 V.components.sections = V.components.sections || {

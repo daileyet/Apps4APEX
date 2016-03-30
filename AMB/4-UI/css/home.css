@@ -69,3 +69,19 @@ cursor:pointer;
 	font-size:12px;
 	list-style: none;
 }
+
+/*
+*used for code editor smart height
+*/
+.t-Body-content{
+	padding-bottom:0px !important;
+}
+.t-Footer{
+	display:none !important;
+	
+}
+.obj-footer{
+	position:fixed;
+	bottom:0px;
+	visibility: hidden;
+}

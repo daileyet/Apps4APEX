@@ -55,7 +55,9 @@ C.init = function() {
 			obj_compiled : '',
 		});
 	}
+	$(window).resize(C.editorResizeHander);
 };
+
 
 // main event handers of page and element
 C.pageLoad = function() {
@@ -66,6 +68,10 @@ C.pageLoad = function() {
 
 C.initVersion = function() {
 	V.components.dialogs.init_version.open();
+}
+
+C.editorResizeHander = function(){
+	V.components.editors.primary.resize();
 }
 
 C.create = function() {
@@ -90,6 +96,7 @@ C.treeNodeClick = function(id) {
 				obj_compiled : $('compile_tag', data).text(),
 				obj_info_url : $('url_info', data).text()
 			});
+			C.editorResizeHander();
 			V.components.overlays.code_loader.hide();
 		}
 	});
@@ -97,6 +104,7 @@ C.treeNodeClick = function(id) {
 C.fullscreen = function() {
 	V.components.editors.primary.exec_command('fullScreen');
 	if (V.components.editors.primary.isFullScreen()) {
+		$(window).unbind("resize",C.editorResizeHander);
 		$(Vn.S_header).slideUp('fast');
 		M.buttons.fullscreen.title('Exit Full Screen');
 		$(Vn.B_fullscreen_icon).removeClass('fa-expand')
@@ -110,6 +118,7 @@ C.fullscreen = function() {
 				.addClass('fa-expand');
 		$(Vn.S_fix_panel).children().appendTo($(Vn.S_main_btn_grp))
 		$(Vn.M_overlay).removeClass('CodeMirror-fullscreen');
+		$(window).bind("resize",C.editorResizeHander);
 	}
 }
 C.refresh = function() {
