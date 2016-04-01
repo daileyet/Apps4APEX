@@ -134,6 +134,10 @@ V.components.dialogs = V.components.dialogs || {
 V.components.editors = V.components.editors || {
 	primary:{
 		cm : {},
+		registerChangeListener(fn){
+			var cm = V.components.editors.primary.cm ;
+			cm.on("change",fn);
+		},
 		exec_command:function(s_cmd, cmd_ops){
 			var cm = V.components.editors.primary.cm ;
 			if (cmd_ops == undefined)

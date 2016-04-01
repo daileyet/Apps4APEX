@@ -60,15 +60,22 @@ M.State = function(){
 	this.obj_version="";
 	this.obj_compile_error="";
 	this.events = {
-		ID:[],NAME:[],STATUS:[],VERSION:[],CODE:[],COMPILED:[],COMPILE_ERROR:[]
+		ID:[],NAME:[],STATUS:[],VERSION:[],CODE:[],COMPILED:[],COMPILE_ERROR:[],AUTO_SAVE:[],AUTO_SAVE_INTERVAL:[]
 	};
+	this.obj_auto_save=true;
+	this.obj_auto_save_interval=30*1000;
 };
 M.State.prototype.update=function(stateObj){
 	var oldState = {
 			obj_id:M.state.obj_id,
 			obj_name:M.state.obj_name,
 			obj_status:M.state.obj_status,
-			obj_version:M.state.obj_version	
+			obj_code:M.state.obj_code,
+			obj_compiled:M.state.obj_compiled,
+			obj_version:M.state.obj_version,
+			obj_compile_error:M.state.obj_compile_error,
+			obj_auto_save:M.state.obj_auto_save,
+			obj_auto_save_interval:M.state.obj_auto_save_interval
 	};
 	stateObj == undefined || stateObj.obj_id==undefined ||( 
 			M.state.obj_id = stateObj.obj_id,
@@ -97,6 +104,14 @@ M.State.prototype.update=function(stateObj){
 	stateObj == undefined || stateObj.obj_compile_error==undefined || (
 			M.state.obj_compile_error = stateObj.obj_compile_error,
 			this.fireUpdateEvent('COMPILE_ERROR',{old_val:oldState.obj_compile_error,new_val:stateObj.obj_compile_error})
+	);
+	stateObj == undefined || stateObj.obj_auto_save==undefined || (
+			M.state.obj_auto_save = stateObj.obj_auto_save,
+			this.fireUpdateEvent('AUTO_SAVE',{old_val:oldState.obj_auto_save,new_val:stateObj.obj_auto_save})
+	);
+	stateObj == undefined || stateObj.obj_auto_save_interval==undefined || (
+			M.state.obj_auto_save_interval = stateObj.obj_auto_save_interval,
+			this.fireUpdateEvent('AUTO_SAVE_INTERVAL',{old_val:oldState.obj_auto_save_interval,new_val:stateObj.obj_auto_save_interval})
 	);
 };
 M.State.prototype.fireUpdateEvent=function(propertyName,valObj){

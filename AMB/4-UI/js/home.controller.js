@@ -56,6 +56,8 @@ C.init = function() {
 		});
 	}
 	$(window).resize(C.editorResizeHander);
+	
+	C.editorChangeHander();
 };
 
 
@@ -73,7 +75,17 @@ C.initVersion = function() {
 C.editorResizeHander = function(){
 	V.components.editors.primary.resize();
 }
-
+C.editorChangeHander=function(){
+	C.refreshOptions();
+	V.components.editors.primary.registerChangeListener(function(){
+		if(!M.items['object_id'].isEmpty() && M.state.obj_auto_save){
+			if(C.autoSaveTimeout)clearTimeout(C.autoSaveTimeout);
+			C.autoSaveTimeout =	setTimeout(function(){
+					C.save();
+				},  M.state.obj_auto_save_interval);
+			}
+	});
+}
 C.create = function() {
 	V.components.dialogs.new_object.open();
 }
@@ -160,6 +172,20 @@ C.compile = function() {
 		}
 	});
 }
+C.refreshOptions=function(){
+	// Ajax load auto save & interval
+	apex.server.process('GET_VERSION_OPTIONS', {
+		x01 : M.items.version.getVal()
+	}, {
+		dataType : 'xml',
+		success : function(data) {
+			M.state.update({
+				obj_auto_save : $('AUTO_SAVE', data).text()=="true"?true:false,
+				obj_auto_save_interval : Number($('AUTO_SAVE_INTERVAL', data).text())*1000
+			});
+		}
+	});
+}
 
 C.openObjectInfo = function() {
 	if(M.state.obj_id!=''){
@@ -175,3 +201,4 @@ C.afterCloseObjectInfo=function(sAction){
 		
 	}
 }
+
