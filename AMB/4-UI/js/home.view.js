@@ -161,6 +161,20 @@ V.components.editors = V.components.editors || {
 			if(cmSmartHeight > cmMinHeight){
 				 $(Vn.S_main_editor_primary_cm).css("height",cmSmartHeight+"px");
 			}
+		},
+		foldAll:function(){
+			var cm = V.components.editors.primary.cm ;
+			 cm.operation(function() {
+			      for (var i = cm.firstLine(), e = cm.lastLine(); i <= e; i++)
+			        cm.foldCode(CodeMirror.Pos(i, 0), null, "fold");
+			  });
+		},
+		unfoldAll:function(){
+			var cm = V.components.editors.primary.cm ;
+			cm.operation(function() {
+			      for (var i = cm.firstLine(), e = cm.lastLine(); i <= e; i++)
+			        cm.foldCode(CodeMirror.Pos(i, 0), null, "unfold");
+			});
 		}
 	},
 	init:function(){
@@ -168,7 +182,6 @@ V.components.editors = V.components.editors || {
 			mode : 'text/x-plsql',
 			lineNumbers : true,
 			lineWrapping: true,
-			fixedGutter : true,
 			foldGutter:{
 				rangeFinder: new CodeMirror.fold.combine(CodeMirror.fold.plsql_begin,CodeMirror.fold.plsql_if,CodeMirror.fold.plsql_loop, CodeMirror.fold.comment)
 			},
@@ -177,6 +190,7 @@ V.components.editors = V.components.editors || {
 			scrollbarStyle : "simple",
 			extraKeys : {
 				"Ctrl-Space" : "autocomplete",
+				"Ctrl-Q" : function(cm){ cm.foldCode(cm.getCursor()); },
 				"F11" : function(cm) {
 					apex.event.trigger(Vn.B_fullscreen, 'click');
 				},
