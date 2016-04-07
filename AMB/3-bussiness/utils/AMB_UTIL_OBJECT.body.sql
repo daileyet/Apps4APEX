@@ -158,4 +158,13 @@ BEGIN
 	RETURN NULL;
 END;
 
+function count_by_type(f_object_type varchar2,f_version_id varchar2) return number
+as
+	v_count NUMBER;
+begin
+	select count(*) into v_count from AMB_OBJECT WHERE VERSION_ID=f_version_id AND TYPE=f_object_type;
+	RETURN v_count;
+end;
+
+
 end AMB_UTIL_OBJECT;

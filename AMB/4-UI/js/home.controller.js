@@ -75,16 +75,18 @@ C.initVersion = function() {
 C.editorResizeHander = function(){
 	V.components.editors.primary.resize();
 }
+C.editorChangeListener=function(){
+	if(!M.items['object_id'].isEmpty()){M.state.obj_status = "CODE_CHANGED";}
+	if(!M.items['object_id'].isEmpty() && M.state.obj_auto_save){
+		if(C.autoSaveTimeout)clearTimeout(C.autoSaveTimeout);
+		C.autoSaveTimeout =	setTimeout(function(){
+				if(M.state.obj_status == "CODE_CHANGED"){C.save();}
+			},  M.state.obj_auto_save_interval);
+	}
+}
 C.editorChangeHander=function(){
 	C.refreshOptions();
-	V.components.editors.primary.registerChangeListener(function(){
-		if(!M.items['object_id'].isEmpty() && M.state.obj_auto_save){
-			if(C.autoSaveTimeout)clearTimeout(C.autoSaveTimeout);
-			C.autoSaveTimeout =	setTimeout(function(){
-					C.save();
-				},  M.state.obj_auto_save_interval);
-			}
-	});
+	V.components.editors.primary.registerChangeListener(C.editorChangeListener);
 }
 C.create = function() {
 	V.components.dialogs.new_object.open();
@@ -101,15 +103,17 @@ C.treeNodeClick = function(id) {
 	}, {
 		dataType : 'xml',
 		success : function(data) {
+			V.components.editors.primary.removeChangeListener(C.editorChangeListener);
 			M.state.update({
 				obj_name : $('name', data).text(),
-				obj_code : $('code', data).text(),
 				obj_status : $('action_status', data).text(),
+				obj_code : $('code', data).text(),
 				obj_compiled : $('compile_tag', data).text(),
 				obj_info_url : $('url_info', data).text()
 			});
 			C.editorResizeHander();
 			V.components.overlays.code_loader.hide();
+			V.components.editors.primary.registerChangeListener(C.editorChangeListener);
 		}
 	});
 }
