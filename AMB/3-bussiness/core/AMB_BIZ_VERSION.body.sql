@@ -264,11 +264,8 @@ begin
 	LOOP
 		v_row_affect:=0;
 		BEGIN
-			v_code:=lods.CONTENT;
-				IF v_code IS NULL THEN
-					v_code:= AMB_UTIL_CODE.get_ddl(lods.TYPE,lods.NAME);
-					AMB_UTIL_CODE.make_pure_ddl(v_code);
-				END IF;
+			v_code:= AMB_UTIL_CODE.get_ddl(lods.TYPE,lods.NAME);
+			AMB_UTIL_CODE.make_pure_ddl(v_code);
 			IF lods.ACTION = AMB_CONSTANT.ACTION_INSERT THEN
 				INSERT INTO AMB_OBJECT(ID,VERSION_ID,NAME,TYPE,CONTENT,CREATE_DATE,CREATE_BY,DESCRIPTION)
 				VALUES(lods.ID,lods.VERSION_ID,lods.NAME,lods.TYPE,v_code,lods.CREATE_DATE,lods.CREATE_BY,lods.DESCRIPTION);
