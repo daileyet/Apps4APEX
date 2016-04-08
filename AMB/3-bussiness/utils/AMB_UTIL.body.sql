@@ -14,6 +14,8 @@ procedure print_clob(p_clob CLOB,p_style varchar2 default 'HTP')
   AS  
     v_clob_length number:=DBMS_LOB.GETLENGTH(p_clob);  
     v_offset number:=1;  
+    v_temp CLOB;
+    v_temp_length number;
   BEGIN  
      
     WHILE v_offset < v_clob_length  
@@ -22,8 +24,13 @@ procedure print_clob(p_clob CLOB,p_style varchar2 default 'HTP')
       DBMS_OUTPUT.PUT_LINE(DBMS_LOB.SUBSTR(p_clob,4000,v_offset));
       v_offset:=v_offset+4000;  
     else
-      htp.p(DBMS_LOB.SUBSTR(p_clob,32767,v_offset)); 
-      v_offset:=v_offset+32767;  
+      --print without '\n'
+      v_temp:=DBMS_LOB.SUBSTR(p_clob,4000,v_offset);
+      v_temp_length:=DBMS_LOB.GETLENGTH(v_temp);  
+      htp.prn(v_temp);
+      --print with '\n'
+      --htp.p() 
+      v_offset:=v_offset+v_temp_length;  
     end if;
       
     END LOOP;  
