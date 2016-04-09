@@ -114,6 +114,9 @@ C.treeNodeClick = function(id) {
 			C.editorResizeHander();
 			V.components.overlays.code_loader.hide();
 			V.components.editors.primary.registerChangeListener(C.editorChangeListener);
+		},
+		complete:function(){
+			V.components.overlays.code_loader.hide();
 		}
 	});
 }
@@ -154,6 +157,9 @@ C.save = function() {
 				obj_status : $('action_status', data).text()
 			});
 			V.components.overlays.code_loader.hide();
+		},
+		complete:function(){
+			V.components.overlays.code_loader.hide();
 		}
 	});
 }
@@ -172,6 +178,9 @@ C.compile = function() {
 				obj_compiled : $('compile_tag', data).text(),
 				obj_compile_error : $('compile_error', data).text()
 			});
+			V.components.overlays.code_loader.hide();
+		},
+		complete:function(){
 			V.components.overlays.code_loader.hide();
 		}
 	});

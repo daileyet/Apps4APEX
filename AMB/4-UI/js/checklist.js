@@ -5,7 +5,9 @@ window.amb.checklist.V = window.amb.checklist.V || {
 
 	names : {
 		I_CHECK_ITEM : 'input.checklist-item',
-		I_MODEL : 'P5_MODEL'
+		I_MODEL : 'P5_MODEL',
+		B_SELECT_ALL:'#btn-select-all',
+		B_UNSELECT_ALL:'#btn-unselect-all'
 	}
 };
 var V = window.amb.checklist.V;
@@ -43,8 +45,74 @@ window.amb.checklist.C = window.amb.checklist.C || {
 				}
 			}
 		}
-
 		);
+	},
+	selectAll:function(){
+		var sIds = '',sCheckValue = 'Y',sModel = $v(V.names.I_MODEL);
+		$(V.names.I_CHECK_ITEM).each(function(){
+			if(!$(this).prop("checked")){
+				sIds=sIds+$(this).data('id')+',';
+			}
+		});
+		if(sIds.length>0){
+			showLoading();
+			sIds=sIds.substr(0,sIds.length-1);
+			apex.server.process('SAVE_OBJECTS_CHECK_LIST_BATCH', {
+				x01 : sIds,
+				x02 : sCheckValue,
+				x03 : sModel
+			},
+			{
+				dataType : 'json',
+				success : function(data) {
+					hideLoading();
+					if(data.type=='SUCCESS'){
+						$(V.names.I_CHECK_ITEM).prop("checked",true);
+					}
+					else{
+						//
+
+					}
+				},
+				complete:function(){
+					hideLoading();
+				}
+			}
+			);
+		}
+	},
+	unselectAll:function(){
+		var sIds = '',sCheckValue = 'N',sModel = $v(V.names.I_MODEL);
+		$(V.names.I_CHECK_ITEM+':checked').each(function(){
+			if($(this).prop("checked")){
+				sIds=sIds+$(this).data('id')+',';
+			}
+		});
+		if(sIds.length>0){
+			showLoading();
+			sIds=sIds.substr(0,sIds.length-1);
+			apex.server.process('SAVE_OBJECTS_CHECK_LIST_BATCH', {
+				x01 : sIds,
+				x02 : sCheckValue,
+				x03 : sModel
+			},
+			{
+				dataType : 'json',
+				success : function(data) {
+					hideLoading();
+					if(data.type=='SUCCESS'){
+						$(V.names.I_CHECK_ITEM).prop("checked",false);
+					}
+					else{
+						//
+					}
+				},
+				complete:function(){
+					hideLoading();
+				}
+			}
+			);
+		}
 	}
 };
 var C = window.amb.checklist.C;
