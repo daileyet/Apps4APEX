@@ -8,7 +8,7 @@ var hideLoading = function(){
 }
 
 $('document').ready(function(){
-    setTimeout(function(){
+    window.loadTimeout = setTimeout(function(){
       $('.lazy-display-block').removeClass('display-none').show();
       $('.lazy-visibility-visible').removeClass('visibility-hiden').show();
       $('.lazy-display-none.refresh-icon-container2').addClass('display-none').hide();

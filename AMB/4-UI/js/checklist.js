@@ -7,7 +7,9 @@ window.amb.checklist.V = window.amb.checklist.V || {
 		I_CHECK_ITEM : 'input.checklist-item',
 		I_MODEL : 'P5_MODEL',
 		B_SELECT_ALL:'#btn-select-all',
-		B_UNSELECT_ALL:'#btn-unselect-all'
+		B_UNSELECT_ALL:'#btn-unselect-all',
+		B_DIFF_HOLDER:'#btn-diff-holder',
+		L_DIFF_INVOKER:'.df-pointer'
 	}
 };
 var V = window.amb.checklist.V;
@@ -19,6 +21,7 @@ var M = window.amb.checklist.M;
 window.amb.checklist.C = window.amb.checklist.C || {
 	init : function() {
 		$(V.names.I_CHECK_ITEM).unbind('change').change(C.itemChangeHander);
+		C.registerDiff();
 	},
 	itemChangeHander : function() {
 		var $checkItem = $(this);
@@ -113,6 +116,14 @@ window.amb.checklist.C = window.amb.checklist.C || {
 			}
 			);
 		}
+	},
+	registerDiff:function(){
+		$(V.names.L_DIFF_INVOKER).unbind('click').click(function(){
+			var clickSource = $(V.names.B_DIFF_HOLDER).attr('onclick');
+			clickSource = clickSource.replace(/P14_MODEL,P14_IDS:(.*)(\\u0026|&)/g, 'P14_MODEL,P14_IDS:'+$v(V.names.I_MODEL)+','+$(this).data('id')+'&');
+			$(V.names.B_DIFF_HOLDER).attr('onclick',clickSource);
+			$(V.names.B_DIFF_HOLDER).trigger('click');
+		});
 	}
 };
 var C = window.amb.checklist.C;
