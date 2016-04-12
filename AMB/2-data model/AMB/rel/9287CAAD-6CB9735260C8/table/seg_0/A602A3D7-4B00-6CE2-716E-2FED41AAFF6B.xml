@@ -140,28 +140,6 @@
 <dataTypeSize>10</dataTypeSize>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="IS_SUCCESS" id="364DB54B-B61A-3DD3-E71F-E3A50851F3B4">
-<createdBy>minjdai</createdBy>
-<createdTime>2016-03-29 07:55:40 UTC</createdTime>
-<ownerDesignName>AMB</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>3</dataTypeSize>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="FAILED_MSG" id="7C38188C-7677-765D-FEDF-7F9210FF0592">
-<createdBy>minjdai</createdBy>
-<createdTime>2016-03-29 07:52:40 UTC</createdTime>
-<ownerDesignName>AMB</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>4000</dataTypeSize>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="0068BDC3-E748-364D-3169-EC02940B56A1" name="AMB_OBJECT_INTER_PK">

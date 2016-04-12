@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="ED172E7C-3D75-7FC6-EF98-27B3E3AC9F67" name="AMB_BEI_LIST">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="ED172E7C-3D75-7FC6-EF98-27B3E3AC9F67" name="AMB_BEIL_LIST">
 <createdBy>minjdai</createdBy>
 <createdTime>2016-03-21 06:55:57 UTC</createdTime>
 <ownerDesignName>AMB</ownerDesignName>
@@ -75,6 +75,17 @@
 <Column name="NEED_IMPORT" id="A3718670-A5CE-1283-B9B8-0A879EA6D2A7">
 <createdBy>openthinks-pc</createdBy>
 <createdTime>2016-03-23 13:35:13 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>3</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NEED_LOAD" id="D354FFB2-3247-D592-9C2B-C941C73DB570">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-04-12 07:28:21 UTC</createdTime>
 <ownerDesignName>AMB</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>

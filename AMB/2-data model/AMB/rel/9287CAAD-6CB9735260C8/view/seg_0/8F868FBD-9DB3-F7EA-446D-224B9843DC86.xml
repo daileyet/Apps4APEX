@@ -4,8 +4,8 @@
 <createdTime>2016-03-24 02:07:04 UTC</createdTime>
 <ownerDesignName>AMB</ownerDesignName>
 <userDefined>true</userDefined>
-<userDefinedSQL>SELECT abl.ID,&lt;br/&gt;  abl.VERSION_ID,&lt;br/&gt;  abl.NAME,&lt;br/&gt;  abl.TYPE,&lt;br/&gt;  abl.NEED_BUILD,&lt;br/&gt;  CASE&lt;br/&gt;    WHEN uo.OBJECT_ID IS NOT NULL&lt;br/&gt;    THEN &apos;Y&apos;&lt;br/&gt;    ELSE &apos;N&apos;&lt;br/&gt;  END AS IS_ALREADY_EXIST,&lt;br/&gt;  CASE&lt;br/&gt;    WHEN uo.STATUS = &apos;VALID&apos;&lt;br/&gt;    THEN &apos;Y&apos;&lt;br/&gt;    WHEN uo.STATUS = &apos;INVALID&apos;&lt;br/&gt;    THEN &apos;N&apos;&lt;br/&gt;    ELSE &apos;&apos;&lt;br/&gt;  END AS IS_VALID,&lt;br/&gt;  CASE&lt;br/&gt;    WHEN uo.OBJECT_ID IS NOT NULL&lt;br/&gt;    THEN&lt;br/&gt;      CASE&lt;br/&gt;        WHEN uo.EDITIONABLE = &apos;Y&apos;&lt;br/&gt;        THEN &apos;REPLACE&apos;&lt;br/&gt;        ELSE &apos;MANUAL&apos;&lt;br/&gt;      END&lt;br/&gt;    ELSE &apos;NEW&apos;&lt;br/&gt;  END AS ACTION,&lt;br/&gt;  AMB_OBJECT_TYPE.SORT_KEY,&lt;br/&gt;  abl.IS_SUCCESS,&lt;br/&gt;  abl.FAILED_MSG&lt;br/&gt;FROM AMB_BEI_LIST abl&lt;br/&gt;LEFT JOIN USER_OBJECTS uo&lt;br/&gt;ON abl.NAME  = uo.OBJECT_NAME&lt;br/&gt;AND abl.TYPE = uo.OBJECT_TYPE&lt;br/&gt;LEFT JOIN AMB_OBJECT_TYPE&lt;br/&gt;ON abl.TYPE = AMB_OBJECT_TYPE.CODE</userDefinedSQL>
-<layoutSQL>&lt;?xml version = &apos;1.0&apos; encoding = &apos;UTF-8&apos;?&gt;&lt;br&gt;&lt;ActiveQueryBuilderLayout&gt;&lt;SQL&gt;Select abl.ID, abl.VERSION_ID, abl.NAME, abl.TYPE, abl.NEED_BUILD, Case When uo.OBJECT_ID Is Not Null Then &apos;Y&apos; Else &apos;N&apos; End As IS_ALREADY_EXIST, Case When uo.STATUS = &apos;VALID&apos; Then &apos;Y&apos; When uo.STATUS = &apos;INVALID&apos; Then &apos;N&apos; Else &apos;&apos; End As IS_VALID, Case When uo.OBJECT_ID Is Not Null Then Case When uo.EDITIONABLE = &apos;Y&apos; Then &apos;REPLACE&apos; Else &apos;MANUAL&apos; End Else &apos;NEW&apos; End As ACTION, AMB_OBJECT_TYPE.SORT_KEY, abl.IS_SUCCESS, abl.FAILED_MSG From AMB_BEI_LIST abl Left Join USER_OBJECTS uo On abl.NAME = uo.OBJECT_NAME And abl.TYPE = uo.OBJECT_TYPE Left Join AMB_OBJECT_TYPE On abl.TYPE = AMB_OBJECT_TYPE.CODE&lt;/SQL&gt;&lt;SubQueries&gt;&lt;SubQuery SQL=&quot;Select abl.ID, abl.VERSION_ID, abl.NAME, abl.TYPE, abl.NEED_BUILD, Case When uo.OBJECT_ID Is Not Null Then &apos;Y&apos; Else &apos;N&apos; End As IS_ALREADY_EXIST, Case When uo.STATUS = &apos;VALID&apos; Then &apos;Y&apos; When uo.STATUS = &apos;INVALID&apos; Then &apos;N&apos; Else &apos;&apos; End As IS_VALID, Case When uo.OBJECT_ID Is Not Null Then Case When uo.EDITIONABLE = &apos;Y&apos; Then &apos;REPLACE&apos; Else &apos;MANUAL&apos; End Else &apos;NEW&apos; End As ACTION, AMB_OBJECT_TYPE.SORT_KEY, abl.IS_SUCCESS, abl.FAILED_MSG From AMB_BEI_LIST abl Left Join USER_OBJECTS uo On abl.NAME = uo.OBJECT_NAME And abl.TYPE = uo.OBJECT_TYPE Left Join AMB_OBJECT_TYPE On abl.TYPE = AMB_OBJECT_TYPE.CODE&quot;&gt;&lt;UnionSubQuery&gt;&lt;DataSource SQL=&quot;AMB_BEI_LIST abl&quot; X=&quot;50&quot; Y=&quot;20&quot; Height=&quot;264&quot; Width=&quot;140&quot;/&gt;&lt;DataSource SQL=&quot;USER_OBJECTS uo&quot; X=&quot;240&quot; Y=&quot;20&quot; Height=&quot;48&quot; Width=&quot;140&quot;/&gt;&lt;DataSource SQL=&quot;AMB_OBJECT_TYPE&quot; X=&quot;240&quot; Y=&quot;88&quot; Height=&quot;102&quot; Width=&quot;140&quot;/&gt;&lt;/UnionSubQuery&gt;&lt;/SubQuery&gt;&lt;/SubQueries&gt;&lt;/ActiveQueryBuilderLayout&gt;</layoutSQL>
+<userDefinedSQL>SELECT abl.ID,&lt;br/&gt;  abl.VERSION_ID,&lt;br/&gt;  abl.NAME,&lt;br/&gt;  abl.TYPE,&lt;br/&gt;  abl.CONTENT,&lt;br/&gt;  abl.NEED_BUILD,&lt;br/&gt;  CASE&lt;br/&gt;    WHEN uo.OBJECT_ID IS NOT NULL&lt;br/&gt;    THEN &apos;Y&apos;&lt;br/&gt;    ELSE &apos;N&apos;&lt;br/&gt;  END AS IS_ALREADY_EXIST,&lt;br/&gt;  CASE&lt;br/&gt;    WHEN uo.STATUS = &apos;VALID&apos;&lt;br/&gt;    THEN &apos;Y&apos;&lt;br/&gt;    WHEN uo.STATUS = &apos;INVALID&apos;&lt;br/&gt;    THEN &apos;N&apos;&lt;br/&gt;    ELSE &apos;&apos;&lt;br/&gt;  END AS IS_VALID,&lt;br/&gt;  CASE&lt;br/&gt;    WHEN uo.OBJECT_ID IS NOT NULL&lt;br/&gt;    THEN&lt;br/&gt;      CASE&lt;br/&gt;        WHEN uo.EDITIONABLE = &apos;Y&apos;&lt;br/&gt;        THEN &apos;REPLACE&apos;&lt;br/&gt;        ELSE &apos;MANUAL&apos;&lt;br/&gt;      END&lt;br/&gt;    ELSE &apos;NEW&apos;&lt;br/&gt;  END AS ACTION,&lt;br/&gt;  AMB_OBJECT_TYPE.SORT_KEY,&lt;br/&gt;  abl.IS_SUCCESS,&lt;br/&gt;  abl.FAILED_MSG&lt;br/&gt;FROM AMB_BEIL_LIST abl&lt;br/&gt;LEFT JOIN USER_OBJECTS uo&lt;br/&gt;ON abl.NAME  = uo.OBJECT_NAME&lt;br/&gt;AND abl.TYPE = uo.OBJECT_TYPE&lt;br/&gt;LEFT JOIN AMB_OBJECT_TYPE&lt;br/&gt;ON abl.TYPE = AMB_OBJECT_TYPE.CODE</userDefinedSQL>
+<layoutSQL>&lt;?xml version = &apos;1.0&apos; encoding = &apos;UTF-8&apos;?&gt;&lt;br&gt;&lt;ActiveQueryBuilderLayout&gt;&lt;SQL&gt;Select abl.ID, abl.VERSION_ID, abl.NAME, abl.TYPE, abl.CONTENT, abl.NEED_BUILD, Case When uo.OBJECT_ID Is Not Null Then &apos;Y&apos; Else &apos;N&apos; End As IS_ALREADY_EXIST, Case When uo.STATUS = &apos;VALID&apos; Then &apos;Y&apos; When uo.STATUS = &apos;INVALID&apos; Then &apos;N&apos; Else &apos;&apos; End As IS_VALID, Case When uo.OBJECT_ID Is Not Null Then Case When uo.EDITIONABLE = &apos;Y&apos; Then &apos;REPLACE&apos; Else &apos;MANUAL&apos; End Else &apos;NEW&apos; End As ACTION, AMB_OBJECT_TYPE.SORT_KEY, abl.IS_SUCCESS, abl.FAILED_MSG From AMB_BEIL_LIST abl Left Join USER_OBJECTS uo On abl.NAME = uo.OBJECT_NAME And abl.TYPE = uo.OBJECT_TYPE Left Join AMB_OBJECT_TYPE On abl.TYPE = AMB_OBJECT_TYPE.CODE&lt;/SQL&gt;&lt;SubQueries&gt;&lt;SubQuery SQL=&quot;Select abl.ID, abl.VERSION_ID, abl.NAME, abl.TYPE, abl.CONTENT, abl.NEED_BUILD, Case When uo.OBJECT_ID Is Not Null Then &apos;Y&apos; Else &apos;N&apos; End As IS_ALREADY_EXIST, Case When uo.STATUS = &apos;VALID&apos; Then &apos;Y&apos; When uo.STATUS = &apos;INVALID&apos; Then &apos;N&apos; Else &apos;&apos; End As IS_VALID, Case When uo.OBJECT_ID Is Not Null Then Case When uo.EDITIONABLE = &apos;Y&apos; Then &apos;REPLACE&apos; Else &apos;MANUAL&apos; End Else &apos;NEW&apos; End As ACTION, AMB_OBJECT_TYPE.SORT_KEY, abl.IS_SUCCESS, abl.FAILED_MSG From AMB_BEIL_LIST abl Left Join USER_OBJECTS uo On abl.NAME = uo.OBJECT_NAME And abl.TYPE = uo.OBJECT_TYPE Left Join AMB_OBJECT_TYPE On abl.TYPE = AMB_OBJECT_TYPE.CODE&quot;&gt;&lt;UnionSubQuery&gt;&lt;DataSource SQL=&quot;AMB_BEIL_LIST abl&quot; X=&quot;50&quot; Y=&quot;20&quot; Height=&quot;264&quot; Width=&quot;140&quot;/&gt;&lt;DataSource SQL=&quot;USER_OBJECTS uo&quot; X=&quot;240&quot; Y=&quot;20&quot; Height=&quot;48&quot; Width=&quot;140&quot;/&gt;&lt;DataSource SQL=&quot;AMB_OBJECT_TYPE&quot; X=&quot;240&quot; Y=&quot;88&quot; Height=&quot;102&quot; Width=&quot;140&quot;/&gt;&lt;/UnionSubQuery&gt;&lt;/SubQuery&gt;&lt;/SubQueries&gt;&lt;/ActiveQueryBuilderLayout&gt;</layoutSQL>
 <parsed>true</parsed>
 <usedContainers>
 <container alias="abl" containerID="ED172E7C-3D75-7FC6-EF98-27B3E3AC9F67"/>
@@ -51,6 +51,17 @@
 <reference>false</reference>
 <referencedColumn>DA65F209-D5B0-752D-4413-4AB540B470D8</referencedColumn>
 <table>ED172E7C-3D75-7FC6-EF98-27B3E3AC9F67</table>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="CONTENT" id="028E8FA3-49FD-9284-036A-6099A23C1243">
+<createdBy>minjdai</createdBy>
+<createdTime>2016-04-12 08:15:43 UTC</createdTime>
+<ownerDesignName>AMB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<dataType>CLOB</dataType>
+<reference>false</reference>
+<referencedColumn>F8C9EA9F-3E99-021A-59C1-44C8E306CD37</referencedColumn>
+<table>ED172E7C-3D75-7FC6-EF98-27B3E3AC9F67</table>
+<tableAlias>abl</tableAlias>
 </viewElement>
 <viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="NEED_BUILD" id="0C53124B-31AA-0B25-D40B-BE94C63F01B7">
 <createdBy>minjdai</createdBy>
@@ -123,7 +134,7 @@
 <usedObjects>
 <UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="ED172E7C-3D75-7FC6-EF98-27B3E3AC9F67">
 <container>true</container>
-<tableName>AMB_BEI_LIST</tableName>
+<tableName>AMB_BEIL_LIST</tableName>
 </UsedObject>
 <UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="193735A4-D0B0-F121-C702-14AC9F0B7BB4">
 <container>true</container>
@@ -132,31 +143,35 @@
 </UsedObject>
 <UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="CF279148-7AA9-7059-9960-33F93DC3DA3C">
 <columnName>ID</columnName>
-<tableName>AMB_BEI_LIST</tableName>
+<tableName>AMB_BEIL_LIST</tableName>
 </UsedObject>
 <UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="20521920-D386-69DB-C330-7F2B693691A1">
 <columnName>VERSION_ID</columnName>
-<tableName>AMB_BEI_LIST</tableName>
+<tableName>AMB_BEIL_LIST</tableName>
 </UsedObject>
 <UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="E0252F77-A648-4C4A-EB4A-D38ECC2F75D3">
 <columnName>NAME</columnName>
-<tableName>AMB_BEI_LIST</tableName>
+<tableName>AMB_BEIL_LIST</tableName>
 </UsedObject>
 <UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="DA65F209-D5B0-752D-4413-4AB540B470D8">
 <columnName>TYPE</columnName>
-<tableName>AMB_BEI_LIST</tableName>
+<tableName>AMB_BEIL_LIST</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="F8C9EA9F-3E99-021A-59C1-44C8E306CD37">
+<columnName>CONTENT</columnName>
+<tableName>AMB_BEIL_LIST</tableName>
 </UsedObject>
 <UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="41B64AC9-2A3A-940D-01BF-1C9B23D7DE4A">
 <columnName>NEED_BUILD</columnName>
-<tableName>AMB_BEI_LIST</tableName>
+<tableName>AMB_BEIL_LIST</tableName>
 </UsedObject>
 <UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="6C60596B-9FAA-1282-AEB7-DECD2B430513">
 <columnName>IS_SUCCESS</columnName>
-<tableName>AMB_BEI_LIST</tableName>
+<tableName>AMB_BEIL_LIST</tableName>
 </UsedObject>
 <UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="9425C45E-7D46-93D7-4105-6961E38DA3DE">
 <columnName>FAILED_MSG</columnName>
-<tableName>AMB_BEI_LIST</tableName>
+<tableName>AMB_BEIL_LIST</tableName>
 </UsedObject>
 </usedObjects>
 </TableView>
