@@ -39,6 +39,11 @@ M.init=function(){
 			var clickSource = this.attr('onclick');
 			clickSource = clickSource.replace(/P2_ID:(.*)(\\u0026|&)/g, 'P2_ID:'+newval_obj_id+'&');
 			this.attr('onclick',clickSource);
+		}),
+		'compare':M.Button.create(Vn.B_compare,function(newval_obj_id){
+			var clickSource = this.attr('onclick');
+			clickSource = clickSource.replace(/P14_MODEL,P14_IDS:(.*)(\\u0026|&)/g, 'P14_MODEL,P14_IDS:NORMAL,'+newval_obj_id+'&');
+			this.attr('onclick',clickSource);
 		})
 		
 	};
@@ -199,6 +204,12 @@ M.Button = function(name,refreshFn){
 	}
 	this.click=function(data){
 		apex.event.trigger($(this.name),"click",data);
+	}
+	this.show=function(){
+		$(this.name).show();
+	}
+	this.hide=function(){
+		$(this.name).hide();
 	}
 	this.refresh=function(objArg){
 		if(this.refreshHander){

@@ -13,6 +13,13 @@ C.init = function() {
 		M.items['object_id'].setVal(valObj.new_val);
 		M.buttons.info_obj.refresh(valObj.new_val);
 		M.buttons.obj_option.refresh(valObj.new_val);
+		M.buttons.compare.refresh(valObj.new_val);
+		if (!M.items['object_id'].isEmpty()){
+			M.buttons.compare.show();
+		}
+		else{
+			M.buttons.compare.hide();
+		}
 	});
 	M.state.addUpdateListener("CODE", function(valObj) {
 		// update editor content
@@ -41,13 +48,13 @@ C.init = function() {
 	M.buttons.compile.bindClick(C.compile);
 	M.buttons.init.bindClick(C.initVersion);
 	M.buttons.info_obj_proxy.bindClick(C.openObjectInfo);
-	
 	M.items.version.isEmpty() ? V.components.dialogs.version_selector.open()
 			: V.components.dialogs.version_selector.close();
 
 	if (!M.items['object_id'].isEmpty()) {
-		C.refresh();
+		M.buttons.compare.show();C.refresh();
 	} else {
+		M.buttons.compare.hide();
 		M.state.update({
 			obj_name : '',
 			obj_code : '',

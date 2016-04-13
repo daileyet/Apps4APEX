@@ -42,6 +42,7 @@ BUILD_ALL_MODEL constant varchar2(10):='BUILD';
 EXPORT_MODEL constant varchar2(10):='EXPORT';
 IMPORT_MODEL constant varchar2(10):='IMPORT';
 LOAD_MODEL constant varchar2(10):='LOAD';
+NORMAL_MODEL constant varchar2(10):='NORMAL';
 
 EXPORT_XML_STYLE constant varchar2(10):='XML';
 EXPORT_DDL_STYLE constant varchar2(10):='DDL';

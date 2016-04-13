@@ -47,6 +47,7 @@ V.names = {
 		'B_build_all':'#btn-version-buildall',
 		'B_export':'#btn-version-export',
 		'B_obj_info':'#btn-object-info',
+		'B_compare':'#btn-object-compare',
 		
 		'N_cp_err':'#compile-error-notification',
 		'N_cp_err_msg':'#compile-error-notification .htmldbUlErr',
@@ -130,6 +131,7 @@ V.components.dialogs = V.components.dialogs || {
 			closeModal();
 		}
 	}
+	
 };
 V.components.editors = V.components.editors || {
 	primary:{

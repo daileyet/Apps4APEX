@@ -40,6 +40,13 @@ begin
 		AMB_UTIL_CODE.make_pure_ddl(v_code_unchange);
 	END IF;
 	
+	IF UPPER(v_model) = AMB_CONSTANT.NORMAL_MODEL THEN
+		v_change_id:=v_ids;
+		v_code_change:=AMB_BIZ_OBJECT.get_object_ctx(v_change_id);
+		
+		v_code_unchange:='';
+	END IF;
+	
 	
 	select XMLSerialize(DOCUMENT XMLElement("codes"
 	,XMLForest(v_code_change as "change", v_code_unchange as "unchange")
