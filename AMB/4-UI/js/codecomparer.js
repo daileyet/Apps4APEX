@@ -125,10 +125,14 @@ window.amb.codecomparer.C = window.amb.codecomparer.C || {
 			V.compareView.resize();
 		});
 		$(V.names.B_SAVE).unbind('click').click(C.saveDiff);
-
-		$(V.names.B_CHOOSER).unbind('click').click(C.openCompareChooser);
-		$(V.names.B_CHOICE_SAVE).unbind('click').click(C.saveCompareChoice);
-		$(V.names.I_CP_VERSION).unbind('change').change(C.compareChangeHander);
+		if($v(V.names.I_MODEL)=='NORMAL'){
+			$(V.names.B_CHOOSER).unbind('click').click(C.openCompareChooser);
+			$(V.names.B_CHOICE_SAVE).unbind('click').click(C.saveCompareChoice);
+			$(V.names.I_CP_VERSION).unbind('change').change(C.compareChangeHander);
+			if($item(V.names.I_CP_VERSION).isEmpty()){
+				C.openCompareChooser();
+			}
+		}
 
 		V.compareView.resize();
 	}
@@ -170,6 +174,7 @@ C.saveDiff = function() {
 		success : function(data) {
 			hideLoading();
 			if (data.type == 'SUCCESS') {
+				window.opener.amb.C.refresh();
 				$(V.names.B_CANCEL).trigger('click');
 			} else {
 				alert("Failed to save changes.");

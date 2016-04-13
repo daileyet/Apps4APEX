@@ -7,6 +7,8 @@ v_object AMB_OBJECT%ROWTYPE;
 v_change_id varchar2(100);
 v_unchange_id varchar2(100);
 v_output CLOB;
+
+v_error AMB_ERROR:=AMB_ERROR.EMPTY_ERROR;
 begin
 	AMB_UTIL.set_ajax_header('text/json');
 	IF UPPER(v_model) = AMB_CONSTANT.LOAD_MODEL THEN
@@ -43,6 +45,17 @@ begin
 		UPDATE AMB_BEIL_LIST
 		SET CONTENT = v_code_change
 		WHERE ID =v_change_id;
+	END IF;
+	
+	IF UPPER(v_model) = AMB_CONSTANT.NORMAL_MODEL THEN
+		v_change_id:=v_ids;
+		v_object.ID:=v_change_id;
+		v_object.CONTENT:=v_code_change;
+		v_object.UPDATE_BY:=:APP_USER;
+		AMB_BIZ_OBJECT.save_object_ctx(v_object,v_error);
+		IF NOT v_error.IS_EMPTY THEN
+			RAISE_APPLICATION_ERROR(-20001,v_error.GET_MESSAGE);
+		END IF;
 	END IF;
 	
 	htp.prn('{"type":"SUCCESS"}');
