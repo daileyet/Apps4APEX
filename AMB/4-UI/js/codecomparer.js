@@ -128,7 +128,7 @@ window.amb.codecomparer.C = window.amb.codecomparer.C || {
 		if($v(V.names.I_MODEL)=='NORMAL'){
 			$(V.names.B_CHOOSER).unbind('click').click(C.openCompareChooser);
 			$(V.names.B_CHOICE_SAVE).unbind('click').click(C.saveCompareChoice);
-			$(V.names.I_CP_VERSION).unbind('change').change(C.compareChangeHander);
+			$($x(V.names.I_CP_VERSION)).unbind('change').change(C.compareChangeHander);
 			if($item(V.names.I_CP_VERSION).isEmpty()){
 				C.openCompareChooser();
 			}
@@ -186,11 +186,12 @@ C.saveDiff = function() {
 	});
 };
 C.saveCompareChoice = function() {
-	var sCompareId = $(V.names.ID_CP_OBJECT).text();
+	var sCompareId = $(V.names.ID_CP_OBJECT).text(), sCompareVersion = $v(V.names.I_CP_VERSION);
 	V.compareSelector.close();
 	showLoading();
 	apex.server.process('RELOAD_COMPARE_CONTENT', {
-		x01 : sCompareId
+		x01 : sCompareId,
+		x02 : sCompareVersion
 	}, {
 		dataType : 'xml',
 		success : function(data) {
@@ -205,17 +206,17 @@ C.saveCompareChoice = function() {
 	});
 };
 C.compareChangeHander = function() {
-	var sNormalId = $v(V.names.I_IDS), sCompareVersion = $v(I_CP_VERSION);
+	var sNormalId = $v(V.names.I_IDS), sCompareVersion = $v(V.names.I_CP_VERSION);
 	V.compareSelector.update('');
-	console.log('reset completely');
-	apex.server.process('RELOAD_COMPARE_ID', {
+	if(sCompareVersion=='')
+		return;
+	apex.server.process('RELOAD_NORMAL_COMPARE_ID', {
 		x01 : sNormalId,
 		x02 : sCompareVersion
 	}, {
 		dataType : 'xml',
 		success : function(data) {
 			V.compareSelector.update($('unchange', data).text());
-			console.log('change completely');
 		},
 		complete : function() {
 		}

@@ -47,6 +47,8 @@ function check_in_build_all_list(f_object_id varchar2) return VARCHAR2;
 function is_in_export_list(f_object_id varchar2) return boolean;
 function check_in_export_list(f_object_id varchar2) return VARCHAR2;
 
+function is_build_without_comments(f_object_id varchar2) return boolean;
+
 
 function count_by_type(f_object_type varchar2,f_version_id varchar2) return number;
 

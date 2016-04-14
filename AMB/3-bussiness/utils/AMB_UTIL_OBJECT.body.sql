@@ -158,6 +158,21 @@ BEGIN
 	RETURN NULL;
 END;
 
+function is_build_without_comments(f_object_id varchar2) return boolean
+AS
+	v_ops_val varchar2(500):='false';
+BEGIN
+	select OPS_VALUE INTO v_ops_val from TABLE(AMB_UTIL_OPTIONS.get_object_options(f_object_id))
+	WHERE OPS_CODE = AMB_CONSTANT.OPS_BUILD_WITHOUT_COMMENTS;
+	
+	IF UPPER(v_ops_val) = 'TRUE' THEN
+		return TRUE;
+	END IF;
+	RETURN FALSE;
+	EXCEPTION WHEN OTHERS THEN
+		RETURN FALSE;
+END;
+
 function count_by_type(f_object_type varchar2,f_version_id varchar2) return number
 as
 	v_count NUMBER;

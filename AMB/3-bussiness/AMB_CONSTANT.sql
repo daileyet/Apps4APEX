@@ -22,6 +22,8 @@ COMPILE_WITH_ERROR constant varchar2(10):='FAILED';
 
 YES_TRUE constant varchar2(3):='Y';
 NO_FALSE constant varchar2(3):='N';
+-- point those objects already exist in APEX schema, named build in version
+BUILD_IN_VERSION constant varchar2(50):='BUILD_IN_SCHEMA';
 
 IS_BASE_VERSION constant varchar2(3):=YES_TRUE;
 NOT_BASE_VERSION constant varchar2(3):=NO_FALSE;
@@ -37,6 +39,7 @@ OPS_STYLE_PRIVATE constant varchar2(10):='PRIVATE';
 
 OPS_CODE_IN_BUILD_ALL constant varchar2(50):='IN_BUILD_ALL_LIST';
 OPS_CODE_IN_EXPORT constant varchar2(50):='IN_EXPORT_LIST';
+OPS_BUILD_WITHOUT_COMMENTS constant varchar2(50):='BUILD_WITHOUT_COMMENTS';
 
 BUILD_ALL_MODEL constant varchar2(10):='BUILD';
 EXPORT_MODEL constant varchar2(10):='EXPORT';

@@ -71,6 +71,10 @@ begin
 			v_object_ctx:=get_object_ctx(p_record.ID);
 		END IF;
 		IF v_object_ctx IS NOT NULL THEN
+			--check need keep or clean comments after build/compile
+			IF AMB_UTIL_OBJECT.is_build_without_comments(p_record.ID) THEN
+				AMB_UTIL_CODE.clean_comments(v_object_ctx);
+			END IF;
 			AMB_UTIL_CODE.execute_ddl(v_object_ctx);
 			UPDATE AMB_OBJECT
 				SET COMPILED = AMB_CONSTANT.COMPILE_WITHOUT_ERROR

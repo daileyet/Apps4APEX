@@ -88,4 +88,11 @@ as
 		p_ddl:=REGEXP_REPLACE(p_ddl,v_regex_tablesapce,'',1,0,'im');
   end;
   
+  
+  procedure clean_comments(p_code in out CLOB)
+  as
+  	v_comments_regx varchar2(500):='(\/\*([^*]|[\r\n]|(\*+([^*/]|[\r\n])))*\*+\/)|(--(.*)[\r\n]*)+';
+  begin
+	p_code:=REGEXP_REPLACE(p_code,v_comments_regx,'',1,0,'m');
+  end;
 end AMB_UTIL_CODE;
