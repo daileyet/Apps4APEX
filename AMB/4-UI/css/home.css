@@ -1,13 +1,13 @@
-#top-section.t-Region{
-	margin-bottom:0px !important;
+#top-section.t-Region {
+	margin-bottom: 0px !important;
 }
 
 #top-section .t-Region-body {
 	display: none;
 }
 
-#compile-error-notification.t-Alert{
-	margin-bottom:0px !important;
+#compile-error-notification.t-Alert {
+	margin-bottom: 0px !important;
 }
 
 @media screen and (min-width: 488px) {
@@ -39,49 +39,79 @@
 	}
 }
 
-
-
 /*
 *used for full screen button group also display in top right
 */
-.fix-btn-group{
-	position:fixed;
-	top:1px;
-	right:10px;
+.fix-btn-group {
+	position: fixed;
+	top: 1px;
+	right: 10px;
 }
 
-#t_Body_nav{
-	overflow:hidden;
+#t_Body_nav {
+	overflow: hidden;
 }
 
-.compile-error{
-color:red;
-font-size:13px;
-cursor:pointer;
+.apex-side-nav.js-navExpanded .t-Body-nav {
+	width: 250px;
 }
 
-.mode-desc{
-	color:blue;
+.apex-side-nav.js-navCollapsed .t-Body-nav, .apex-side-nav.js-navCollapsed .t-Body-nav .t-TreeNav
+	{
+	width: 40px;
+}
+
+.apex-side-nav.js-navExpanded.t-PageBody--hideLeft .t-Body-content {
+	margin-left: 250px;
+}
+
+.apex-side-nav.js-navCollapsed .t-Body-content, .apex-side-nav.js-navCollapsed .t-Body-side,
+	.apex-side-nav.js-navCollapsed .t-Body-title {
+	margin-left: 40px;
+}
+
+@media only screen and (max-width: 480px) {
+	.apex-side-nav.js-navCollapsed .t-Body-nav {
+		-webkit-transform: translateX(-40px);
+		-ms-transform: translateX(-40px);
+		transform: translateX(-40px);
+	}
+	.apex-side-nav.js-navCollapsed .t-Body-content, .apex-side-nav.js-navCollapsed .t-Body-side,
+		.apex-side-nav.js-navCollapsed .t-Body-title {
+		margin-left: 0;
+	}
+}
+
+.compile-error {
+	color: red;
+	font-size: 13px;
+	cursor: pointer;
+}
+
+.mode-desc {
+	color: blue;
 	margin: 2px;
 	padding-left: 15px;
 }
-.mode-desc li{
-	font-size:12px;
+
+.mode-desc li {
+	font-size: 12px;
 	list-style: none;
 }
 
 /*
 *used for code editor smart height
 */
-.t-Body-content{
-	padding-bottom:0px !important;
+.t-Body-content {
+	padding-bottom: 0px !important;
 }
-.t-Footer{
-	display:none !important;
-	
+
+.t-Footer {
+	display: none !important;
 }
-.obj-footer{
-	position:fixed;
-	bottom:0px;
+
+.obj-footer {
+	position: fixed;
+	bottom: 0px;
 	visibility: hidden;
 }

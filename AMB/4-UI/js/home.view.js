@@ -182,6 +182,8 @@ V.components.editors = V.components.editors || {
 			return cm.getOption('fullScreen');
 		},
 		resize:function(){
+			if(V.components.editors.primary.getVal()=="")
+				return;
 			var padding =12, cmMinHeight = 300;
 			var cmPos = $(Vn.S_main_editor_primary_cm).offset();
 			var footerPos = $(Vn.S_main_editor_primary_footer).offset();
