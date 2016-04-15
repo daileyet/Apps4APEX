@@ -3,6 +3,7 @@ window.amb.V = window.amb.V || {};
 var V = window.amb.V;
 
 V.init=function(){// view initialize
+	V.components.nav_tree.init();
 	V.components.sections.top.init();
 	V.components.sections.main.init();
 	V.components.sections.alert.init();
@@ -63,7 +64,9 @@ V.names = {
 		'T_nav':'#t_Body_nav',
 		'T_nav_leaf_label':'#t_Body_nav .a-TreeView-node--leaf .a-TreeView-label',
 		
-		'L_obj_info':'#object-info'
+		'L_obj_info':'#object-info',
+		
+		'L_tree_view_parent_label':'.a-TreeView-label[aria-level="1"]'
 		
 };
 var Vn = V.names;
@@ -84,7 +87,9 @@ V.components.overlays = V.components.overlays || {
 };
 
 V.components.nav_tree = V.components.nav_tree || {
-	init:function(){},
+	init:function(){
+		V.components.nav_tree.updateParentTreeItemLabel();
+	},
 	removeNode:function(itemName){
 		var $removed_labels = $(Vn.T_nav_leaf_label).filter(function(){
 			return $(this).text() == itemName;
@@ -98,7 +103,20 @@ V.components.nav_tree = V.components.nav_tree || {
 		if($remove_leafs_group.length!=0 && $remove_leafs_group.children().length==0){
 			$remove_node_topLevel.remove();
 		}
-		
+	},
+	updateParentTreeItemLabel:function(){
+		$(Vn.L_tree_view_parent_label).each(function(){
+			var $label = $(this);
+			var sLabel = $label.text();
+			var nIndex = sLabel.indexOf('@');
+			if(nIndex==-1){
+				return;
+			}
+			var sChildCount = sLabel.substr(nIndex+1);
+			sLabel = sLabel.substring(0,nIndex);
+			$label.text(sLabel);
+			$label.append('<span class="a-TreeView-badge">'+sChildCount+'</span>');
+		});
 	}
 };
 

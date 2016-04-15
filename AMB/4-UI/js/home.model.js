@@ -18,17 +18,19 @@ M.init=function(){
 			,'alert_region_close': M.Item.create(Vn.N_cp_err_close,false)
 	};
 	M.buttons = {
-		//object section
+		// object section
 		'fullscreen':M.Button.create(Vn.B_fullscreen),
 		'refresh':M.Button.create(Vn.B_refresh),
 		'save':M.Button.create(Vn.B_save),
 		'compile':M.Button.create(Vn.B_compile),
 		'obj_option':M.Button.create(Vn.B_obj_option,function(newval_obj_id){
 			var clickSource = this.attr('onclick');
-			clickSource = clickSource.replace(/P4_OBJECT:(.*)(\\u0026|&)/g, 'P4_OBJECT:'+newval_obj_id+'&');
-			this.attr('onclick',clickSource);
+			if(clickSource){
+				clickSource = clickSource.replace(/P4_OBJECT:(.*)(\\u0026|&)/g, 'P4_OBJECT:'+newval_obj_id+'&');
+				this.attr('onclick',clickSource);
+			}
 		}),
-		//version sections
+		// version sections
 		'create':M.Button.create(Vn.B_create),
 		'init':M.Button.create(Vn.B_init),
 		'build_all':M.Button.create(Vn.B_build_all),
@@ -37,13 +39,17 @@ M.init=function(){
 		'info_obj_proxy':M.Button.create(Vn.L_obj_info),
 		'info_obj':M.Button.create(Vn.B_obj_info,function(newval_obj_id){
 			var clickSource = this.attr('onclick');
-			clickSource = clickSource.replace(/P2_ID:(.*)(\\u0026|&)/g, 'P2_ID:'+newval_obj_id+'&');
-			this.attr('onclick',clickSource);
+			if(clickSource){
+				clickSource = clickSource.replace(/P2_ID:(.*)(\\u0026|&)/g, 'P2_ID:'+newval_obj_id+'&');
+				this.attr('onclick',clickSource);
+			}
 		}),
 		'compare':M.Button.create(Vn.B_compare,function(newval_obj_id){
 			var clickSource = this.attr('onclick');
-			clickSource = clickSource.replace(/P14_MODEL,P14_IDS:(.*)(\\u0026|&)/g, 'P14_MODEL,P14_IDS:NORMAL,'+newval_obj_id+'&');
-			this.attr('onclick',clickSource);
+			if(clickSource){
+				clickSource = clickSource.replace(/P14_MODEL,P14_IDS:(.*)(\\u0026|&)/g, 'P14_MODEL,P14_IDS:NORMAL,'+newval_obj_id+'&');
+				this.attr('onclick',clickSource);
+			}
 		})
 		
 	};
