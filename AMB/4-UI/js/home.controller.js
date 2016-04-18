@@ -16,9 +16,17 @@ C.init = function() {
 		M.buttons.compare.refresh(valObj.new_val);
 		if (!M.items['object_id'].isEmpty()){
 			M.buttons.compare.show();
+			M.buttons.refresh.show();
+			M.buttons.save.show();
+			M.buttons.compile.show();
+			M.buttons.obj_option.show();
 		}
 		else{
 			M.buttons.compare.hide();
+			M.buttons.refresh.hide();
+			M.buttons.save.hide();
+			M.buttons.compile.hide();
+			M.buttons.obj_option.hide();
 		}
 	});
 	M.state.addUpdateListener("CODE", function(valObj) {
@@ -52,9 +60,18 @@ C.init = function() {
 			: V.components.dialogs.version_selector.close();
 
 	if (!M.items['object_id'].isEmpty()) {
-		M.buttons.compare.show();C.refresh();
+		M.buttons.compare.show();
+		M.buttons.refresh.show();
+		M.buttons.save.show();
+		M.buttons.compile.show();
+		M.buttons.obj_option.show();
+		C.refresh();
 	} else {
 		M.buttons.compare.hide();
+		M.buttons.refresh.hide();
+		M.buttons.save.hide();
+		M.buttons.compile.hide();
+		M.buttons.obj_option.hide();
 		M.state.update({
 			obj_name : '',
 			obj_code : '',
