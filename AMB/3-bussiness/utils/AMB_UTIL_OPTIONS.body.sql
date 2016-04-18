@@ -36,7 +36,9 @@ as
 		v_version_row AMB_VERSION%ROWTYPE;
 		v_project_id varchar2(100);
 	begin
-		v_version_row:=AMB_BIZ_VERSION.get_version(f_version_id);
+		IF f_version_id IS NOT NULL THEN
+			select * into v_version_row from AMB_VERSION WHERE ID = f_version_id;
+		END IF;
 		v_project_id:=v_version_row.PROJECT_ID;
 		FOR vops in (
 			SELECT 
@@ -73,7 +75,9 @@ as
 		v_version_id varchar2(100);
 		v_object_row AMB_OBJECT%ROWTYPE;
 	begin
-		v_object_row:=AMB_BIZ_OBJECT.get_object(f_object_id);
+		IF f_object_id IS NOT NULL THEN
+			select * into v_object_row from AMB_OBJECT WHERE ID = f_object_id;
+		END IF;
 		v_version_id:=v_object_row.VERSION_ID;
 		FOR oops IN (
 			SELECT

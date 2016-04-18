@@ -4,8 +4,8 @@
 <createdTime>2016-03-22 09:06:59 UTC</createdTime>
 <ownerDesignName>AMB</ownerDesignName>
 <userDefined>true</userDefined>
-<userDefinedSQL>SELECT ael.ID,&lt;br/&gt;  ael.VERSION_ID,&lt;br/&gt;  ael.NAME,&lt;br/&gt;  ael.TYPE,&lt;br/&gt;  ael.NEED_EXPORT,&lt;br/&gt;  AMB_BIZ_OBJECT.get_object_ctx(ael.ID) AS CONTENT,&lt;br/&gt;  AMB_OBJECT.CREATE_DATE,&lt;br/&gt;  AMB_OBJECT.CREATE_BY,&lt;br/&gt;  AMB_OBJECT.DESCRIPTION,&lt;br/&gt;  aot.SORT_KEY,&lt;br/&gt;  ael.IS_SUCCESS&lt;br/&gt;FROM AMB_BEIL_LIST ael&lt;br/&gt;LEFT JOIN AMB_OBJECT&lt;br/&gt;ON ael.ID = AMB_OBJECT.ID&lt;br/&gt;LEFT JOIN AMB_OBJECT_TYPE aot&lt;br/&gt;ON ael.TYPE = aot.CODE</userDefinedSQL>
-<layoutSQL>&lt;?xml version = &apos;1.0&apos; encoding = &apos;UTF-8&apos;?&gt;&lt;br&gt;&lt;ActiveQueryBuilderLayout&gt;&lt;SQL&gt;Select ael.ID, ael.VERSION_ID, ael.NAME, ael.TYPE, ael.NEED_EXPORT, AMB_BIZ_OBJECT.get_object_ctx(ael.ID) As CONTENT, AMB_OBJECT.CREATE_DATE, AMB_OBJECT.CREATE_BY, AMB_OBJECT.DESCRIPTION, aot.SORT_KEY, ael.IS_SUCCESS From AMB_BEIL_LIST ael Left Join AMB_OBJECT On ael.ID = AMB_OBJECT.ID Left Join AMB_OBJECT_TYPE aot On ael.TYPE = aot.CODE&lt;/SQL&gt;&lt;SubQueries&gt;&lt;SubQuery SQL=&quot;Select ael.ID, ael.VERSION_ID, ael.NAME, ael.TYPE, ael.NEED_EXPORT, AMB_BIZ_OBJECT.get_object_ctx(ael.ID) As CONTENT, AMB_OBJECT.CREATE_DATE, AMB_OBJECT.CREATE_BY, AMB_OBJECT.DESCRIPTION, aot.SORT_KEY, ael.IS_SUCCESS From AMB_BEIL_LIST ael Left Join AMB_OBJECT On ael.ID = AMB_OBJECT.ID Left Join AMB_OBJECT_TYPE aot On ael.TYPE = aot.CODE&quot;&gt;&lt;UnionSubQuery&gt;&lt;DataSource SQL=&quot;AMB_BEIL_LIST ael&quot; X=&quot;50&quot; Y=&quot;20&quot; Height=&quot;246&quot; Width=&quot;140&quot;/&gt;&lt;DataSource SQL=&quot;AMB_OBJECT&quot; X=&quot;240&quot; Y=&quot;20&quot; Height=&quot;264&quot; Width=&quot;140&quot;/&gt;&lt;DataSource SQL=&quot;AMB_OBJECT_TYPE aot&quot; X=&quot;50&quot; Y=&quot;286&quot; Height=&quot;102&quot; Width=&quot;140&quot;/&gt;&lt;/UnionSubQuery&gt;&lt;/SubQuery&gt;&lt;/SubQueries&gt;&lt;/ActiveQueryBuilderLayout&gt;</layoutSQL>
+<userDefinedSQL>SELECT ael.ID,&lt;br/&gt;  ael.VERSION_ID,&lt;br/&gt;  ael.NAME,&lt;br/&gt;  ael.TYPE,&lt;br/&gt;  ael.NEED_EXPORT,&lt;br/&gt;  ael.CONTENT AS CONTENT,&lt;br/&gt;  AMB_OBJECT.CREATE_DATE,&lt;br/&gt;  AMB_OBJECT.CREATE_BY,&lt;br/&gt;  AMB_OBJECT.DESCRIPTION,&lt;br/&gt;  aot.SORT_KEY,&lt;br/&gt;  ael.IS_SUCCESS&lt;br/&gt;FROM AMB_BEIL_LIST ael&lt;br/&gt;LEFT JOIN AMB_OBJECT&lt;br/&gt;ON ael.ID = AMB_OBJECT.ID&lt;br/&gt;LEFT JOIN AMB_OBJECT_TYPE aot&lt;br/&gt;ON ael.TYPE = aot.CODE</userDefinedSQL>
+<layoutSQL>&lt;?xml version = &apos;1.0&apos; encoding = &apos;UTF-8&apos;?&gt;&lt;br&gt;&lt;ActiveQueryBuilderLayout&gt;&lt;SQL&gt;Select ael.ID, ael.VERSION_ID, ael.NAME, ael.TYPE, ael.NEED_EXPORT, ael.CONTENT As CONTENT, AMB_OBJECT.CREATE_DATE, AMB_OBJECT.CREATE_BY, AMB_OBJECT.DESCRIPTION, aot.SORT_KEY, ael.IS_SUCCESS From AMB_BEIL_LIST ael Left Join AMB_OBJECT On ael.ID = AMB_OBJECT.ID Left Join AMB_OBJECT_TYPE aot On ael.TYPE = aot.CODE&lt;/SQL&gt;&lt;SubQueries&gt;&lt;SubQuery SQL=&quot;Select ael.ID, ael.VERSION_ID, ael.NAME, ael.TYPE, ael.NEED_EXPORT, ael.CONTENT As CONTENT, AMB_OBJECT.CREATE_DATE, AMB_OBJECT.CREATE_BY, AMB_OBJECT.DESCRIPTION, aot.SORT_KEY, ael.IS_SUCCESS From AMB_BEIL_LIST ael Left Join AMB_OBJECT On ael.ID = AMB_OBJECT.ID Left Join AMB_OBJECT_TYPE aot On ael.TYPE = aot.CODE&quot;&gt;&lt;UnionSubQuery&gt;&lt;DataSource SQL=&quot;AMB_BEIL_LIST ael&quot; X=&quot;50&quot; Y=&quot;20&quot; Height=&quot;300&quot; Width=&quot;140&quot;/&gt;&lt;DataSource SQL=&quot;AMB_OBJECT&quot; X=&quot;240&quot; Y=&quot;20&quot; Height=&quot;264&quot; Width=&quot;140&quot;/&gt;&lt;DataSource SQL=&quot;AMB_OBJECT_TYPE aot&quot; X=&quot;240&quot; Y=&quot;304&quot; Height=&quot;102&quot; Width=&quot;140&quot;/&gt;&lt;/UnionSubQuery&gt;&lt;/SubQuery&gt;&lt;/SubQueries&gt;&lt;/ActiveQueryBuilderLayout&gt;</layoutSQL>
 <parsed>true</parsed>
 <usedContainers>
 <container alias="ael" containerID="ED172E7C-3D75-7FC6-EF98-27B3E3AC9F67"/>
@@ -75,9 +75,10 @@
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <alias>CONTENT</alias>
-<dataType>UNKNOWN</dataType>
+<dataType>CLOB</dataType>
 <expression>AMB_BIZ_OBJECT.get_object_ctx(ael.ID)</expression>
 <reference>false</reference>
+<referencedColumn>F8C9EA9F-3E99-021A-59C1-44C8E306CD37</referencedColumn>
 </viewElement>
 <viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="CREATE_DATE" id="AC94AAEC-B9D6-FFC4-C106-3FD9317F0B36">
 <createdBy>minjdai</createdBy>
@@ -164,6 +165,10 @@
 </UsedObject>
 <UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="0DA2265F-7120-4B44-CA50-5907C1DCD7EA">
 <columnName>NEED_EXPORT</columnName>
+<tableName>AMB_BEIL_LIST</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="F8C9EA9F-3E99-021A-59C1-44C8E306CD37">
+<columnName>CONTENT</columnName>
 <tableName>AMB_BEIL_LIST</tableName>
 </UsedObject>
 <UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="6A68706E-CDBC-939C-4BF2-3A04DED834CF">

@@ -109,20 +109,25 @@ function get_export_content(f_version_id varchar2,f_style varchar2 default AMB_C
 as
 v_output CLOB;
 v_version_row AMB_VERSION%ROWTYPE;
+v_content CLOB;
 begin
 	v_version_row:=get_version(f_version_id);
 	IF f_style = AMB_CONSTANT.EXPORT_XML_STYLE THEN
 		select dbms_xmlgen.getxml(
-		'select NAME,TYPE,CONTENT,CREATE_DATE,CREATE_BY,DESCRIPTION	 from AMB_EXPORT_VW WHERE VERSION_ID= '''||f_version_id||''' ORDER BY SORT_KEY,NAME')  
+		'select NAME,TYPE,CASE WHEN CONTENT IS NULL THEN AMB_BIZ_OBJECT.get_object_ctx(ID) ELSE CONTENT END AS CONTENT,CREATE_DATE,CREATE_BY,DESCRIPTION from AMB_EXPORT_VW WHERE VERSION_ID= '''||f_version_id||''' AND NEED_EXPORT='''||AMB_CONSTANT.YES_TRUE||''' ORDER BY SORT_KEY,NAME')  
 		into v_output from dual;
 	ELSE
 		v_output:=			'-----------------------------------------------------'||chr(13)||chr(10);
 		v_output:=v_output||'--'||v_version_row.APP_NAME||' '||v_version_row.ENVIRONMENT||' '||v_version_row.EDITION ||'--'||chr(13)||chr(10);
 		v_output:=v_output||'--@date:'||TO_CHAR(SYSDATE,'DD-Mon-YYYY hh24:mi:ss')||'--'||chr(13)||chr(10);
 		v_output:=v_output||'-----------------------------------------------------'||chr(13)||chr(10);
-		FOR objs in (select * from AMB_EXPORT_VW WHERE VERSION_ID=f_version_id ORDER BY SORT_KEY,NAME)
+		FOR objs in (select * from AMB_EXPORT_VW WHERE VERSION_ID=f_version_id AND 	NEED_EXPORT =AMB_CONSTANT.YES_TRUE  ORDER BY SORT_KEY,NAME)
 		LOOP
-			v_output:=v_output||objs.CONTENT||chr(13)||chr(10) ||' -- End of object '||objs.NAME ||chr(13)||chr(10);
+			v_content:=objs.CONTENT;
+			IF v_content IS NULL THEN
+				v_content:=AMB_BIZ_OBJECT.get_object_ctx(objs.ID);
+			END IF;
+			v_output:=v_output||v_content||chr(13)||chr(10) ||' -- End of object '||objs.NAME ||chr(13)||chr(10);
 		END LOOP;
 	END IF;
 	return v_output;
