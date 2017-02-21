@@ -9,7 +9,7 @@
         3.2	We can rebuild all objects under this application when they are destroyed in accident.
 	4.	Unified platform to coding, viewing, compiling objects for application.
 
-project structure:
+## Project structure:
 
 	1-prototype		use pencil tool design the prototype
 	2-data model
@@ -17,3 +17,8 @@ project structure:
 	4-UI
 	5-release
 	6-doc
+	
+## Installation
+
+	Import AMB_rel1.0.sql on folder '5-release' into APEX system as new project.
+	
