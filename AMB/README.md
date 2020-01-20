@@ -1,13 +1,12 @@
 # Apps Manager for Backend
-
-	1.   We can use this application to manager the relationship between objects and applications.
-		1.1	We can very clear know how many objects referenced and used in one application.
-        1.2	Quick modification for this application objects, without showing objects belong other applications
-	2.	We can use this application to export and import the objects for transporting between development and production environments.
-	3.	We also need maintain the different version objects in development and production.
-        3.1	We can invoke each version objects
-        3.2	We can rebuild all objects under this application when they are destroyed in accident.
-	4.	Unified platform to coding, viewing, compiling objects for application.
+* We can use this application to manager the relationship between objects and applications.
+	* We can very clear know how many objects referenced and used in one application.
+	* Quick modification for this application objects, without showing objects belong other applications
+* We can use this application to export and import the objects for transporting between development and production environments.
+* We also need maintain the different version objects in development and production.
+	* We can invoke each version objects
+	* We can rebuild all objects under this application when they are destroyed in accident.
+* Unified platform to coding, viewing, compiling objects for application.
 
 ## Project structure:
 
